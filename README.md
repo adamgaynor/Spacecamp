@@ -1,19 +1,3 @@
-Users
-  Each user can have many projects
-  Projects can be seen by their owners
-Projects
-  Are listed as tiles
-  Clicking on the tile brings you to the project's index page
-Discussions
-  Each project can have many discussions
-To-Do lists
-  To-Do list items
-    Items are checkboxes that can be clicked
-    Clicked the checkbox moves it to the bottom of the list
-    Items can be drag-and-drop rearranged
-    Items have a discussion
-
-
 # Spacecamp
 
 [Heroku link][heroku]
@@ -21,7 +5,8 @@ To-Do lists
 [heroku]: #
 
 ##Minimum Viable Project
-Spacecamp is a clone of Basecamp built on Rails and Backbone. Users:
+SpaceCamp is a clone of Basecamp for NASA built on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
+Space pioneers will be able to:
 
  - [ ] Create accounts
  - [ ] Create sessions (log in)
@@ -46,12 +31,12 @@ Spacecamp is a clone of Basecamp built on Rails and Backbone. Users:
 ## Implementation Timeline
 
 ###Phase 1: User Authentication, Project Creation (~1 Day)
-I will implement user authentication. I will do so using the methods we learned in Rails, but may switch to using Backbone authentication for a more seamless Ajax setup. I will also implement the ability for users to create projects in the app using a Rails form. I will ensure that the app functions correctly when pushed to Heroku.
+I will implement user authentication. I will do this using the Rails framework. I will also implement the ability for users to create projects in the app using a Rails form. I will ensure that the app functions correctly when pushed to Heroku.
 
 [Details][phase-one]
 
 ###Phase 2: Viewing Projects, Discussions, and To-Do items (~2 days)
-I will add API routes to send Project, Discussion, and To-Do item information as JSON. Users will be able to create projects and view the discussions and To-Do items inside of them within the Backbone app.
+I will add API routes to send Project, Discussion, and To-Do item information as JSON. The API routes will use CRUD functionality to create, render, and destroy items. Users will be able to create projects and view the discussions and To-Do items inside of them within the Backbone app.
 
 [Details][phase-two]
 
@@ -75,6 +60,7 @@ I will implement the ability to drag-and-drop to rearrange items in the To-Do li
 - [ ] Users can share documents with other project members
 - [ ] Projects will have a central calendar for team members to coordinate
 - [ ] Track the history of project updates
+- [ ] Some kind of fancy authentication
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

@@ -8,6 +8,7 @@
 
 ### Controllers
 * UsersController (create, new)
+* ProjectsController (create, new)
 * SessionsController (create, new, destroy)
 * DiscussionsController (create, new, show)
 * ToDosController (create, new, show)
