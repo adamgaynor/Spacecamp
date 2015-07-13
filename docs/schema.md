@@ -47,8 +47,7 @@ email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
-## collaboration
-
+## collaborations
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
