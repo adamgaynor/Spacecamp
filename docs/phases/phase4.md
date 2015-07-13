@@ -1,4 +1,4 @@
-# Phase 4: User Feeds
+# Phase 4: Commenting on Discussions and Checking off To-Do items
 
 ## Rails
 ### Models

@@ -1,4 +1,4 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Drag-and-Drop rearranging of Discussions and To-Do items
 
 ## Rails
 ### Models
