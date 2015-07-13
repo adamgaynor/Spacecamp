@@ -2,15 +2,20 @@
 
 ## Rails
 ### Models
+* Collaboration
 
 ### Controllers
+* Api::CollaborationsController
 
 ### Views
+* Collaborations will be listed in the Project Api's JSON
 
 ## Backbone
 ### Models
+* Collaboration
 
 ### Collections
+* Collaborations
 
 ### Views
 * InviteForm

@@ -2,21 +2,25 @@
 
 ## Rails
 ### Models
+* To-Do      (change order attribute)
+* Discussion (change order attribute)
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
 
 ### Views
 
 ## Backbone
 ### Models
+* To-Do
+* Discussion
 
 ### Collections
+* To-Dos
+* Discussions
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
+* To-Dos
+* DiscussionsIndex
 
 ## Gems/Libraries
-
+* jQuery UI Sortable - https://api.jqueryui.com/sortable/

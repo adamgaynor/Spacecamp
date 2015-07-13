@@ -50,7 +50,7 @@ I will add the capability for users to comment on discussions to which they have
 
 [Details][phase-four]
 
-###Phase 5: Drag-and-Drop rearranging of Discussions and To-Do items
+###Phase 5: Drag-and-Drop rearranging of Discussions and To-Do items (~2 days)
 I will implement the ability to drag-and-drop to rearrange items in the To-Do list and discussions list, with the 'jQuery UI' library.
 
 [Details][phase-five]

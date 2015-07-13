@@ -2,19 +2,20 @@
 
 ## Rails
 ### Models
+* Comment
 
 ### Controllers
-Api::PostsController (feed)
 
 ### Views
-posts/feed.json.jbuilder
 
 ## Backbone
 ### Models
+* Comment
 
 ### Collections
+* Comments
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* Discussion (contains Comments subviews)
 
 ## Gems/Libraries
