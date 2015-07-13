@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Inviting Collaborators to Projects
 
 ## Rails
 ### Models
@@ -13,7 +13,7 @@
 ### Collections
 
 ### Views
-* PostForm
+* InviteForm
 
 ## Gems/Libraries
 * Filepicker
