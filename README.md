@@ -56,7 +56,7 @@ I will implement the ability to drag-and-drop to rearrange items in the To-Do li
 [Details][phase-five]
 
 ###Phase 6: Users can upload documents to be viewed by collaborators (~2 days)
-I will add the capability for users to upload documents that can be shared with collaborators on the same project. This will be done using the filepicker.io library.
+I will add the capability for users to upload documents that can be shared with collaborators on the same project. This will be done using the "paperclip" library.
 
 ### Bonus Features (TBD)
 - [ ] Users can upload documents

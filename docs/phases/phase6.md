@@ -11,9 +11,10 @@
 ### Models
 
 ### Collections
+* Documents
 
 ### Views
 * Project (add documents to the main view)
 
 ## Gems/Libraries
-* filepicker.io
+* paperclip
