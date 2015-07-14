@@ -49,16 +49,25 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+
+  gem 'factory_girl_rails'
+
+  gem 'guard-rspec'
 end
 
 group :development do
   gem 'spring-commands-rspec'
-  gem 'guard-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'annotate'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do
