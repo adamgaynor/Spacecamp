@@ -9,7 +9,7 @@
 <body>
 
   <%= render "shared/logout_button" if logged_in? %>
-  <%= flash[:error] %>
+  <%= flash[:errors] %>
 
 <%= yield %>
 
