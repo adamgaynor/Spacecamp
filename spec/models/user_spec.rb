@@ -15,5 +15,13 @@ RSpec.describe User, type: :model do
     specify 'when lname is blank' do
       expect(FactoryGirl.build(:user, lname: '')).not_to be_valid
     end
+
+    specify 'when password is less than 6 characters' do
+      expect(FactoryGirl.build(:user, password: '')).not_to be_valid
+    end
+  end
+
+  describe 'associations' do
+    it { should have_many(:projects) }
   end
 end

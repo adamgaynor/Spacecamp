@@ -13,4 +13,8 @@ RSpec.describe Project, type: :model do
       expect(FactoryGirl.build(:project, owner_id: '')).not_to be_valid
     end
   end
+
+  describe 'associations' do
+    it { should belong_to(:owner) }
+  end
 end

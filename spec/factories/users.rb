@@ -1,5 +1,3 @@
-require 'BCrypt'
-
 FactoryGirl.define do
   factory :user do
     email 'john_smith@gmail.com'
