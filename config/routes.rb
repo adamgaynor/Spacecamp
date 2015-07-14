@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#root'
-  
+  root to: 'sessions#new'
+
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
 

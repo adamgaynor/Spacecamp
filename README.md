@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: #
+[heroku]: https://spacecamp.herokuapp.com/
 
 ##Minimum Viable Project
 SpaceCamp is a clone of Basecamp for NASA built on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
