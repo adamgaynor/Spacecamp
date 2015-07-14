@@ -68,6 +68,7 @@ group :test do
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
+  gem "shoulda-matchers"
 end
 
 group :production do

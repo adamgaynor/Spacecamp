@@ -5,7 +5,7 @@ FactoryGirl.define do
     email 'john_smith@gmail.com'
     fname 'John'
     lname 'Smith'
-    password_digest BCrypt::Password.create("aaaaaa")
+    password 'abcdef'
   end
 
 end

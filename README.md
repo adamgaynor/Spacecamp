@@ -10,7 +10,7 @@ Space pioneers will be able to:
 
  - [x] Create accounts
  - [x] Create sessions (log in)
- - [ ] Create projects
+ - [x] Create projects
  - [ ] Create discussions
  - [ ] Create To-Do lists
  - [ ] Create To-Do items within To-Do lists
