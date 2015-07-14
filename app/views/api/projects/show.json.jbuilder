@@ -1,4 +1,4 @@
-json.extract! @user, :id, :email, :fname, :lname
+json.extract! @project, :title, :description
 # json.projects do
 #
 #

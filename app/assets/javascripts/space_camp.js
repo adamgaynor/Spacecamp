@@ -4,7 +4,13 @@ window.SpaceCamp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log('Hello from Backbone!');
+    var projects = new SpaceCamp.Collections.Projects();
+    //var current_user = new SpaceCamp.Models.User();
+    new SpaceCamp.Routers.Router({
+      projects: projects,
+      $rootEl: $("#content")
+    });
+    Backbone.history.start();
   }
 };
 

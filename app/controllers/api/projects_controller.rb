@@ -1,7 +1,13 @@
 class Api::ProjectsController < ApplicationController
-  def show
+  def index
     @user = current_user
-    render json: @user
+    #@projects = current_user.projects
+    render :index
+  end
+
+  def show
+    @project = current_user.projects.find(params[:id])
+    render :show
   end
 
 end
