@@ -1,4 +1,5 @@
 SpaceCamp.Collections.Projects = Backbone.Collection.extend({
-  url: 'projects',
+  url: '/api/projects',
+  
   model: SpaceCamp.Models.Project
 });

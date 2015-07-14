@@ -9,6 +9,7 @@ window.SpaceCamp = {
       projects: projects,
       $rootEl: $("#content")
     });
+    Backbone.history.stop();
     Backbone.history.start();
   }
 };

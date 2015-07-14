@@ -41,12 +41,12 @@ I will add API routes to send Project, Discussion, and To-Do item information as
 [Details][phase-two]
 
 ###Phase 3: Inviting Collaborators to Projects (~1 day)
-I will add functionality for users to be invited as collaborators on others' projects, so that they can view and comment on the project's discussions, as well as add To-Do items.
+I will add functionality for intrepid space explorers to be invited as collaborators on others' projects, so that they can view and comment on the project's discussions, as well as add To-Do items.
 
 [Details][phase-three]
 
 ###Phase 4: Commenting on Discussions and Checking off To-Do items (~2 days)
-I will add the capability for users to comment on discussions to which they have access. I will also add the capability for users to mark To-Do items as completed using the check-boxes.
+I will add the capability for fellow cosmonauts to comment on discussions to which they have access. I will also add the capability for users to mark To-Do items as completed using the check-boxes.
 
 [Details][phase-four]
 
