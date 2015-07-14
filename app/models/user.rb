@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  validates :email, :password_digest, :session_token, presence: true
-  validates :username, :session_token, uniqueness: true
+  validates :email, :fname, :lname, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_session_token!
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
   def password=(password)
     @password = password
-    self.password_digest = BCrypt::Password.create(pasword)
+    self.password_digest = BCrypt::Password.create(password)
   end
 
   def is_password?(password)
@@ -51,6 +51,6 @@ class User < ActiveRecord::Base
   private
 
   def ensure_session_token!
-    self.session_token ||= self.generate_session_token
+    self.session_token ||= User.generate_session_token
   end
 end
