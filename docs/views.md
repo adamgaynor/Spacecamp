@@ -1,26 +1,22 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Sign In
+![sign-in]
 
-## Feed Show (landing page)
-![feed-show]
+## Projects Index (landing page)
+![projects-index]
 
-## Blog Show
-![blog-show]
+## Project Index View
+![project-index]
 
-## Post Show
-![post-show]
+## Discussion View
+![discussion-view]
 
-## Post Form
-![post-form]
+## To-Do View
+![to-do-view]
 
-## Search Results
-![search-results]
-
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[sign-in]: ./wireframes/Sign_In.jpg
+[projects-index]: ./wireframes/Projects_Index.jpg
+[project-index]: ./wireframes/Project_Index.jpg
+[discussion-view]: ./wireframes/Discussion_View.jpg
+[to-do-view]: ./wireframes/To_Do_View.jpg
