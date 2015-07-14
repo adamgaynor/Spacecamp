@@ -10,8 +10,9 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
 
   projectsIndex: function () {
     var indexView = new SpaceCamp.Views.ProjectsIndex({
-
+      projects: this.projects
     });
+    this._swapView(indexView);
   },
 
   _swapView: function (view) {
