@@ -1,4 +1,7 @@
 <h1>New Project</h1>
+<a href="<%= user_url(current_user) %>">Back to All Projects</a>
+<br>
+<br>
 <form class="new-project" action="<%= projects_url %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="title">Title</label>
