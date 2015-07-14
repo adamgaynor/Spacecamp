@@ -8,8 +8,8 @@
 SpaceCamp is a clone of Basecamp for NASA built on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
 Space pioneers will be able to:
 
- - [ ] Create accounts
- - [ ] Create sessions (log in)
+ - [x] Create accounts
+ - [x] Create sessions (log in)
  - [ ] Create projects
  - [ ] Create discussions
  - [ ] Create To-Do lists
