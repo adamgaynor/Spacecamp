@@ -1,8 +1,8 @@
-class Api::UsersController < ApiController
+class Api::UsersController < ApplicationController
 
   def show
     @user = current_user
-    render json: @user
+    render :show
   end
 
 end

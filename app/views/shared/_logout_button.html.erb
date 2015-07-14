@@ -1,4 +1,4 @@
-<%= current_user.fname %>
+<div class="header-fname"><%= current_user.fname %></div>
 <br>
 <form class="logout-button" action="<%= session_url %>" method="post">
   <input type="hidden" name="_method" value="delete">
