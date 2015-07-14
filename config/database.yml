@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: space-camp_production
-#   username: space-camp
-#   password: <%= ENV['SPACE_CAMP_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: space-camp_production
+  username: space-camp
+  password: <%= ENV['SPACE_CAMP_DATABASE_PASSWORD'] %>

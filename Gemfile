@@ -29,6 +29,8 @@ gem "backbone-on-rails"
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'serialize_json-rails'
+
+gem 'newrelic_rpm'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
