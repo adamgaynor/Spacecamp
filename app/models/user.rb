@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token!
 
-  has_many (
+  has_many(
     :projects,
     class_name: "Project",
     foreign_key: :owner_id
