@@ -9,11 +9,11 @@ window.SpaceCamp = {
       projects: projects,
       $rootEl: $("#content")
     });
-    Backbone.history.stop();
+    //Backbone.history.stop();
     Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  SpaceCamp.initialize();
-});
+// $(document).ready(function(){
+//   SpaceCamp.initialize();
+// });
