@@ -19,4 +19,6 @@ class Project < ActiveRecord::Base
     class_name: "User",
     foreign_key: :owner_id
   )
+
+  has_many :to_do_lists
 end
