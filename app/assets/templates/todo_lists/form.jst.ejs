@@ -1,0 +1,14 @@
+<form class="todo-list-form">
+
+  <label for="title">Title</label>
+  <input id="title" type="text"
+         name="todo_list[title]"
+         value="<%= list.escape("title") %>">
+
+  <label for="description">Description</label>
+  <input id="description" type="text"
+         name="todo_list[description]"
+         value="<%= list.escape("description") %>">
+  <br>
+  <button>Create a new List</button>
+</form>

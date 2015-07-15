@@ -28,8 +28,11 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   addCreateToDoList: function () {
+    var toDoList = new SpaceCamp.Models.ToDoList();
     var createToDoListForm = new SpaceCamp.Views.ToDoListForm({
-      project: this.project
+      project: this.project,
+      collection: this.toDoLists,
+      model: list
     });
     this.addSubview(".todo-lists", createToDoListForm);
   }
