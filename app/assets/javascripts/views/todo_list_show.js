@@ -1,4 +1,4 @@
-SpaceCamp.Views.ToDoListShow = Backbone.View.extend({
+SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
   template: JST['todo_lists/show'],
 
   tagName: 'li',
