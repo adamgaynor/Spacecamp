@@ -20,7 +20,8 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   newProject: function () {
     var project = new SpaceCamp.Models.Project();
     var newProjectView = new SpaceCamp.Views.ProjectsForm({
-      project: project
+      project: project,
+      projects: this.projects
     });
     this._swapView(newProjectView);
   },
