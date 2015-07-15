@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, h1, h2, p, ul, li, a, button {
+html, body, h1, h2, p, ul, li, button {
   background: transparent;
   display: block;
   font: inherit;
@@ -65,4 +65,12 @@ ul {
   width: 80px;
   cursor: pointer;
   margin: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 36px;
 }

@@ -9,7 +9,7 @@ SpaceCamp.Views.ToDoListForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.project = options.project;
-    this.$el.attr("class", "todo-list-wrapper")
+    this.$el.attr("class", "todo-list-form")
   },
 
   render: function () {
