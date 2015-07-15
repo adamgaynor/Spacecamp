@@ -13,4 +13,6 @@
 class ToDoList < ActiveRecord::Base
 
   belongs_to :project
+
+  validates :project_id, :name, presence: true
 end

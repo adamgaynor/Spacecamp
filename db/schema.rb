@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150715162130) do
   create_table "to_do_lists", force: :cascade do |t|
     t.integer  "project_id",  null: false
     t.string   "name",        null: false
-    t.string   "description", null: false
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

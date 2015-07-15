@@ -3,7 +3,7 @@ class CreateToDoLists < ActiveRecord::Migration
     create_table :to_do_lists do |t|
       t.integer :project_id, null: false
       t.string :name, null: false
-      t.string :description, null: false
+      t.string :description
 
       t.timestamps null: false
     end
