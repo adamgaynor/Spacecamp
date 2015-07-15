@@ -24,7 +24,7 @@ class Api::ToDoListsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description)
+    params.require(:todo_list).permit(:title, :description)
   end
 
 end
