@@ -1,4 +1,4 @@
-SpaceCamp.Views.ProjectShow = Backbone.View.extend({
+SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   template: JST['projects/show'],
 
   tagName: 'section',
