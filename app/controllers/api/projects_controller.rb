@@ -12,6 +12,12 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.owner_id = current_user.id
+    if @project.save
+      render json: @project
+    else
+      render json: @project.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   private

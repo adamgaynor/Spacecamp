@@ -28,7 +28,7 @@ SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
       success: function () {
         this.projects.add(this.project, { merge:true });
         Backbone.history.navigate('', { trigger: true });
-      }
+      }.bind(this)
     });
   }
 });
