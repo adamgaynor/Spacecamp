@@ -11,6 +11,9 @@ SpaceCamp.Views.ProjectShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content;
+    var content = this.template({ project: this.project });
+    this.$el.html(content);
+
+    return this;
   }
 });
