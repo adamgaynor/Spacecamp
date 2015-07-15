@@ -29,9 +29,10 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
 
   showProject: function (id) {
     var project = this.projects.getOrFetch(id);
-    var projectShowView = new SpaceCamp.Views.ProjectShow({
+    var projectShow = new SpaceCamp.Views.ProjectShow({
       project: project
     });
+    this._swapView(projectShow);
   },
 
   _swapView: function (view) {
