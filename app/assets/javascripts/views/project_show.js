@@ -14,6 +14,7 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ project: this.project });
     this.$el.html(content);
+    //remove all ToDOLists before we add them again
     this.removeAllLists();
     //add a ToDoList subview for each ToDoList
     this.toDoLists.each(this.addToDoList.bind(this));
