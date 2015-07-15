@@ -23,7 +23,7 @@ html, body, h1, h2, p, ul, li, a, button {
   margin: 0;
   padding: 0;
   border: 0;
-  
+
 }
 
 body {
@@ -58,5 +58,10 @@ ul {
   border: 1px solid black;
   border-radius: 5px;
   width: 80px;
+  margin: auto;
+}
+
+.logout-button button {
+  cursor: pointer;
   margin: auto;
 }
