@@ -23,7 +23,7 @@ html, body, h1, h2, p, ul, li, a, button {
   margin: 0;
   padding: 0;
   border: 0;
-
+  outline: none;
 }
 
 body {
@@ -52,16 +52,17 @@ ul {
 }
 
 .logout-button {
+
+  margin: auto;
+}
+
+.logout-button button {
   text-align: center;
   padding: 10px;
   background-color: lightgreen;
   border: 1px solid black;
   border-radius: 5px;
   width: 80px;
-  margin: auto;
-}
-
-.logout-button button {
   cursor: pointer;
   margin: auto;
 }
