@@ -1,5 +1,5 @@
-SpaceCamp.Views.ProjectsIndex = Backbone.View.extend({
-  template: JST['projects/new'],
+SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
+  template: JST['projects/form'],
 
   tagName: "form",
 
