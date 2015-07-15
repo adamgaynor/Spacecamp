@@ -1,7 +1,7 @@
 class Api::ProjectsController < ApplicationController
   def index
-    @user = current_user
-    #@projects = current_user.projects
+    #@user = current_user
+    @projects = current_user.projects
     render :index
   end
 
