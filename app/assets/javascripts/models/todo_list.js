@@ -1,5 +1,9 @@
 SpaceCamp.Models.ToDoList = Backbone.Model.extend({
-  rootUrl: function () {
-    return this.project.url() + "/lists";
+  url: function () {
+    var url = "/api/todo_lists/";
+    if (this.id) {
+      url = url + this.id;
+    }
+    return url;
   }
-})
+});

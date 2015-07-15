@@ -4,12 +4,11 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
   tagName: 'li',
 
   initialize: function (options) {
-    this.list = options.list;
     this.$el.attr("class", "todo-list group");
   },
 
   render: function () {
-    var content = this.template({ list: this.list });
+    var content = this.template({ list: this.model });
     this.$el.html(content);
     return this;
   }

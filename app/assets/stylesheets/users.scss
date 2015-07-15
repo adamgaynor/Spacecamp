@@ -2,20 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #content {
-  ul {
+  .projects-list {
     margin: 10px;
     background-color: red;
-  }
 
-  li {
-    float: left;
-    background-color: lightblue;
-    border: 1px solid black;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 200px;
-    height: 200px;
-    border-radius: 5px;
+    li {
+      float: left;
+      background-color: lightblue;
+      border: 1px solid black;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 200px;
+      height: 200px;
+      border-radius: 5px;
+    }
+  
 
     .project-title {
       text-align: center;

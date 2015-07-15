@@ -1,4 +1,4 @@
-class Api::ToDoListsController < ApplicationController
+class Api::TodoListsController < ApplicationController
   def index
     @project = current_user.projects.find(params[:project_id])
     @lists = @project.to_do_lists
@@ -13,8 +13,20 @@ class Api::ToDoListsController < ApplicationController
   def create
     #get project_id in the form
     current_project = current_user.projects.find(params[:project_id])
+    return if current_project.nil?
     @list = current_project.to_do_lists.new(project_params)
     if @list.save
+      render json: @list
+    else
+      render json: @list.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    current_project = current_user.projects.find(params[:project_id])
+    return if current_project.nil?
+    @list = current_project.to_do_lists.find(params[:id])
+    if @list.update_attributes(project_params)
       render json: @list
     else
       render json: @list.errors.full_messages, status: :unprocessable_entity
