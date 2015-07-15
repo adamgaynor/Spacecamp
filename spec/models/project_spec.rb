@@ -28,5 +28,6 @@ RSpec.describe Project, type: :model do
 
   describe 'associations' do
     it { should belong_to(:owner) }
+    it { should have_many(:to_do_lists) }
   end
 end

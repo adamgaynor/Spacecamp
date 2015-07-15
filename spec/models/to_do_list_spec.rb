@@ -4,8 +4,8 @@
 #
 #  id          :integer          not null, primary key
 #  project_id  :integer          not null
-#  name        :string           not null
-#  description :string           not null
+#  title       :string           not null
+#  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -13,5 +13,25 @@
 require 'rails_helper'
 
 RSpec.describe ToDoList, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'is valid' do
+    specify "when all attributes are present" do
+      expect(FactoryGirl.build(:to_do_list)).to be_valid
+    end
+    specify "when there is no description" do
+      expect(FactoryGirl.build(:to_do_list, description: '')).to be_valid
+    end
+  end
+
+  context 'is invalid' do
+    specify 'when title is blank' do
+      expect(FactoryGirl.build(:to_do_list, title: '')).not_to be_valid
+    end
+    specify 'when owner_id is blank' do
+      expect(FactoryGirl.build(:to_do_list, project_id: '')).not_to be_valid
+    end
+  end
+
+  describe 'associations' do
+    it { should belong_to(:project) }
+  end
 end
