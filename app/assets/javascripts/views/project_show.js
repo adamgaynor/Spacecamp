@@ -21,8 +21,8 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   addToDoList: function (toDoList) {
     var listView = new TrelloClone.Views.ListShowView({
-      model: toDoList,
-      project: this.project
+      toDoList: toDoList,
+      toDoLists: this.toDoLists
     });
     this.addSubview(".lists", listView);
   }

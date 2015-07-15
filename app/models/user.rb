@@ -28,6 +28,12 @@ class User < ActiveRecord::Base
     foreign_key: :owner_id
   )
 
+  has_many(
+    :to_do_lists,
+    through: :project,
+    source: :to_do_lists
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
