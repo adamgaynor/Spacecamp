@@ -13,17 +13,24 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ project: this.project });
     this.$el.html(content);
-
-
+    //add a ToDoList subview for each ToDoList
+    this.toDoLists.each(this.addToDoList.bind(this));
     this.attachSubviews();
     return this;
   },
 
   addToDoList: function (toDoList) {
-    var listView = new TrelloClone.Views.ListShowView({
+    var listView = new SpaceCamp.Views.ToDoListShowView({
       toDoList: toDoList,
       toDoLists: this.toDoLists
     });
-    this.addSubview(".lists", listView);
+    this.addSubview(".todo-lists", listView);
+  },
+
+  addCreateToDoList: function () {
+    var createToDoListForm = new SpaceCamp.Views.ToDoListForm({
+      project: this.project
+    });
+    this.addSubview(".todo-lists", createToDoListForm);
   }
 });
