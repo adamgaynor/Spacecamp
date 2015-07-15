@@ -1,8 +1,11 @@
 SpaceCamp.Views.ToDoListShow = Backbone.View.extend({
   template: JST['todo_lists/show'],
 
+  tagName: 'li',
+
   initialize: function (options) {
-    this.list = options.list
+    this.list = options.list;
+    this.$el.attr("class", "todo-list group");
   },
 
   render: function () {
