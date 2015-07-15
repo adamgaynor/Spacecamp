@@ -2,11 +2,10 @@
 <br>
 <h1>Projects</h1>
  <% projects.forEach(function(project) { %>
-   <li>
+   <li class="project-tile">
      <h2 class="project-title"><%= project.escape("title") %></h2>
      <p class="project-description">
        <%= project.escape("description") %>
      </p>
-     <button class="delete">Delete</button>
     </li>
  <% }) %>
