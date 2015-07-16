@@ -7,7 +7,7 @@ class Api::TodoListsController < ApplicationController
 
   def show
     @list = current_user.to_do_lists.find(params[:id])
-    render :show
+    render json: @list
   end
 
   def create

@@ -14,7 +14,8 @@
 class ToDoItem < ActiveRecord::Base
 
   validates :to_do_list_id, :order, :description, presence: true
-  validates :order, uniqueness: true
+  validates :order, uniqueness: { scope: :to_do_list_id,
+    message: "can only have one item in each position per list" }
 
   belongs_to :to_do_list
 end

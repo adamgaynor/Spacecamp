@@ -30,7 +30,10 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
     this.model.save(formData, {
       success: function () {
         this.collection.add(this.model);
-      }.bind(this)
+      }.bind(this),
+      error: function (model, jqxhr) {
+        //debugger;
+      }
     });
   }
 });

@@ -5,5 +5,11 @@ SpaceCamp.Models.ToDoItem = Backbone.Model.extend({
       url = url + this.id;
     }
     return url;
+  },
+
+  toJSON: function() {
+    return {
+      todo_item: _.clone(this.attributes)
+    }
   }
 });
