@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150716130807) do
     t.datetime "updated_at",                    null: false
   end
 
-  add_index "to_do_items", ["order"], name: "index_to_do_items_on_order", unique: true, using: :btree
   add_index "to_do_items", ["to_do_list_id"], name: "index_to_do_items_on_to_do_list_id", using: :btree
 
   create_table "to_do_lists", force: :cascade do |t|
