@@ -14,7 +14,7 @@ class Api::TodoListsController < ApplicationController
     #get project_id in the form
     current_project = current_user.projects.find(params[:project_id])
     return if current_project.nil?
-    @list = current_project.to_do_lists.new(project_params)
+    @list = current_project.to_do_lists.new(list_params)
     if @list.save
       render json: @list
     else
@@ -35,7 +35,7 @@ class Api::TodoListsController < ApplicationController
 
   private
 
-  def project_params
+  def list_params
     params.require(:todo_list).permit(:title, :description)
   end
 
