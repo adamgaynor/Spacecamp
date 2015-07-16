@@ -22,13 +22,13 @@ project_id  | integer   | not null, foreign key (references projects)
 title       | string    | not null
 description | string    |  
 
-## to_dos
+## to_do_items
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
-to_do_list_id | string    | not null, unique (references to_do_lists)
-content       | string    | not null
+to_do_list_id | string    | not null (references to_do_lists)
 order         | integer   | not null
+content       | string    | not null
 completed     | boolean   | not null
 
 ## discussion_posts
