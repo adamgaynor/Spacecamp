@@ -9,7 +9,7 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.toDoLists) {
-      this.toDoLists().set(response.toDoLists);
+      this.toDoLists().set(response.toDoLists, { parse: true });
       delete response.toDoLists;
     }
 
