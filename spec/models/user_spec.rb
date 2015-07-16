@@ -12,6 +12,9 @@
 #  updated_at      :datetime         not null
 #
 
+
+# run: ---rake db:test:prepare---
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do

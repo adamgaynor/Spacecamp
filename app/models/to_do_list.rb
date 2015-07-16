@@ -12,7 +12,10 @@
 
 class ToDoList < ActiveRecord::Base
 
+  validates :project_id, :title, presence: true
+
   belongs_to :project
 
-  validates :project_id, :title, presence: true
+  has_many :to_do_list_items
+
 end
