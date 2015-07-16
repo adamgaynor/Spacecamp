@@ -1,11 +1,7 @@
-
-
-
-
-
-
 <input type="checkbox"
        name="todo_item[completed]"
-       <% if (item.get("completed")) { %>checked<% } %>
-       >
-<br>
+       class="completion-box"
+       <% if (item.get("completed")) { %>checked<% } %>>
+<article>
+  <%= item.escape("description") %>
+</article>

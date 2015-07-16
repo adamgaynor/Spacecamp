@@ -1,6 +1,10 @@
 SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
   template: JST['todo_items/show'],
 
+  events: {
+    'click .completion-box': 'completeTask'
+  },
+
   tagName: 'li',
 
   initialize: function (options) {
@@ -9,10 +13,20 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      list_item: this.model
+      item: this.model
     });
     this.$el.html(content);
 
     return this;
+  },
+
+  completeTask: function (event) {
+    var isComplete = this.model.get("completed");
+    if (isComplete) {
+      this.model.set("completed", false);
+    } else {
+      this.model.set("completed", true);
+    }
+    this.model.save();
   }
 });

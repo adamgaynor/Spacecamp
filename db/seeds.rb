@@ -11,39 +11,33 @@ users = User.create([{
     email: 'adamgaynor71017@gmail.com',
     fname: 'Adam',
     lname: 'Gaynor',
-    password: 'aaaaaa',
-    id: 1
+    password: 'aaaaaa'
   }, {
     email: 'john_smith@example.com',
     fname: 'John',
     lname: 'Smith',
-    password: 'qwerty',
-    id: 2
+    password: 'qwerty'
   }
 ])
 
 projects = Project.create([{
     owner_id: users.first.id,
     title: 'SpaceCamp',
-    description: 'A project management site...for astronauts!',
-    id: 1
+    description: 'A project management site...for astronauts!'
   }, {
     owner_id: users[1].id,
     title: 'SpaceCamp',
-    description: 'A project management site...for astronauts!',
-    id: 2
+    description: 'A project management site...for astronauts!'
   }
 ])
 
 to_do_lists = ToDoList.create([{
     project_id: projects.first.id,
     title: 'Features',
-    description: 'To be implemented.',
-    id: 1
+    description: 'To be implemented.'
   }, {
     project_id: projects[1].id,
     title: 'Features',
-    description: 'To be implemented.',
-    id: 2
+    description: 'To be implemented.'
   }
 ])
