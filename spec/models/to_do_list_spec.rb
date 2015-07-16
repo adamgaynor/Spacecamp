@@ -33,5 +33,6 @@ RSpec.describe ToDoList, type: :model do
 
   describe 'associations' do
     it { should belong_to(:project) }
+    it { should have_many(:to_do_items) }
   end
 end

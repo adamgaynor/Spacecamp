@@ -13,7 +13,10 @@
 
 FactoryGirl.define do
   factory :to_do_item do
-    
+    to_do_list_id 1
+    order 0
+    description "A new item"
+    completed true
   end
 
 end

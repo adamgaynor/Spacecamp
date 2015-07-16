@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150716130807) do
     t.integer  "to_do_list_id", null: false
     t.integer  "order",         null: false
     t.string   "description",   null: false
-    t.boolean  "completed",     null: false
+    t.boolean  "completed"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

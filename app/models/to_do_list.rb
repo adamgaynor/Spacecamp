@@ -16,6 +16,6 @@ class ToDoList < ActiveRecord::Base
 
   belongs_to :project
 
-  has_many :to_do_list_items
+  has_many :to_do_items
 
 end

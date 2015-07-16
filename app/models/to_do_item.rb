@@ -13,7 +13,7 @@
 
 class ToDoItem < ActiveRecord::Base
 
-  validates :to_do_list_id, :order, :description, :completed, presence: true
+  validates :to_do_list_id, :order, :description, presence: true
   validates :order, uniqueness: true
 
   belongs_to :to_do_list
