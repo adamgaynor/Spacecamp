@@ -5,5 +5,11 @@ SpaceCamp.Models.ToDoList = Backbone.Model.extend({
       url = url + this.id;
     }
     return url;
+  },
+
+  toDoItems: function () {
+    if (this._items) return this._items;
+    this._items = new SpaceCamp.Collections.ToDoItems([], { toDoList: this });
+    return this._items;
   }
 });
