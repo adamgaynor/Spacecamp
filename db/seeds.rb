@@ -41,3 +41,26 @@ to_do_lists = ToDoList.create([{
     description: 'To be implemented.'
   }
 ])
+
+to_do_items = ToDoItem.create([{
+    to_do_list_id: to_do_lists.first.id,
+    description: 'To-Do Lists',
+    completed: true,
+    order: 0
+  }, {
+    to_do_list_id: to_do_lists.first.id,
+    description: 'Discussion Boards',
+    completed: false,
+    order: 1
+  }, {
+    to_do_list_id: to_do_lists[1].id,
+    description: 'To-Do Lists',
+    completed: true,
+    order: 0
+  }, {
+    to_do_list_id: to_do_lists[1].id,
+    description: 'Discussion Boards',
+    completed: false,
+    order: 1
+  }]
+)
