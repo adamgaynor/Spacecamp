@@ -29,7 +29,7 @@ id            | integer   | not null, primary key
 to_do_list_id | string    | not null (references to_do_lists)
 order         | integer   | not null
 content       | string    | not null
-completed     | boolean   | not null
+completed     | boolean   | 
 
 ## discussion_posts
 column name   | data type | details
