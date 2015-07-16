@@ -12,14 +12,15 @@ Space pioneers will be able to:
  - [x] Create sessions (log in)
  - [x] Create projects
  - [ ] Create discussions
- - [ ] Create To-Do lists
- - [ ] Create To-Do items within To-Do lists
+ - [x] Create To-Do lists
+ - [x] Create To-Do items within To-Do lists
+ - [x] Mark To-Do items as completed
+ - [ ] To-Do Items can be assigned to specific collaborators
  - [ ] Share projects with other project members
  - [ ] View discussions
  - [ ] View To-Do Items
  - [ ] Comment on discussions
  - [ ] Rearrange To-Do items
- - [ ] Mark To-Do items as completed
 
 ##Design Docs
 * [View Wireframes][views]
@@ -45,8 +46,8 @@ I will add functionality for intrepid space explorers to be invited as collabora
 
 [Details][phase-three]
 
-###Phase 4: Commenting on Discussions and Checking off To-Do items (~2 days)
-I will add the capability for fellow cosmonauts to comment on discussions to which they have access. I will also add the capability for users to mark To-Do items as completed using the check-boxes.
+###Phase 4: Commenting on Discussions and assigning To-Do items (~2 days)
+I will add the capability for fellow cosmonauts to comment on discussions to which they have access. I will also add the capability for the project owner to assign To-Do items to specific collaborators on the project.
 
 [Details][phase-four]
 
