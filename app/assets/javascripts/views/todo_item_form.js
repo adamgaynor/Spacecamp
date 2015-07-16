@@ -1,7 +1,7 @@
 SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
   template: JST['todo_items/form'],
 
-  tagName: 'form',
+  tagName: 'li',
 
   events: {
     'click button': 'submit'
@@ -9,7 +9,7 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.toDoList = options.toDoList;
-    this.$el.attr("class", "todo-item-form")
+    //this.$el.attr("class", "todo-item-form")
   },
 
   render: function () {

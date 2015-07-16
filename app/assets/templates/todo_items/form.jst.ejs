@@ -1,1 +1,15 @@
 <h1>To Do Item Form</h1>
+
+<form class="todo-item-form">
+  <label for="description"></label>
+  <br>
+  <input id="description" type="text"
+         name="todo_item[description]"
+         value="<%= item.escape("description") %>">
+  <br>
+  <input type="checkbox"
+         name="todo_item[completed]"
+         <%= if (item.completed) {"checked"} %>
+  <br>
+  <button>Create Item</button>
+</form>
