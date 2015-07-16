@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::TodoItemsController < ApplicationController
 
   def create
@@ -16,8 +17,8 @@ class Api::TodoItemsController < ApplicationController
   def update
     current_list =
       current_user.to_do_lists.find(params[:to_do_list_id])
-    @item = current_list.find(params[:id])
-    if @item.save(update_params)
+    @item = current_list.to_do_items.find(params[:id])
+    if @item.update_attributes(update_params)
       render json: @item
     else
       render json: @item.errors.full_messages, status: :unprocessable_entity

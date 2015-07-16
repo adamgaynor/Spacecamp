@@ -29,11 +29,10 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
     } else {
       this.model.set("completed", true);
     }
+    //debugger
     console.log(this.model);
     this.model.save({}, {
-      success: function () {
-        this.collection.add(this.model);
-      }.bind(this),
+      success: function () {},
       error: function (model, jqxhr) {
         debugger;
       }
