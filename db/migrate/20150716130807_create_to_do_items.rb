@@ -4,8 +4,8 @@ class CreateToDoItems < ActiveRecord::Migration
       t.integer :to_do_list_id, null: false
       t.integer :order, null: false
       t.string :description, null: false
-      t.boolean :completed
-      
+      t.boolean :completed, default: false
+
       t.timestamps null: false
     end
 
