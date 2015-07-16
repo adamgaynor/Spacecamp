@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   has_many(
     :to_do_lists,
-    through: :project,
+    through: :projects,
     source: :to_do_lists
   )
 

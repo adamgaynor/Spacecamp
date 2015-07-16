@@ -23,9 +23,10 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    var formData = this.$el.serializeJSON();
+    var formData = this.$el.find("form").serializeJSON();
     this.model.set(formData);
-    formData.to_do_list_id = this.toDoList.id;
+    this.model.set("to_do_list_id", this.toDoList.id);
+    this.model.set("order", this.collection.length);
     this.model.save(formData, {
       success: function () {
         this.collection.add(this.model);

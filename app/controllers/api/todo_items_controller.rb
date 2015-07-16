@@ -4,6 +4,7 @@ class Api::TodoItemsController < ApplicationController
     current_list = current_user.to_do_lists.find(params[:to_do_list_id])
     return if current_list.nil?
     @item = current_list.to_do_items.new(item_params)
+    @item.order = params[:order]
     if @item.save
       render json: @item
     else
