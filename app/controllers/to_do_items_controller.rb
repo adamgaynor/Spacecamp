@@ -1,2 +1,0 @@
-class ToDoItemsController < ApplicationController
-end
