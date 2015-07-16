@@ -24,9 +24,8 @@ class Api::TodoListsController < ApplicationController
 
   def update
     current_project = current_user.projects.find(params[:project_id])
-    return if current_project.nil?
     @list = current_project.to_do_lists.find(params[:id])
-    if @list.update_attributes(project_params)
+    if @list.update_attributes(list_params)
       render json: @list
     else
       render json: @list.errors.full_messages, status: :unprocessable_entity
