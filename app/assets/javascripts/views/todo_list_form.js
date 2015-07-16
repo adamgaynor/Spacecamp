@@ -28,6 +28,7 @@ SpaceCamp.Views.ToDoListForm = Backbone.View.extend({
     formData.project_id = this.project.id;
     this.model.save(formData, {
       success: function () {
+        this.model.fetch();
         this.collection.add(this.model);
       }.bind(this)
     });

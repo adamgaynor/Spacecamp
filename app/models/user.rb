@@ -34,6 +34,12 @@ class User < ActiveRecord::Base
     source: :to_do_lists
   )
 
+  has_many(
+    :to_do_items,
+    through: :projects,
+    source: :to_do_items
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

@@ -1,6 +1,14 @@
 require 'byebug'
 class Api::TodoItemsController < ApplicationController
 
+  def show
+    # current_list =
+    #   current_user.to_do_lists.find(params[:to_do_list_id])
+    # @item = current_list.to_do_items.find(params[:id])
+    @item = current_user.to_do_items.find(params[:id])
+    render json: @item
+  end
+
   def create
     current_list =
       current_user.to_do_lists.find(params[:to_do_list_id])

@@ -5,6 +5,7 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.$el.attr("class", "todo-list group");
+    this.listenTo(this.model.toDoItems(), "update add", this.render)
   },
 
   render: function () {

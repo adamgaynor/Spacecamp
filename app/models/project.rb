@@ -21,4 +21,10 @@ class Project < ActiveRecord::Base
   )
 
   has_many :to_do_lists
+
+  has_many(
+    :to_do_items,
+    through: :to_do_lists,
+    source: :to_do_items
+  )
 end

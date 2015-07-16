@@ -9,7 +9,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.$el.attr("class", "todo-item");
-    this.listenTo(this.model, "change", this.render)
+    this.listenTo(this.model, "change sync", this.render)
   },
 
   render: function () {
@@ -29,12 +29,13 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
     } else {
       this.model.set("completed", true);
     }
-    //debugger
-    console.log(this.model);
     this.model.save({}, {
-      success: function () {},
+      success: function () {
+        this.render();
+        //this.model.fetch();
+      }.bind(this),
       error: function (model, jqxhr) {
-        debugger;
+        //debugger;
       }
     });
   }
