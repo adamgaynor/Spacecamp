@@ -26,6 +26,7 @@ class Api::TodoItemsController < ApplicationController
     current_list =
       current_user.to_do_lists.find(params[:to_do_list_id])
     @item = current_list.to_do_items.find(params[:id])
+    #debugger
     if @item.update_attributes(update_params)
       render json: @item
     else
