@@ -29,7 +29,6 @@ SpaceCamp.Views.CommentForm = Backbone.View.extend({
 		this.model.set("discussion_id", this.discussion.id);
 		this.model.save(formData, {
 			success: function () {
-				this.model.fetch();
 				this.collection.add(this.model, { merge: true });
 			}.bind(this)
 		});

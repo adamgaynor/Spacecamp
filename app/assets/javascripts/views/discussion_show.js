@@ -50,7 +50,4 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
     });
     this.addSubview('.comments', createCommentForm);
   }
-	//create CommentShow view
-	//create CommentForm view
-
 });
