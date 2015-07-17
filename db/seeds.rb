@@ -64,3 +64,13 @@ to_do_items = ToDoItem.create([{
     order: 1
   }]
 )
+
+#doesn't work
+discussions = Discussion.create([{
+  author_id: users.first.id,
+  project_id: projects.first.id,
+  title: 'Sample Discussion',
+  content: 'Here is my proposal',
+  summary: 'Here is my...'
+  }
+])

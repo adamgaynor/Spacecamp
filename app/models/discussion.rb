@@ -7,6 +7,7 @@
 #  author_id  :integer          not null
 #  title      :string           not null
 #  content    :text
+#  summary    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
