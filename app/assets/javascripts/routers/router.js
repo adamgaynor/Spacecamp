@@ -4,7 +4,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     'projects/new': 'newProject',
     'projects/:id': 'showProject',
     'projects/:project_id/discussions/new': 'newDiscussion',
-    'discussions/:id': 'showDiscussion',
+    'projects/:project_id/discussions/:discussion_id': 'showDiscussion',
     'discussions/:id/edit': 'editDiscussion'
   },
 
@@ -51,9 +51,13 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     this._swapView(newDiscussionView);
   },
 
-  showDiscussion: function (id) {
-    //var discussion = this.project.discussions().getOrFetch(id)
-
+  showDiscussion: function (project_id, discussion_id) {
+    var project.getOrFetch(project_id);
+    var discussion = this.project.discussions().getOrFetch(discussion_id);
+    var discussionShow - new SpaceCamp.Views.ProjectShow({
+      model: discussion
+    });
+    this._swapView(discussionShow);
   },
 
   editDiscussion: function (id) {
