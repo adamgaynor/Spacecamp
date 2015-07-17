@@ -13,7 +13,8 @@ end
 json.discussions do
   json.array! @project.discussions do |discussion|
     json.extract! discussion, :id, :title, :summary, :author_id, :updated_at
-    #json.extract! discussion.author, :id
+    json.author_name discussion.author.fname
+    #json.extract! discussion.author, :fname
   end
 
 end
