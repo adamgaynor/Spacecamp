@@ -7,13 +7,6 @@ id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 title       | string    | not null
 
-## discussions
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-project_id  | integer   | not null, foreign key (references projects)
-title       | string    | not null
-
 ## to_do_lists
 column name | data type | details
 ------------|-----------|-----------------------
@@ -29,7 +22,16 @@ id            | integer   | not null, primary key
 to_do_list_id | string    | not null (references to_do_lists)
 order         | integer   | not null
 content       | string    | not null
-completed     | boolean   | 
+completed     | boolean   |
+
+## discussions
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+project_id  | integer   | not null, foreign key (references projects)
+author_id   | integer   | not null, foreign key (references users)
+title       | string    | not null
+content     | text      | not null
 
 ## discussion_posts
 column name   | data type | details
