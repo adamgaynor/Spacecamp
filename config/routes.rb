@@ -8,12 +8,11 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :projects, except: [:new, :edit] do
       #resources :todo_lists, only: [:index]
-      resources :discussions, only: [:create]
     end
     resources :todo_lists, only: [:show, :create, :update, :destroy] do
       resources :todo_items, only: [:index]
     end
     resources :todo_items, only: [:show, :create, :update, :destroy]
-    resources :discussions, only: [:show, :update, :destroy]
+    resources :discussions, only: [:show, :update, :destroy, :create]
   end
 end

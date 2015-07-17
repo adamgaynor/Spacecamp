@@ -27,7 +27,8 @@ SpaceCamp.Views.DiscussionForm = Backbone.View.extend({
     this.model.set(formData);
     this.model.save(formData, {
       success: function () {
-        this.collection.add(this.model);
+        this.collection.add(this.model, { merge: true });
+				Backbone.history.navigate('#projects/' + this.project.id, { trigger: true });
       }.bind(this),
       error: function (model, jqxhr) {
         //debugger;
