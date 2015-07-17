@@ -43,5 +43,6 @@ RSpec.describe User, type: :model do
     it { should have_many(:authored_discussions) }
     it { should have_many(:to_do_lists) }
     it { should have_many(:to_do_items) }
+    it { should have_many(:authored_comments) }
   end
 end
