@@ -1,1 +1,5 @@
-<h1>Show Discussion</h1>
+<h1><a href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a></h1>
+<h1><%= discussion.escape("title") %></h1>
+<p>
+	<%= discussion.escape("content") %>
+</p>

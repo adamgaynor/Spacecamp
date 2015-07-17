@@ -4,6 +4,7 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 	tagName: 'section',
 
 	initialize: function (options) {
+		this.project = options.project;
 		this.comments = options.comments;
     this.listenToOnce(this.model, "sync", this.render);
     this.$el.attr("class", "discussion-show group");
@@ -11,6 +12,7 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 
 	render: function () {
 		var content = this.template({
+			project: this.project,
 			discussion: this.model,
 			comments: this.comments
 		});
