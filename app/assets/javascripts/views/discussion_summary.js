@@ -3,9 +3,14 @@ SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
 
 	tagName: 'article',
 
+	initialize: function (options) {
+		this.project = options.project;
+	},
+
 	render: function () {
 		var content = this.template({
-			discussion: this.model
+			discussion: this.model,
+			project: this.project
 		});
 		this.$el.html(content);
 

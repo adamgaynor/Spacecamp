@@ -41,7 +41,8 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   addDiscussion: function (discussion) {
     var discussionView = new SpaceCamp.Views.DiscussionSummary({
       model: discussion,
-      collection: this.discussions
+      collection: this.discussions,
+      project: this.project
     });
     this.addSubview(".discussions", discussionView);
   },

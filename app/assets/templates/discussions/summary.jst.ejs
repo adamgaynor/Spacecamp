@@ -1,8 +1,8 @@
-<strong>Discussion Summary</strong>
+Author: <%= discussion.escape("author_name") %>
 <br>
-<%= discussion.escape("author_name") %>
-<br>
+<a href="<%= "#projects/" + project.id + "/discussions/" + discussion.id %>">
 <%= discussion.escape("title") %>
+</a>
 <br>
 <%= discussion.escape("summary") %>
 <br>
