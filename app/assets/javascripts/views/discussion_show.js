@@ -18,7 +18,38 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 		});
 		this.$el.html(content);
 
+		this.removeAllComments();
+    this.model.comments().each(this.addComment.bind(this));
+    this.addCreateComment();
+    this.attachSubviews();
+
 		return this;
-	}
+	},
+
+  removeAllComments: function () {
+    var subviews = this.subviews('.comments');
+    var views = subviews.clone();
+    views.forEach(this.removeSubview.bind(this, '.comments'));
+  },
+
+  addComment: function (comment) {
+    var commentView = new SpaceCamp.Views.CommentShow({
+      model: comment,
+      collection: this.model.comments()
+    });
+    this.addSubview('.comments', commentView);
+  },
+
+	addCreateComment: function () {
+    var comment = new SpaceCamp.Models.Comment();
+    var createCommentForm = new SpaceCamp.Views.CommentForm({
+      discussion: this.model,
+      collection: this.model.comments(),
+      model: comment
+    });
+    this.addSubview('.comments', createCommentForm);
+  }
+	//create CommentShow view
+	//create CommentForm view
 
 });
