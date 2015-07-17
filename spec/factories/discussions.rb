@@ -13,7 +13,10 @@
 
 FactoryGirl.define do
   factory :discussion do
-    
+    project_id 1
+    author_id 1
+    title "Sample Discussion"
+    content "Some things"
   end
 
 end

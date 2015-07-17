@@ -14,5 +14,29 @@
 require 'rails_helper'
 
 RSpec.describe Discussion, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'is valid' do
+    specify "when all attributes are present" do
+      expect(FactoryGirl.build(:discussion)).to be_valid
+    end
+    specify "when there is no content" do
+      expect(FactoryGirl.build(:discussion, content: '')).to be_valid
+    end
+  end
+
+  context 'is invalid' do
+    specify 'when title is blank' do
+      expect(FactoryGirl.build(:discussion, title: '')).not_to be_valid
+    end
+    specify 'when author_id is blank' do
+      expect(FactoryGirl.build(:discussion, author_id: '')).not_to be_valid
+    end
+    specify 'when project_id is blank' do
+      expect(FactoryGirl.build(:discussion, project_id: '')).not_to be_valid
+    end
+  end
+
+  describe 'associations' do
+    it { should belong_to(:project) }
+    #it { should have_many(:discussion_posts) }
+  end
 end
