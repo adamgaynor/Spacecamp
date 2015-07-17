@@ -13,7 +13,6 @@ class Api::TodoListsController < ApplicationController
   def create
     #get project_id in the form
     current_project = current_user.projects.find(params[:project_id])
-    return if current_project.nil?
     @list = current_project.to_do_lists.new(list_params)
     if @list.save
       render json: @list

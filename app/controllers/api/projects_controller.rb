@@ -1,6 +1,5 @@
 class Api::ProjectsController < ApplicationController
   def index
-    #@user = current_user
     @projects = current_user.projects
     render :index
   end
@@ -11,8 +10,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
-    @project.owner_id = current_user.id
+    @project = current_user.projects.new(project_params)
     if @project.save
       render json: @project
     else
