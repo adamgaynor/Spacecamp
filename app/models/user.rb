@@ -46,6 +46,12 @@ class User < ActiveRecord::Base
     foreign_key: :author_id
   )
 
+  has_many(
+    :discussions,
+    through: :projects,
+    source: :discussions
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

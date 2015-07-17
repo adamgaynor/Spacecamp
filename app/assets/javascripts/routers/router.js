@@ -52,6 +52,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   showDiscussion: function (id) {
+    //var discussion = this.project.discussions().getOrFetch(id)
 
   },
 
