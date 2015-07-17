@@ -25,6 +25,7 @@ SpaceCamp.Views.DiscussionForm = Backbone.View.extend({
     event.preventDefault();
     var formData = this.$el.serializeJSON();
     this.model.set(formData);
+		this.model.set("project_id", this.project.id);
     this.model.save(formData, {
       success: function () {
         this.collection.add(this.model, { merge: true });

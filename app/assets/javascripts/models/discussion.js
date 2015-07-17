@@ -5,5 +5,11 @@ SpaceCamp.Models.Discussion = Backbone.Model.extend({
       url = url + this.id;
     }
     return url;
+  },
+
+  toJSON: function() {
+    return {
+      discussion: _.clone(this.attributes)
+    }
   }
 });
