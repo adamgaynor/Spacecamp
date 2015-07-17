@@ -1,1 +1,8 @@
-<h1>Comments Show</h1>
+<br>
+<article>
+	<strong><%= comment.escape("author_fname") %> <%= comment.escape("author_lname") %></strong>
+	<p>
+	<%= comment.escape("content") %>
+	</p>
+	Posted <%= time %>
+</article>
