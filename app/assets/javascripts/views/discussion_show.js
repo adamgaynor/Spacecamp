@@ -7,6 +7,7 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 		this.project = options.project;
 		this.comments = options.comments;
     this.listenToOnce(this.model, "sync", this.render);
+		this.listenTo(this.comments, "add", this.render);
     this.$el.attr("class", "discussion-show group");
   },
 

@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
 	def create
 		current_discussion =
 			current_user.discussions.find(params[:comment][:discussion_id])

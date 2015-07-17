@@ -1,3 +1,9 @@
 SpaceCamp.Models.Comment = Backbone.Model.extend({
-	urlRoot: '/api/comments'
+	urlRoot: '/api/comments',
+
+  toJSON: function() {
+    return {
+      comment: _.clone(this.attributes)
+    }
+  }
 });
