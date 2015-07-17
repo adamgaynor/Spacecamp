@@ -3,6 +3,8 @@ SpaceCamp.Collections.ToDoItems = Backbone.Collection.extend({
     return this.toDoList.url() + "/todo_lists";
   },
 
+  comparator: "order",
+
   model: SpaceCamp.Models.ToDoItem,
 
   getOrFetch: function (id) {

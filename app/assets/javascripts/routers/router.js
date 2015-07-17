@@ -2,7 +2,10 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'projectsIndex',
     'projects/new': 'newProject',
-    'projects/:id': 'showProject'
+    'projects/:id': 'showProject',
+    'projects/:project_id/discussions/new': 'newDiscussion',
+    'discussions/:id': 'showDiscussion',
+    'discussions/:id/edit': 'editDiscussion'
   },
 
   initialize: function (options) {
@@ -35,6 +38,25 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
       discussions: project.discussions()
     });
     this._swapView(projectShow);
+  },
+
+  newDiscussion: function (project_id) {
+    var discussion = new SpaceCamp.Models.Discussion();
+    var project = this.projects.getOrFetch(id);
+    var newDiscussionView = new SpaceCamp.Views.DiscussionForm({
+      model: discussion,
+      collection: project.discussions(),
+      project: project
+    });
+    this._swapView(newDiscussionView);
+  },
+
+  showDiscussion: function (id) {
+
+  },
+
+  editDiscussion: function (id) {
+
   },
 
   _swapView: function (view) {
