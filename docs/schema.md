@@ -34,13 +34,13 @@ title       | string    | not null
 content     | text      | not null
 summary     | text      | not null
 
-## discussion_posts
+## comments
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
 author_id     | integer   | not null, foreign key (references users)
 discussion_id | integer   | not null, foreign key (references discussions)
-body          | text      | not null
+content       | text      | not null
 
 ## users
 column name     | data type | details
