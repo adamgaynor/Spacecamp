@@ -11,7 +11,8 @@ Space pioneers will be able to:
  - [x] Create accounts
  - [x] Create sessions (log in)
  - [x] Create projects
- - [ ] Create discussions
+ - [x] Create discussions
+ - [ ] Comment on discussions
  - [x] Create To-Do lists
  - [x] Create To-Do items within To-Do lists
  - [x] Mark To-Do items as completed
@@ -19,7 +20,6 @@ Space pioneers will be able to:
  - [ ] Share projects with other project members
  - [ ] View discussions
  - [ ] View To-Do Items
- - [ ] Comment on discussions
  - [ ] Rearrange To-Do items
 
 ##Design Docs

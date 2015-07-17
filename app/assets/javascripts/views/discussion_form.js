@@ -9,6 +9,7 @@ SpaceCamp.Views.DiscussionForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.project = options.project;
+    this.listenTo(this.project, "sync", this.render);
     this.$el.attr("class", "discussion-form")
   },
 

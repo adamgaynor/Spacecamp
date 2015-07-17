@@ -1,7 +1,10 @@
 <a href="#">Back to All Projects</a>
 <h1>Project name: <%= project.escape("title") %></h1>
 <br>
-<h3>Discussions</h3>
+<span><strong>Discussions</strong></span>
+<a href="<%= "#projects/" + project.id + "/discussions/new" %>">
+	Post a new message
+</a>
 <section class="discussions"></section>
 <br>
 <h3>To-do lists</h1>
