@@ -7,16 +7,23 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.project = options.project;
     this.listenToOnce(this.project, "sync", this.render);
     this.$el.attr("class", "project-show group");
-    this.toDoLists = options.toDoLists
+    this.toDoLists = options.toDoLists;
+    this.discussions = options.discussions;
     this.listenTo(this.toDoLists, "add", this.render);
   },
 
   render: function () {
     var content = this.template({ project: this.project });
     this.$el.html(content);
+    //remove all Discussions before we add them again
+    //this.removeAllDiscussions();
+    //add a form to create a new Discussion
+    //this.addCreateDiscussion();
+    //add a Discussion subview for each Discussion
+    //this.discussions.each(this.addDiscussion.bind(this));
     //remove all ToDOLists before we add them again
     this.removeAllLists();
-    //add a form to crate a new ToDoList
+    //add a form to create a new ToDoList
     this.addCreateToDoList();
     //add a ToDoList subview for each ToDoList
     this.toDoLists.each(this.addToDoList.bind(this));
@@ -24,6 +31,26 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     return this;
   },
 
+  //functions dealing with Discussion subviews
+  removeAllDiscussions: function () {
+    var subviews = this.subviews('.discussions');
+    var views = subviews.clone();
+    views.forEach(this.removeSubview.bind(this, '.discussions'));
+  },
+
+  addDiscussion: function (discussion) {
+    var discussionView = new SpaceCamp.Views.DiscussionSummary({
+      model: discussion,
+      collection: this.discussions
+    });
+    this.addSubview(".discussions", discussionView);
+  },
+
+  addCreateDiscussion: function () {
+
+  },
+
+  //functions dealing with ToDoList subviews
   removeAllLists: function () {
     var subviews = this.subviews('.todo-lists');
     var views = subviews.clone();
