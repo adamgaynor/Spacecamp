@@ -14,6 +14,9 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 			discussion: this.model,
 			comments: this.comments
 		});
+		this.$el.html(content);
+
+		return this;
 	}
 
 });

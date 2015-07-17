@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     end
     resources :todo_items, only: [:show, :create, :update, :destroy]
     resources :discussions, only: [:show, :update, :destroy, :create]
+    resources :comments, only: [:create, :update, :destroy]
   end
 end

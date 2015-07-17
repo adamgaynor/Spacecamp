@@ -52,9 +52,9 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   showDiscussion: function (project_id, discussion_id) {
-    var project.getOrFetch(project_id);
-    var discussion = this.project.discussions().getOrFetch(discussion_id);
-    var discussionShow - new SpaceCamp.Views.ProjectShow({
+    var project = this.projects.getOrFetch(project_id);
+    var discussion = project.discussions().getOrFetch(discussion_id);
+    var discussionShow = new SpaceCamp.Views.DiscussionShow({
       model: discussion,
       comments: discussion.comments()
     });
