@@ -65,12 +65,18 @@ to_do_items = ToDoItem.create([{
   }]
 )
 
-#doesn't work
 discussions = Discussion.create([{
   author_id: users.first.id,
   project_id: projects.first.id,
   title: 'Sample Discussion',
   content: 'Here is my proposal',
-  summary: 'Here is my...'
+  summary: 'Here is my'
+  }
+])
+
+comments = Comment.create([{
+    author_id: users.first.id,
+    discussion_id: discussions.first.id,
+    content: 'Something to say.'
   }
 ])
