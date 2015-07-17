@@ -27,4 +27,6 @@ class Project < ActiveRecord::Base
     through: :to_do_lists,
     source: :to_do_items
   )
+
+  has_many :discussions
 end

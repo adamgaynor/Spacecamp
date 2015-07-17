@@ -40,6 +40,12 @@ class User < ActiveRecord::Base
     source: :to_do_items
   )
 
+  has_many(
+    :authored_discussions,
+    class_name: "Discussion",
+    foreign_key: :author_id
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
