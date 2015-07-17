@@ -31,7 +31,6 @@ class Api::TodoListsController < ApplicationController
       render json: @list.errors.full_messages, status: :unprocessable_entity
     end
   end
-
   private
 
   def list_params
