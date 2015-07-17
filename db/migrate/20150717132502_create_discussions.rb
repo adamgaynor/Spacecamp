@@ -5,6 +5,7 @@ class CreateDiscussions < ActiveRecord::Migration
       t.integer :author_id, null: false
       t.string :title, null: false
       t.text :content
+      t.text :summary
 
       t.timestamps null: false
     end

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150717132502) do
     t.integer  "author_id",  null: false
     t.string   "title",      null: false
     t.text     "content"
+    t.text     "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

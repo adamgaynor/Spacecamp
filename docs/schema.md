@@ -32,6 +32,7 @@ project_id  | integer   | not null, foreign key (references projects)
 author_id   | integer   | not null, foreign key (references users)
 title       | string    | not null
 content     | text      | not null
+summary     | text      | not null
 
 ## discussion_posts
 column name   | data type | details

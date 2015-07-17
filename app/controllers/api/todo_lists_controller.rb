@@ -1,8 +1,8 @@
 class Api::TodoListsController < ApplicationController
-  def index
+  def index # Not used for anything yet    
     @project = current_user.projects.find(params[:project_id])
     @lists = @project.to_do_lists
-    render :index
+    render json: @lists
   end
 
   def show
