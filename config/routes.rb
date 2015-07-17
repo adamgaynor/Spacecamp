@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: :show
     resources :projects, except: [:new, :edit] do
-      resources :todo_lists, only: [:index]
-      resources :discussions, only: [:index]
+      #resources :todo_lists, only: [:index]
+      #resources :discussions, only: [:index]
     end
     resources :todo_lists, only: [:show, :create, :update, :destroy] do
       resources :todo_items, only: [:index]
