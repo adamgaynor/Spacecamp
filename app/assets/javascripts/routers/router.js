@@ -32,7 +32,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     var projectShow = new SpaceCamp.Views.ProjectShow({
       project: project,
       toDoLists: project.toDoLists(),
-      discussions: project.discussions();
+      discussions: project.discussions()
     });
     this._swapView(projectShow);
   },

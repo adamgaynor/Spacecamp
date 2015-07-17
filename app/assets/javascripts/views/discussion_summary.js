@@ -5,11 +5,11 @@ SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
 
 	render: function () {
 		var content = this.template({
-			project: this.model,
-			author: this.model.get("author_id")
+			discussion: this.model,
+			author: this.model.escape("author_id")
 		});
 		this.$el.html(content);
 
 		return this;
 	}
-}),
+});
