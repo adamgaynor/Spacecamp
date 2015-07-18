@@ -27,7 +27,7 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend({
     var delta = parseInt((relative_to.getTime() - date) / 1000);
     //delta = delta + (relative_to.getTimezoneOffset() * 60);
 
-    if (delta < 60) { return 'less than one minute ago'; }
+    if (delta < 60) { return 'less than a minute ago'; }
     else if (delta < 120) { return 'a minute ago'; }
     else if (delta < (60 * 60)) { return (parseInt(delta / 60)).toString() + ' minutes ago'; }
     else if (delta < (120 * 60)) { return 'an hour ago'; }
