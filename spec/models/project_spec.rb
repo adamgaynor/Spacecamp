@@ -30,5 +30,6 @@ RSpec.describe Project, type: :model do
     it { should belong_to(:owner) }
     it { should have_many(:to_do_lists) }
     it { should have_many(:discussions) }
+    it { should have_many(:collaborations) }
   end
 end
