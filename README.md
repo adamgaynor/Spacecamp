@@ -12,7 +12,7 @@ Space pioneers will be able to:
  - [x] Create sessions (log in)
  - [x] Create projects
  - [x] Create discussions
- - [ ] Comment on discussions
+ - [x] Comment on discussions
  - [x] Create To-Do lists
  - [x] Create To-Do items within To-Do lists
  - [x] Mark To-Do items as completed
@@ -21,6 +21,7 @@ Space pioneers will be able to:
  - [ ] View discussions
  - [ ] View To-Do Items
  - [ ] Rearrange To-Do items
+ - [ ] Oauth integration with Google login
 
 ##Design Docs
 * [View Wireframes][views]
@@ -51,7 +52,7 @@ I will add the capability for fellow cosmonauts to comment on discussions to whi
 
 [Details][phase-four]
 
-###Phase 5: Drag-and-Drop rearranging of Discussions and To-Do items (~2 days)
+###Phase 5: Drag-and-Drop rearranging of To-Do items (~2 days)
 I will implement the ability to drag-and-drop to rearrange items in the To-Do list and discussions list, with the 'jQuery UI' library.
 
 [Details][phase-five]
