@@ -40,11 +40,11 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { should have_many(:projects) }
+    it { should have_many(:owned_projects) }
     it { should have_many(:authored_discussions) }
     it { should have_many(:to_do_lists) }
     it { should have_many(:to_do_items) }
     it { should have_many(:authored_comments) }
     it { should have_many(:collaborations) }
-    it { should have_many(:collaborated_projects) }
   end
 end
