@@ -20,10 +20,12 @@ class Project < ActiveRecord::Base
     foreign_key: :owner_id
   )
 
+  has_many :collaborations
+
   has_many :to_do_lists
 
   has_many :discussions
-  
+
   has_many(
     :to_do_items,
     through: :to_do_lists,

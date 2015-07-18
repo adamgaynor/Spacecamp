@@ -23,7 +23,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token!
 
   has_many(
-    :collaborations
+    :collaborations,
+    class_name: 'Collaboration',
+    foreign_key: :user_id
   )
 
   has_many(

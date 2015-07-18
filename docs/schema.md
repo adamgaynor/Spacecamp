@@ -51,8 +51,8 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 
 ## collaborations
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-project_id      | integer   | not null, foreign key (references projects)
-collaborator_id | integer   | not null, foreign key (references users)
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+project_id    | integer   | not null, foreign key (references projects)
+user_id       | integer   | not null, foreign key (references users)

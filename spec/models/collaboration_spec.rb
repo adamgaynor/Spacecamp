@@ -12,10 +12,6 @@
 require 'rails_helper'
 
 RSpec.describe Collaboration, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-
-RSpec.describe Collaboration, type: :model do
   it "is valid when required attributes are present" do
     expect(FactoryGirl.build(:collaboration)).to be_valid
   end
