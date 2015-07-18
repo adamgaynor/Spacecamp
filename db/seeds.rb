@@ -80,3 +80,15 @@ comments = Comment.create([{
     content: 'Something to say.'
   }
 ])
+
+collaborations = Collaboration.create([{
+    user_id: users.first.id,
+    project_id: projects.first.id
+  }, {
+    user_id: users[1].id,
+    project_id: projects.first.id
+  }, {
+    user_id: users[1].id,
+    project_id: projects[1].id
+  }
+])
