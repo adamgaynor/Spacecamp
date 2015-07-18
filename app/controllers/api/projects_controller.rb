@@ -10,8 +10,9 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.new(project_params)
+    @project = current_user.owned_projects.new(project_params)
     if @project.save
+      create_owner_collaboration(@project.id, current_user.id)
       render json: @project
     else
       render json: @project.errors.full_messages, status: :unprocessable_entity
@@ -22,6 +23,14 @@ class Api::ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :description)
+  end
+
+  def create_owner_collaboration(project_id, user_id)
+    @collaboration = Collaboration.new(
+      project_id: project_id,
+      user_id: user_id
+    )
+    @collaboration.save
   end
 
 end
