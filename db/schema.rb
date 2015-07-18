@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20150718033312) do
   enable_extension "plpgsql"
 
   create_table "collaborations", force: :cascade do |t|
-    t.integer  "project_id"
-    t.integer  "collaborator_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "project_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "collaborations", ["collaborator_id"], name: "index_collaborations_on_collaborator_id", using: :btree
   add_index "collaborations", ["project_id"], name: "index_collaborations_on_project_id", using: :btree
+  add_index "collaborations", ["user_id"], name: "index_collaborations_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "author_id",     null: false
