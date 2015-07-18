@@ -26,8 +26,8 @@ projects = Project.create([{
     description: 'A project management site...for astronauts!'
   }, {
     owner_id: users[1].id,
-    title: 'SpaceCamp',
-    description: 'A project management site...for astronauts!'
+    title: 'SpaceCamp2',
+    description: 'Another project management site...for astronauts!'
   }
 ])
 
