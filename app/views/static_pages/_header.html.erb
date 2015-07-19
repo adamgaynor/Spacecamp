@@ -1,7 +1,7 @@
 
-<header class="root-header"
-<div class="header-fname"><%= current_user.fname %> <%= current_user.lname %></div>
-
-
-<%= render "logout_button" if logged_in? %>
+<header class="root-header group">
+  <ul>
+    <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
+    <li><%= render "logout_button" if logged_in? %></li>
+  </ul>
 </header>

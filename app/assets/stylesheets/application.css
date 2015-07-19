@@ -41,7 +41,11 @@ ul {
   display: block;
 }
 
-.header-fname {
+/*.root-header > ul {
+  float:right
+}*/
+
+.header-name {
   text-align: center;
   padding: 10px;
   background-color: lightgreen;
