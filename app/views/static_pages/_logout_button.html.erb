@@ -1,5 +1,3 @@
-<div class="header-fname"><%= current_user.fname %></div>
-<br>
 <form class="logout-button" action="<%= session_url %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
