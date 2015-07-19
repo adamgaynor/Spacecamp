@@ -29,6 +29,7 @@ html, body, h1, h2, p, ul, li, button {
 body {
   background-color: #eee;
   color: black;
+  font-family: sans-serif;
 }
 
 ul {
@@ -41,37 +42,9 @@ ul {
   display: block;
 }
 
-/*.root-header > ul {
-  float:right
-}*/
 
-.header-name {
-  text-align: center;
-  padding: 10px;
-  background-color: lightgreen;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 100px;
-  margin: auto;
-}
 
-.logout-button {
-
-  margin: auto;
-}
-
-.logout-button button {
-  text-align: center;
-  padding: 10px;
-  background-color: lightgreen;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 80px;
-  cursor: pointer;
-  margin: auto;
-}
-
-button {
+#content button {
   cursor: pointer;
   border: 1px solid black;
   border-radius: 5px;

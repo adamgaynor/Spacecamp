@@ -4,6 +4,23 @@
   }
 
   li {
-    float: left
+
   }
+}
+
+.header-name {
+  text-align: center;
+  padding: 2px 10px;
+  width: 100px;
+  font-size: 80%;
+  display: none;
+}
+
+.logout-button button {
+  text-align: center;
+  padding: 2px 5px;
+  width: 80px;
+  cursor: pointer;
+  margin: auto;
+  font-size: 100%;
 }
