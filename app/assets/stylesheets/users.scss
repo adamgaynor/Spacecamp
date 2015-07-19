@@ -5,7 +5,7 @@
   .projects-list {
     margin: 10px;
 
-    li {
+    .project-tile {
       float: left;
       background-color: lightblue;
       border: 1px solid black;
@@ -26,6 +26,28 @@
 
     .project-description {
       margin: 10px;
+    }
+
+    .new-project-tile {
+      float: left;
+      background-color: #eee;
+      border: 1px solid black;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 200px;
+      height: 200px;
+      border-radius: 5px;
+      
+      h2 {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 10px;
+      }
     }
   }
 }
