@@ -1,5 +1,4 @@
-<a href="#">Back to All Projects</a>
-<h1>Project name: <%= project.escape("title") %></h1>
+<h1 class="project-title"><%= project.escape("title") %></h1>
 <br>
 <span><strong>Discussions</strong></span>
 <a href="<%= "#projects/" + project.id + "/discussions/new" %>">

@@ -42,10 +42,11 @@ ul {
   display: block;
 }
 
-/*#content{
+#content{
   width: 1000px;
   margin: auto;
-}*/
+  background: lightblue;
+}
 
 #content button {
   cursor: pointer;

@@ -1,11 +1,13 @@
 
-<header class="root-header group">
-  <ul class="main-header">
-    <li><a href="#">SpaceCamp</a></li>
-  </ul>
+<header class="root-header">
+  <nav class="group">
+    <ul class="main-header">
+      <li><a href="#">SpaceCamp</a></li>
+    </ul>
 
-  <ul class="user-info">
-    <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
-    <li><%= render "logout_button" if logged_in? %></li>
-  </ul>
+    <ul class="user-info">
+      <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
+      <li><%= render "logout_button" if logged_in? %></li>
+    </ul>
+  </nav>
 </header>
