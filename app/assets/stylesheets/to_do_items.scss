@@ -71,9 +71,17 @@
 }
 
 .todo-item {
-  margin: 5px 0px;  
+  margin: 5px 0px;
 }
 
 .show {
   display: block;
+}
+
+.assigned-user {
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 0px 7px;
+  font-size: 12px;
+  margin-left: 5px;
 }

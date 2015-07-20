@@ -4,9 +4,9 @@
        <% if (item.get("completed")) { %>checked<% } %>>
 <article>
   <%= item.escape("description") %>
-  <span class="assigned-user">
-    <% if (collaborator) { %>
+  <% if (collaborator) { %>
+    <span class="assigned-user">
       <%= collaborator.escape("fname") %> <%= collaborator.escape("lname") %>
-    <% } %>
-  </span>
+    </span>
+  <% } %>
 </article>
