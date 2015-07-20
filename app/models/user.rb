@@ -70,6 +70,12 @@ class User < ActiveRecord::Base
     source: :discussions
   )
 
+  has_many(
+    :assigned_to_do_items,
+    class_name: 'ToDoItem',
+    foreign_key: :assigned_user_id
+  )
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

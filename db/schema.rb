@@ -61,16 +61,16 @@ ActiveRecord::Schema.define(version: 20150720182130) do
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
 
   create_table "to_do_items", force: :cascade do |t|
-    t.integer  "to_do_list_id",                 null: false
-    t.integer  "order",                         null: false
-    t.string   "description",                   null: false
-    t.boolean  "completed",     default: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "assigned_user", default: -1,    null: false
+    t.integer  "to_do_list_id",                    null: false
+    t.integer  "order",                            null: false
+    t.string   "description",                      null: false
+    t.boolean  "completed",        default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "assigned_user_id", default: -1,    null: false
   end
 
-  add_index "to_do_items", ["assigned_user"], name: "index_to_do_items_on_assigned_user", using: :btree
+  add_index "to_do_items", ["assigned_user_id"], name: "index_to_do_items_on_assigned_user_id", using: :btree
   add_index "to_do_items", ["to_do_list_id"], name: "index_to_do_items_on_to_do_list_id", using: :btree
 
   create_table "to_do_lists", force: :cascade do |t|
