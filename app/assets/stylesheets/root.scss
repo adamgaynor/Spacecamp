@@ -1,12 +1,13 @@
-header {
+.root-header {
   background: black;
+
+  nav {
+    width: 1000px;
+    margin: auto;
+    background: black;
+  }
 }
 
-nav {
-  width: 1000px;
-  margin: auto;
-  background: black;
-}
 
 .user-info {
   float: right;

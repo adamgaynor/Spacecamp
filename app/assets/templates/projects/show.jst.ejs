@@ -1,4 +1,7 @@
-<h1 class="project-title"><%= project.escape("title") %></h1>
+<header class="project-header">
+	<h1 class="project-title"><%= project.escape("title") %></h1>
+	<h2 class="project-description"><%= project.escape("description") %></h2>
+</header>
 <span>Discussions</span>
 <a class="new-discussion" href="<%= "#projects/" + project.id + "/discussions/new" %>">
 	Post a new message
