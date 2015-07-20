@@ -31,5 +31,6 @@ RSpec.describe Project, type: :model do
     it { should have_many(:to_do_lists) }
     it { should have_many(:discussions) }
     it { should have_many(:collaborations) }
+    it { should have_many(:collaborators) }
   end
 end

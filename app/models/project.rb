@@ -32,4 +32,10 @@ class Project < ActiveRecord::Base
     source: :to_do_items
   )
 
+  has_many(
+    :collaborators,
+    through: :collaborations,
+    source: :user
+  )
+
 end
