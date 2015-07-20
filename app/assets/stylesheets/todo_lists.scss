@@ -66,14 +66,14 @@
     background-color: white;
   }
 
-  span {
+  .cancel {
     display: inline;
     font-size: 14px;
     text-decoration: underline;
     cursor: pointer;
 
     &:hover {
-      color: #aaa;
+      color: #1c5c76;
     }
   }
 }

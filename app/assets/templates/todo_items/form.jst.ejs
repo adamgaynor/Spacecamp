@@ -1,10 +1,20 @@
-<br>
+<span class="todo-item-form-show">Add a to-do</span>
+
 <form class="todo-item-form">
-  <button>Create Item</button>
-  <label for="description">Task</label>
-  <br>
-  <input id="description" type="text"
+  <input type="checkbox" disabled>
+  <input class="description" type="text"
          name="description"
-         value="<%= item.escape("description") %>">
+         value="<%= item.escape("description") %>"
+         placeholder="Add a new to-do...">
   <br>
+  <span class="form-text">Assigned to: </span>
+  <select>
+    <option value="Adam">Adam</option>
+  </select>
+  <!-- <span class="form-text">Due Date: </span> -->
+  <!-- <input type="date" name="date" value=""> -->
+  <br>
+  <button>Add this to-do</button>
+  or
+  <span class="cancel">I'm done adding new items</span>
 </form>

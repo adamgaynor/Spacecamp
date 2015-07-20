@@ -4,7 +4,9 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
   tagName: 'li',
 
   events: {
-    'click button': 'submit'
+    'click button': 'submit',
+    'click .todo-item-form-show': 'showForm',
+    'click .cancel': 'hideForm'
   },
 
   initialize: function (options) {
@@ -35,5 +37,17 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
         //debugger;
       }
     });
+  },
+
+  showForm: function (event) {
+    event.preventDefault();
+    var $form = this.$el.find(".todo-item-form");
+    $form.attr("class", "todo-item-form show");
+  },
+
+  hideForm: function (event) {
+    event.preventDefault();
+    var $form = this.$el.find(".todo-item-form");
+    $form.attr("class", "todo-item-form");
   }
 });
