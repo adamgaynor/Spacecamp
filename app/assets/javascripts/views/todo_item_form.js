@@ -47,11 +47,17 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
     event.preventDefault();
     var $form = this.$el.find(".todo-item-form");
     $form.attr("class", "todo-item-form show");
+
+    var $link = this.$el.find(".todo-item-form-show");
+    $link.attr("class", "todo-item-form-show hidden");
   },
 
   hideForm: function (event) {
     event.preventDefault();
     var $form = this.$el.find(".todo-item-form");
     $form.attr("class", "todo-item-form");
+
+    var $link = this.$el.find(".todo-item-form-show");
+    $link.attr("class", "todo-item-form-show");
   }
 });
