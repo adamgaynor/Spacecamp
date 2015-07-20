@@ -5,7 +5,8 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     'projects/:id': 'showProject',
     'projects/:project_id/discussions/new': 'newDiscussion',
     'projects/:project_id/discussions/:discussion_id': 'showDiscussion',
-    'discussions/:id/edit': 'editDiscussion'
+    'discussions/:id/edit': 'editDiscussion',
+    'projects/:project_id/add': 'addCollaborators'
   },
 
   initialize: function (options) {
@@ -65,6 +66,14 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
 
   editDiscussion: function (id) {
 
+  },
+
+  addCollaborators: function (project_id) {
+    var users = new SpaceCamp.Collections.Users();
+    var project = this.projects.getOrFetch(project_id);
+    var addCollaboratorsView = new SpaceCamp.Views.UsersIndex({
+      project: project
+    });
   },
 
   _swapView: function (view) {
