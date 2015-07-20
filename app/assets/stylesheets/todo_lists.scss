@@ -2,11 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+.todo-list-form-show {
+  display: inline;
+  padding: 3px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0px 1px 0px #ddd;
+  color: black;
+  cursor: pointer;
+
+  &:active {
+    background-color: #ccc;
+  }
+}
+
+
 .todo-list-form {
+
+  display: none;
+  margin-left: 20px;
+
   button {
-    background-color: lightblue;
+    display: inline;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid black;
-    padding: 5px;
+    font-size: 12px;
+    box-shadow: 0px 1px 0px #ddd;
+    background-color: white;
   }
 }

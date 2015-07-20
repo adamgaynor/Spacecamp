@@ -3,6 +3,10 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   tagName: 'section',
 
+  events: {
+    'click .todo-list-form-show': 'showTodoListForm'
+  },
+
   initialize: function (options) {
     this.project = options.project;
     this.listenToOnce(this.project, "sync", this.render);
@@ -74,5 +78,11 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
       model: toDoList
     });
     this.addSubview(".todo-lists", createToDoListForm);
+  },
+
+  showTodoListForm: function (event) {
+    event.preventDefault();
+    var todoList = this.$el.find('.todo-list-form');
+    todoList.attr("style", "display:block");
   }
 });
