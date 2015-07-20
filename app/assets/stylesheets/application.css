@@ -27,7 +27,7 @@ html, body, h1, h2, h3, p, ul, li, a, button {
 }
 
 body {
-  background-color: #eee;
+  background-color: black;
   color: black;
   font-family: sans-serif;
 }
@@ -45,7 +45,9 @@ ul {
 #content {
   width: 1000px;
   margin: auto;
-  background: lightblue;
+  background: white;
+  border-radius: 3px;
+  /*box-shadow: 0 0 6px rgba(0,0,0,0.3);*/
 }
 
 #content button {

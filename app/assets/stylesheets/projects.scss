@@ -10,18 +10,21 @@
     font-weight: normal;
     font-size: 20px;
     padding: 0px 0px 10px 20px;
+    color: #900;
   }
 
   .new-discussion {
+    margin-left: 10px;
     display: inline;
-    padding: 5px 10px;
-    border: 1px solid black;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: green;
-    
+    font-size: 12px;
+    box-shadow: 0px 1px 0px #ddd;
+
     &:active {
-      background-color: blue;
-      color: white;
+      background-color: #ccc;
+      color: black;
     }
   }
 
