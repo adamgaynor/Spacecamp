@@ -18,10 +18,11 @@
     border: 1px solid black;
     border-radius: 5px;
     background-color: green;
-
+    
     &:active {
       background-color: blue;
       color: white;
     }
+  }
 
 }
