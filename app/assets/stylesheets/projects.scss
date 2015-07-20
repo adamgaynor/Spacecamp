@@ -1,6 +1,6 @@
 .project-show {
 
-  
+
 
   h1 {
     font-size: 24px;
@@ -23,6 +23,9 @@
     border-radius: 5px;
     font-size: 12px;
     box-shadow: 0px 1px 0px #ddd;
+    position: relative;
+    top: -2px;
+
 
     &:active {
       background-color: #ccc;
