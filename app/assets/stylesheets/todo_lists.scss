@@ -19,6 +19,23 @@
   }
 }
 
+.todo-list {
+  margin: 20px 0px 0px 20px;
+  .todo-list-title {
+    font-weight: bold;
+  }
+
+  .todo-list-description {
+    font-style: italic;
+    margin-bottom: 10px;
+
+  }
+
+  .todo-items {
+    margin-left: 10px;
+  }
+}
+
 .todo-lists .show {
   display: block;
 }
@@ -45,5 +62,15 @@
     border-radius: 5px;
     font-size: 12px;
     background-color: white;
+  }
+
+  span {
+    display: inline;
+    font-size: 14px;
+    text-decoration: underline;
+
+    &:hover {
+      color: #aaa;
+    }
   }
 }
