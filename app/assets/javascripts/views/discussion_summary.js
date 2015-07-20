@@ -1,10 +1,11 @@
 SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
 	template: JST['discussions/summary'],
 
-	tagName: 'article',
+	tagName: 'tr',
 
 	initialize: function (options) {
 		this.project = options.project;
+		this.$el.attr("class", "group");
 	},
 
 	render: function () {

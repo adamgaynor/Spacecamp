@@ -1,9 +1,17 @@
-Author: <%= discussion.escape("author_name") %>
-<br>
-<a href="<%= "#projects/" + project.id + "/discussions/" + discussion.id %>">
-<%= discussion.escape("title") %>
+<td class="name group"><a href="<%= "#projects/" +
+              project.id +
+              "/discussions/" +
+              discussion.id %>">
+  </a>          
+  <%= discussion.escape("author_name") %>
+</td>
+
+<td class="content group">
+<a href="<%= "#projects/" +
+              project.id +
+              "/discussions/" +
+              discussion.id %>">
 </a>
-<br>
+<%= discussion.escape("title") %>
 <%= discussion.escape("summary") %>
-<br>
-<br>
+</td>
