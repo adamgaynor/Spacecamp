@@ -13,6 +13,12 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
     return this._discussions
   },
 
+  collaborators: function () {
+    if (this._collaborators) return this._collaborators;
+    this._collaborators = new SpaceCamp.Collections.ToDoLists([], { project: this });
+    return this._collaborators;
+  },
+
   parse: function (response) {
     if (response.toDoLists) {
       this.toDoLists().set(response.toDoLists, { parse: true });
