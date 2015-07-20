@@ -31,7 +31,8 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
   addToDoItem: function (toDoItem) {
     var itemView = new SpaceCamp.Views.ToDoItemShow({
       model: toDoItem,
-      collection: this.model.toDoItems()
+      collection: this.model.toDoItems(),
+      collaborators: this.collaborators
     });
     this.addSubview(".todo-items", itemView);
   },

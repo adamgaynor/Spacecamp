@@ -8,13 +8,16 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
   tagName: 'li',
 
   initialize: function (options) {
+    this.collaborators = options.collaborators;
+    this.collaborator = this.collaborators.get(this.model.get("assigned_user_id"));
     this.$el.attr("class", "todo-item");
     this.listenTo(this.model, "change sync", this.render)
   },
 
   render: function () {
     var content = this.template({
-      item: this.model
+      item: this.model,
+      collaborator: this.collaborator
     });
     this.$el.html(content);
 

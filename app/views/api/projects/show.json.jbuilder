@@ -4,7 +4,7 @@ json.toDoLists do
     json.extract! list, :id, :title, :description, :created_at
     json.toDoItems do
       json.array! list.to_do_items do |item|
-        json.extract! item, :id, :description, :order, :to_do_list_id, :completed
+        json.extract! item, :id, :description, :order, :to_do_list_id, :completed, :assigned_user_id
       end
     end
   end
