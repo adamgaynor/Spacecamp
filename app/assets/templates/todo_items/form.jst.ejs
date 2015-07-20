@@ -1,5 +1,10 @@
 <span class="todo-item-form-show">Add a to-do</span>
 
+<br>
+
+
+<br>
+
 <form class="todo-item-form">
   <input type="checkbox" disabled>
   <input class="description" type="text"
@@ -8,8 +13,13 @@
          placeholder="Add a new to-do...">
   <br>
   <span class="form-text">Assigned to: </span>
-  <select>
-    <option value="Adam">Adam</option>
+  <select name="assigned_user">
+    <option value="-1">None</option>
+  <% collaborators.forEach(function(collaborator){ %>
+    <option value="<%= collaborator.id %>">
+      <%= collaborator.escape("fname") %> <%= collaborator.escape("lname") %>
+    </option>
+  <% }); %>
   </select>
   <!-- <span class="form-text">Due Date: </span> -->
   <!-- <input type="date" name="date" value=""> -->

@@ -28,6 +28,6 @@ class Api::TodoItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:todo_item).permit(:description, :order, :completed, :assigned_user)
+    params.require(:todo_item).permit(:description, :order, :completed, :assigned_user_id)
   end
 end

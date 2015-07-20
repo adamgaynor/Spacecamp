@@ -13,8 +13,7 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.$el.attr("class", "project-show group");
     this.toDoLists = options.toDoLists;
     this.discussions = options.discussions;
-    this.collaborators =
-      new SpaceCamp.Collections.Collaborators({ project: this.project});
+    this.collaborators = this.project.collaborators();
     this.listenTo(this.toDoLists, "add", this.render);
   },
 
