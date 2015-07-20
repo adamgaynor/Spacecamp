@@ -16,12 +16,14 @@ Space pioneers will be able to:
  - [x] Create To-Do lists
  - [x] Create To-Do items within To-Do lists
  - [x] Mark To-Do items as completed
- - [ ] To-Do Items can be assigned to specific collaborators
+ - [x] To-Do Items can be assigned to specific collaborators
  - [ ] Share projects with other project members
  - [ ] View discussions
  - [ ] View To-Do Items
  - [ ] Rearrange To-Do items
  - [ ] Oauth integration with Google login
+ - [ ] Uploading avatars
+ - [ ] Uploading files
 
 ##Design Docs
 * [View Wireframes][views]
