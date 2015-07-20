@@ -4,7 +4,8 @@ SpaceCamp.Views.ToDoListForm = Backbone.View.extend({
   tagName: 'form',
 
   events: {
-    'click button': 'submit'
+    'click .submit': 'submit',
+    'click .cancel': 'cancel'
   },
 
   initialize: function (options) {
@@ -33,5 +34,10 @@ SpaceCamp.Views.ToDoListForm = Backbone.View.extend({
         this.collection.add(this.model);
       }.bind(this)
     });
+  },
+
+  cancel: function (event) {
+    event.preventDefault();
+    this.$el.attr("class", "todo-list-form");
   }
 });

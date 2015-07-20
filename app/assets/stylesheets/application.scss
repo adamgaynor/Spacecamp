@@ -50,13 +50,13 @@ ul {
   /*box-shadow: 0 0 6px rgba(0,0,0,0.3);*/
 }
 
-/*#content button {
+#content button {
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: lightblue;
-  padding: 5px;
-}*/
+
+  &:active {
+    background-color: #ccc;
+  }
+}
 
 h1 {
   font-size: 36px;

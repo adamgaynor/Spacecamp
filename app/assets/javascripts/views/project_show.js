@@ -83,6 +83,6 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   showTodoListForm: function (event) {
     event.preventDefault();
     var todoList = this.$el.find('.todo-list-form');
-    todoList.attr("style", "display:block");
+    todoList.attr("class", "todo-list-form show");
   }
 });

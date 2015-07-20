@@ -1,17 +1,20 @@
 <form>
 
-  <label for="title">Title</label>
+  <!-- <label for="title">Title</label> -->
   <br>
   <input id="title" type="text"
          name="todo_list[title]"
-         value="<%= list.escape("title") %>">
-  <br>
-  <label for="description">Description</label>
-  <br>
-  <input id="description" type="text"
+         value="<%= list.escape("title") %>"
+         placeholder="Give the list a title">
+
+  <!-- <label for="description">Description</label> -->
+
+  <input id="description" type="hidden"
          name="todo_list[description]"
          value="<%= list.escape("description") %>">
   <br>
-  <button>Create a new List</button>
+  <button class='submit'>Save and start adding to-dos</button>
+  or
+  <button class='cancel'>Cancel</button>
 </form>
 <br>
