@@ -18,3 +18,9 @@ json.discussions do
   end
 
 end
+
+json.collaborators do
+  json.array! @project.collaborators do |collaborator|
+    json.extract! collaborator, :id, :fname, :lname
+  end
+end

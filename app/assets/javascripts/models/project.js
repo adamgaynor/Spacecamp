@@ -30,6 +30,11 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
       delete response.discussions;
     }
 
+    if (response.collaborators) {
+      this.collaborators().set(response.collaborators);
+      delete response.collaborators;
+    }
+
     return response;
   }
 });
