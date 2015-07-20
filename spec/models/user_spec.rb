@@ -46,5 +46,6 @@ RSpec.describe User, type: :model do
     it { should have_many(:to_do_items) }
     it { should have_many(:authored_comments) }
     it { should have_many(:collaborations) }
+    it { should have_many(:assigned_to_do_items) }
   end
 end

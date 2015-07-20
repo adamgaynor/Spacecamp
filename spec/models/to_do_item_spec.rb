@@ -38,5 +38,6 @@ RSpec.describe ToDoItem, type: :model do
 
   describe 'associations' do
     it { should belong_to(:to_do_list) }
+    it { should belong_to(:assigned_user) }
   end
 end
