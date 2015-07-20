@@ -15,7 +15,7 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
 
   collaborators: function () {
     if (this._collaborators) return this._collaborators;
-    this._collaborators = new SpaceCamp.Collections.ToDoLists([], { project: this });
+    this._collaborators = new SpaceCamp.Collections.Collaborators([], { project: this });
     return this._collaborators;
   },
 

@@ -13,6 +13,8 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.$el.attr("class", "project-show group");
     this.toDoLists = options.toDoLists;
     this.discussions = options.discussions;
+    this.collaborators =
+      new SpaceCamp.Collections.Collaborators({ project: this.project});
     this.listenTo(this.toDoLists, "add", this.render);
   },
 
@@ -65,7 +67,9 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   addToDoList: function (toDoList) {
     var listView = new SpaceCamp.Views.ToDoListShow({
       model: toDoList,
-      collection: this.toDoLists
+      collection: this.toDoLists,
+      collaborators: this.collaborators,
+      project: this.project
     });
     this.addSubview(".todo-lists", listView);
   },

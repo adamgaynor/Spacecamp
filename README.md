@@ -72,3 +72,10 @@ I will add the capability for users to upload documents that can be shared with 
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+
+
+<br>
+<% collaborators.each(function (collaborator){ %>
+  <%= collaborator.escape("fname"); %>
+<% }) %>
+<br>

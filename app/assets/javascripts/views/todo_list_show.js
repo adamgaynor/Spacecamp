@@ -4,8 +4,10 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
   tagName: 'li',
 
   initialize: function (options) {
+    this.project = options.project;
+    this.collaborators = options.collaborators;
     this.$el.attr("class", "todo-list group");
-    this.listenTo(this.model.toDoItems(), "update add", this.render)
+    this.listenTo(this.model.toDoItems(), "update add", this.render);
   },
 
   render: function () {
@@ -39,7 +41,9 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
     var createToDoItemForm = new SpaceCamp.Views.ToDoItemForm({
       toDoList: this.model,
       collection: this.model.toDoItems(),
-      model: toDoItem
+      model: toDoItem,
+      collaborators: this.collaborators,
+      project: this.project
     });
     this.addSubview(".todo-items", createToDoItemForm);
   }
