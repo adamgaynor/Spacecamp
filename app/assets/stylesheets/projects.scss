@@ -1,18 +1,30 @@
 .project-show {
 
+  .project-header {
+    position: relative;
 
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px 20px 10px 20px;
+    }
 
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px 20px 10px 20px;
+    h2 {
+      font-size: 16px;
+      padding: 0px 0px 20px 20px;
+      color: #aa9c84;
+    }
+
+    a {
+      position: absolute;
+      top: 25px;
+      left: 200px;
+      color: #1c5c76;
+      text-decoration: underline;
+    }
   }
 
-  h2 {
-    font-size: 16px;
-    padding: 0px 0px 20px 20px;
-    color: #aa9c84;
-  }
+
 
   > span {
     font-weight: normal;
