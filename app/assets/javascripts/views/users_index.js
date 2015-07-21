@@ -11,14 +11,16 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
   initialize: function (options) {
     this.project = options.project;
     this.users = options.users;
+    this.collaborations = this.project.collaborations();
     this.collaborators = this.project.collaborators();
     this.$el.attr("class", "users-list");
     this.listenTo(this.users, "sync", this.render);
     this.listenTo(this.project, "sync", this.render);
-    this.listenTo(this.collaborators, "add", this.render);
+    //this.listenTo(this.collaborators, "add", this.render);
   },
 
   render: function () {
+    collaborations = this.collaborations;
     collaborators = this.collaborators;
     users = this.users;
     var content = this.template({
@@ -46,6 +48,7 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     };
     collaboration.save(formData, {
       success: function () {
+        this.collaborations.add(collaboration);
         this.project.fetch();
       }.bind(this),
       error: function (model, jqxhr) {

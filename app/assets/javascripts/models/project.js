@@ -13,6 +13,12 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
     return this._discussions
   },
 
+  collaborations: function () {
+    if (this._collaborations) return this._collaborations;
+    this._collaborations = new SpaceCamp.Collections.Collaborations([], { project: this });
+    return this._collaborations;
+  },
+
   collaborators: function () {
     if (this._collaborators) return this._collaborators;
     this._collaborators = new SpaceCamp.Collections.Collaborators([], { project: this });
@@ -28,6 +34,11 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
     if (response.discussions) {
       this.discussions().set(response.discussions);
       delete response.discussions;
+    }
+
+    if (response.collaborations) {
+      this.collaborations().set(response.collaborations);
+      delete response.collaborations;
     }
 
     if (response.collaborators) {
