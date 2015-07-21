@@ -9,8 +9,15 @@ User authentication is the normal Rails authentication method, and uses methods 
 
 ## Project Index
 
-###Phase 1: User Authentication, Project Creation (~1 Day)
-I will implement user authentication. I will do this using the Rails framework. I will also implement the ability for users to create projects in the app using a Rails form. I will ensure that the app functions correctly when pushed to Heroku.
+The project index page displays all of the projects that the current user has either created, or been given collaborator access to.  
+Its information from from the Api::Users Controller's show method, which renders a jbuilder containing the user's information and basic details about the projects to which they have access.
+This information is then given to the ProjectsIndex (projects_index.js) Backbone View to render the information onto the page through its template.
+
+##Project show page
+
+Each project has a ProjectShow view (project_show.js), which displays the relevant information about the project.  The Show page is a Composite View that contains a list of the current discussion topics about the project, as well as lists of To-Do items.
+The discussions index is a list of subviews, one for each discussion.  They are assembled in the render function of ProjectShow.  First, the removeAllDiscussions function removes existing discussions that have already been rendered to prevent repeats, then a loop calls addDiscussion on each discussion.
+
 
 [Details][phase-one]
 

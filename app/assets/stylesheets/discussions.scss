@@ -29,6 +29,15 @@
     :hover {
       cursor: pointer;
     }
+
+    .discussion-title {
+      font-weight: bold;
+    }
+
+    .discussion-summary {
+      color: #666;
+      padding-left: 10px;
+    }
   }
 
 }

@@ -1,10 +1,9 @@
-<td class="name group"><a href="<%= "#projects/" +
+<td class="name group">
+  <a href="<%= "#projects/" +
               project.id +
               "/discussions/" +
               discussion.id %>">
-  </a>          
-  <%= discussion.escape("author_name") %>
-</td>
+  </a><%= discussion.escape("author_name") %></td>
 
 <td class="content group">
 <a href="<%= "#projects/" +
@@ -12,6 +11,10 @@
               "/discussions/" +
               discussion.id %>">
 </a>
-<%= discussion.escape("title") %>
-<%= discussion.escape("summary") %>
+<span class="discussion-title">
+  <%= discussion.escape("title") %>
+</span>
+<span class="discussion-summary">
+   - <%= discussion.escape("summary") %>
+</span>
 </td>
