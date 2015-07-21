@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resources :projects, except: [:new, :edit] do
       resources :users, only: [:index]
+      resources :collaborations, only: [:create]
     end
     resources :todo_lists, only: [:show, :create, :update, :destroy] do
       resources :todo_items, only: [:index]
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
     resources :todo_items, only: [:show, :create, :update, :destroy]
     resources :discussions, only: [:show, :update, :destroy, :create]
     resources :comments, only: [:create, :update, :destroy]
+    resources :collaborations, only: [:destroy]
   end
 end

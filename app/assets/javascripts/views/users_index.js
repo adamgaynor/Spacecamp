@@ -10,7 +10,6 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     this.$el.attr("class", "users-list");
     this.listenTo(this.users, "sync", this.render);
     this.listenTo(this.project, "sync", this.render);
-
   },
 
   render: function () {
