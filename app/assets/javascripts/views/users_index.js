@@ -3,6 +3,11 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
 
   tagName: 'section',
 
+  events: {
+    'click .add-collaborator': 'addCollaborator',
+    'click .remove-collaborator': 'removeCollaborator'
+  },
+
   initialize: function (options) {
     this.project = options.project;
     this.users = options.users;
@@ -22,5 +27,19 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  addCollaborator: function (event) {
+    event.preventDefault();
+    var $target = $(event.currentTarget);
+    var formData = {
+      collaboration: {
+        user_id: $target.data("user-id")
+      }
+    }
+  },
+
+  removeCollaborator: function (event) {
+    event.preventDefault();
   }
 });
