@@ -1,4 +1,5 @@
 json.extract! @project, :id, :title, :description, :owner_id
+json.current_user_id current_user.id
 json.toDoLists do
   json.array! @project.to_do_lists do |list|
     json.extract! list, :id, :title, :description, :created_at
