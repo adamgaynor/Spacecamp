@@ -1,12 +1,19 @@
-<h1>Log In</h1>
+
+<section id="login-page">
+<h1 class="sign-in">Sign In</h1>
 <br>
 <form class="new-session" action="<%= session_url %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="email">Email Address</label>
-  <input id="email" type="text" name="email" value="<%= params[:email] %>">
-  <br>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password">
+  <!-- <label for="email">Email Address</label> -->
+  <input type="text"
+         name="email"
+         value="<%= params[:email] %>"
+         placeholder="email address">
+
+  <!-- <label for="password">Password</label> -->
+  <input type="password"
+         name="password"
+         placeholder="password">
   <br>
   <button class="new-session-button">Submit</button>
 </form>
@@ -21,3 +28,23 @@
   <br>
   password: "qwerty"
 </p>
+
+
+<form class="new-session" action="<%= session_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <!-- <label for="email">Email Address</label> -->
+  <input type="text"
+         name="email"
+         value="john_smith@example.com"
+         placeholder="email address"
+         class="no-show">
+
+  <!-- <label for="password">Password</label> -->
+  <input type="text"
+         name="password"
+         value="qwerty"
+         placeholder="password"
+         class="no-show">
+  <button class="new-session-button">Guest Login</button>
+</form>
+</section>
