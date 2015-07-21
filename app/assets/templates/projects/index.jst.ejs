@@ -4,16 +4,16 @@
  <% projects.forEach(function(project) { %>
    <li class="project-tile">
      <h2 class="project-title"><a href="#projects/<%= project.id %>"><%= project.escape("title") %></a></h2>
+     <span class="ownership-status">
+       <% if (project.id === project.get("current_user_id")) { %>
+         Owner
+       <% } else { %>
+         Collaborator
+       <% } %>
+     </span>
      <p class="project-description">
        <%= project.escape("description") %>
      </p>
-     <span class="ownership-status">
-       <% if (project.id === project.get("current_user_id")) { %>
-         (owner)
-       <% } else { %>
-         (collaborator)
-       <% } %>
-     </span>
     </li>
  <% }) %>
 <li class="new-project-tile">
