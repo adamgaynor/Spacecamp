@@ -20,12 +20,12 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
   },
 
   render: function () {
-    collaborations = this.collaborations;
-    collaborators = this.collaborators;
-    users = this.users;
+    // collaborations = this.collaborations;
+    // collaborators = this.collaborators;
+    // users = this.users;
     var content = this.template({
       users: this.users,
-      collaborators: collaborators
+      collaborators: this.collaborators
     });
     this.$el.html(content);
 
@@ -48,7 +48,7 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     };
     collaboration.save(formData, {
       success: function () {
-        this.collaborations.add(collaboration);
+        //this.collaborations.add(collaboration);
         this.project.fetch();
       }.bind(this),
       error: function (model, jqxhr) {
@@ -60,7 +60,7 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
   removeCollaborator: function (event) {
     event.preventDefault();
     var $target = $(event.currentTarget);
-    var collaboration = this.collaborations.where("user_id", $target.data("user-id"));
+    var collaboration = this.collaborations.findWhere({"user_id": $target.data("user-id")});
     collaboration.destroy({
       success: function () {
         this.project.fetch();
