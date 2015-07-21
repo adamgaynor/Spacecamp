@@ -3,5 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .users-list {
+  margin-left: 20px;
+  h1 {
+    margin-bottom: 20px;
+  }
 
+  li {
+    margin: 10px 0px;
+  }
+
+  button {
+    margin-left: 10px;
+    display: inline;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0px 1px 0px #ddd;
+    position: relative;
+    top: -2px;
+
+  }
 }
