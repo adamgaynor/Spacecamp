@@ -70,10 +70,13 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
 
   addCollaborators: function (project_id) {
     var users = new SpaceCamp.Collections.Users();
+    users.fetch();
     var project = this.projects.getOrFetch(project_id);
     var addCollaboratorsView = new SpaceCamp.Views.UsersIndex({
-      project: project
+      project: project,
+      users: users
     });
+    this._swapView(addCollaboratorsView);
   },
 
   _swapView: function (view) {
