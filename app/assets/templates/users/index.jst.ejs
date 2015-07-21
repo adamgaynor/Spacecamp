@@ -2,11 +2,13 @@
 
 <% users.forEach(function (user) { %>
   <li class="show-user">
-    <%= user.escape("fname") %> <%= user.escape("lname") %> <%= user.id %>
+    <span class="user-name"><%= user.escape("fname") %> <%= user.escape("lname") %></span>
     <% if (collaborators.get(user.id)) { %>
-      <button class="remove-collaborator">Remove</button>
+      <button class="remove-collaborator"
+              data-user-id="<%= user.id %>">Remove</button>
     <% } else {%>
-      <button class="add-collaborator">Add</button>
+      <button class="add-collaborator"
+              data-user-id="<%= user.id %>">Add</button>
     <% } %>
 
     </li>
