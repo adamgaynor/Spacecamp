@@ -16,13 +16,12 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     this.$el.attr("class", "users-list");
     this.listenTo(this.users, "sync", this.render);
     this.listenTo(this.project, "sync", this.render);
-    //this.listenTo(this.collaborators, "add", this.render);
   },
 
   render: function () {
     //the owner of the project should not be on its own list
     this.users.remove(this.project.get("owner_id"));
-    
+
     var content = this.template({
       users: this.users,
       collaborators: this.collaborators
@@ -48,7 +47,6 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     };
     collaboration.save(formData, {
       success: function () {
-        //this.collaborations.add(collaboration);
         this.project.fetch();
       }.bind(this),
       error: function (model, jqxhr) {
