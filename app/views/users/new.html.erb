@@ -1,20 +1,29 @@
-<h1>Sign Up</h1>
+<section id="sign-up-page">
+  <h1>Sign Up</h1>
 
-<form class="new-user" action="<%= users_url %>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="email">Email Address</label>
-  <input id="email" type="text" name="user[email]" value="<%= @user.email %>">
+  <form class="new-user" action="<%= users_url %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input class="email"
+           type="text"
+           name="user[email]"
+           value="<%= @user.email %>"
+           placeholder="Email Address">
+    <input class="fname"
+           type="text"
+           name="user[fname]"
+           value="<%= @user.fname %>"
+           placeholder="First Name">
+    <input class="lname"
+           type="text"
+           name="user[lname]"
+           value="<%= @user.lname %>"
+           placeholder="Last Name">
+    <input class="password"
+           type="password"
+           name="user[password]"
+           placeholder="Password">
+    <button class="new-user-button">Submit</button>
+  </form>
   <br>
-  <label for="fname">First Name</label>
-  <input id="fname" type="text" name="user[fname]" value="<%= @user.fname %>">
-  <br>
-  <label for="lname">Last Name</label>
-  <input id="lname" type="text" name="user[lname]" value="<%= @user.lname %>">
-  <br>
-  <label for="passwprd">Password</label>
-  <input id="password" type="password" name="user[password]">
-  <br>
-  <button class="new-user-button">Submit</button>
-</form>
-<br>
-<a class="sign-in-link" href="<%= new_session_url %>">Sign In</a>
+  <a class="sign-in-link" href="<%= new_session_url %>">Sign In</a>
+</section>

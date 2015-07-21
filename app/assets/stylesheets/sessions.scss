@@ -12,6 +12,10 @@
     display: block;
     margin: auto;
     border-radius: 5px;
+
+    &:active {
+      background-color: lightblue;
+    }
   }
 
   .site-name {
@@ -20,10 +24,12 @@
     display: block;
     text-align: center;
   }
+
   .guest-login-button {
     background-color: green;
     padding: 10px 20px;
     width: 13%;
+    color: white;
   }
 
   .new-session-button {
@@ -45,6 +51,10 @@
     margin: auto;
     margin-top: 20px;
     border-radius: 5px;
+
+    &:active {
+      background-color: lightblue;
+    }
   }
 
   .no-show {
@@ -74,5 +84,75 @@
     border-top: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+}
+
+#sign-up-page {
+  width: 1000px;
+  margin: auto;
+  margin-top: 100px;
+
+  h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  input {
+    display: block;
+    margin: auto;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    padding: 10px 0px 10px 20px;
+    outline: none;
+    background-color: #eee;
+    width: 20%;
+
+    &:focus {
+      background-color: white;
+    }
+  }
+
+  .email {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .password {
+    border-bottom: 1px solid #aaa;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .new-user-button {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #0066FF;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid green;
+    font-size: 20px;
+    margin-top: 20px;
+
+    &:active {
+      background-color: lightblue;
+    }
+  }
+
+  .sign-in-link {
+    width: 9%;
+    background-color: white;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px 20px;
+    margin: auto;
+    border-radius: 5px;
+
+    &:active {
+      background-color: lightblue;
+    }
   }
 }
