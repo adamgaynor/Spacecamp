@@ -3,7 +3,7 @@
 		<h1 class="project-title"><%= project.escape("title") %></h1>
 		<h2 class="project-description"><%= project.escape("description") %></h2>
 	</section>
-	<% if (project.id === project.get("current_user_id")) { %>
+	<% if (project.get("owner_id") === project.get("current_user_id")) { %>
 	<section class="invite-link">
 		<a href="#projects/<%= project.id %>/add">Invite more people</a>
 	</section>
