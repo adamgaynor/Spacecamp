@@ -4,35 +4,10 @@
 
 [heroku]: http://www.spacecamp.xyz/
 
-##Minimum Viable Project
-SpaceCamp is a clone of Basecamp for use in space built on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
-Space pioneers will be able to:
+##User Authentication
+User authentication is the normal Rails authentication method, and uses methods in the Application Controller, Sessions Controller, and Users Controller to track user registration and login.
 
- - [x] Create accounts
- - [x] Create sessions (log in)
- - [x] Create projects
- - [x] Create discussions
- - [x] Comment on discussions
- - [x] Create To-Do lists
- - [x] Create To-Do items within To-Do lists
- - [x] Mark To-Do items as completed
- - [x] To-Do Items can be assigned to specific collaborators
- - [ ] Share projects with other project members
- - [ ] View discussions
- - [ ] View To-Do Items
- - [ ] Rearrange To-Do items
- - [ ] Oauth integration with Google login
- - [ ] Uploading avatars
- - [ ] Uploading files
-
-##Design Docs
-* [View Wireframes][views]
-* [DB schema][schema]
-
-[views]: ./docs/views.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
+## Project Index
 
 ###Phase 1: User Authentication, Project Creation (~1 Day)
 I will implement user authentication. I will do this using the Rails framework. I will also implement the ability for users to create projects in the app using a Rails form. I will ensure that the app functions correctly when pushed to Heroku.
