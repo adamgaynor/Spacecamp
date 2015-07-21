@@ -2,10 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.transparent-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: auto;
+  display: block;
+  border-radius: 20%;
+}
+
 #login-page {
   width: 1000px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 250px;
+  min-width: 500px;
 
   button {
     cursor: pointer;
@@ -90,12 +101,11 @@
 #sign-up-page {
   width: 1000px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 250px;
 
   h1 {
     text-align: center;
     color: white;
-    margin-bottom: 20px;
   }
 
   input {
