@@ -41,6 +41,12 @@ class User < ActiveRecord::Base
   )
 
   has_many(
+    :owned_project_collaborations,
+    through: :owned_projects,
+    source: :collaborations
+  )
+
+  has_many(
     :to_do_lists,
     through: :projects,
     source: :to_do_lists

@@ -12,7 +12,7 @@ class Api::CollaborationsController < ApplicationController
 
   def destroy
     @collaboration =
-      current_user.owned_projects.collaborations.find(params[:id])
+      current_user.owned_project_collaborations.find(params[:id])
     @collaboration.destroy
     render json: @collaboration
   end

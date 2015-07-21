@@ -59,5 +59,12 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
 
   removeCollaborator: function (event) {
     event.preventDefault();
+    var $target = $(event.currentTarget);
+    var collaboration = this.collaborations.where("user_id", $target.data("user-id"));
+    collaboration.destroy({
+      success: function () {
+        this.project.fetch();
+      }.bind(this)
+    });
   }
 });
