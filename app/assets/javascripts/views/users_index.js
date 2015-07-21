@@ -31,12 +31,22 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
 
   addCollaborator: function (event) {
     event.preventDefault();
+    var collaboration = new SpaceCamp.Models.Collaboration();
     var $target = $(event.currentTarget);
     var formData = {
       collaboration: {
         user_id: $target.data("user-id")
       }
-    }
+    };
+    collaboration.set(formData);
+    collaboration.save({
+      success: function () {
+        this.render();
+      }.bind(this),
+      error: function (model, jqxhr) {
+        //debugger;
+      }
+    });
   },
 
   removeCollaborator: function (event) {
