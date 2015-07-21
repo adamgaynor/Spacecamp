@@ -5,22 +5,71 @@
 #login-page {
   width: 1000px;
   margin: auto;
-  background: green;
-  .sign-in {
+  margin-top: 100px;
+
+  .site-name {
     color: white;
     margin: auto;
     display: block;
+    text-align: center;
   }
+  .guest-login-button {
+    background-color: green;
+    display: block;
+    padding: 10px 20px;
+    margin: auto;
+    width: 13%;
+    border-radius: 5px;
+  }
+
   .new-session-button {
+    background-color: #0066FF;
     color: white;
+    padding: 5px 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .sign-up-link {
+    width: 9%;
+    background-color: white;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px 20px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
   }
 
   .no-show {
     display: none;
   }
-  
+
   input {
     display: block;
     margin: auto;
+    border: 1px solid #aaa;
+    padding: 10px 20px;
+    outline: none;
+    background-color: #eee;
+
+    &:focus {
+      background-color: white;
+    }
+  }
+
+  .input-email {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .input-password {
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }

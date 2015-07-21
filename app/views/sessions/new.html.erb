@@ -1,6 +1,6 @@
 
 <section id="login-page">
-<h1 class="sign-in">Sign In</h1>
+<h1 class="site-name">SpaceCamp</h1>
 <br>
 <form class="new-session" action="<%= session_url %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -8,26 +8,18 @@
   <input type="text"
          name="email"
          value="<%= params[:email] %>"
-         placeholder="email address">
+         placeholder="email address"
+         class="input-email">
 
   <!-- <label for="password">Password</label> -->
   <input type="password"
          name="password"
-         placeholder="password">
-  <br>
-  <button class="new-session-button">Submit</button>
+         placeholder="password"
+         class="input-password">
+  <button class="new-session-button">Sign In</button>
 </form>
 <br>
-<a class="sign-up-link" href="<%= new_user_url %>">Sign Up</a>
-<br><br>
-<p>
-  <strong>Sample Login</strong>
-</p>
-<p>
-  email: john_smith@example.com
-  <br>
-  password: "qwerty"
-</p>
+
 
 
 <form class="new-session" action="<%= session_url %>" method="POST">
@@ -45,6 +37,7 @@
          value="qwerty"
          placeholder="password"
          class="no-show">
-  <button class="new-session-button">Guest Login</button>
+  <button class="guest-login-button">Guest Login</button>
 </form>
+<a class="sign-up-link" href="<%= new_user_url %>">Sign Up</a>
 </section>
