@@ -16,7 +16,10 @@ This information is then given to the ProjectsIndex (projects_index.js) Backbone
 ##Project show page
 
 Each project has a ProjectShow view (project_show.js), which displays the relevant information about the project.  The Show page is a Composite View that contains a list of the current discussion topics about the project, as well as lists of To-Do items.
-The discussions index is a list of subviews, one for each discussion.  They are assembled in the render function of ProjectShow.  First, the removeAllDiscussions function removes existing discussions that have already been rendered to prevent repeats, then a loop calls addDiscussion on each discussion.
+The discussions index is a list of subviews, one for each discussion.  They are assembled in the render function of ProjectShow.  First, the removeAllDiscussions function removes existing discussions that have already been rendered to prevent repeats.  Then, a loop calls addDiscussion on each discussion, which places its Summary subview into a <section> on the page marked as a discussion list.
+
+##To-Do List Subview
+The To-Do Lists follow the same pattern, with a function that removes all of the lists and then adds them all as subviews into the correct <section>.  Each To-Do List also has subviews which are created in the ToDoList View (todo_list_show.js).  That view uses the same pattern in order to create a subview for each To-Do Item.
 
 
 [Details][phase-one]
