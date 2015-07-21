@@ -21,41 +21,36 @@ The discussions index is a list of subviews, one for each discussion.  They are 
 ##To-Do List Subview
 The To-Do Lists follow the same pattern, with a function that removes all of the lists and then adds them all as subviews into the correct \<section\>.  Each To-Do List also has subviews which are created in the ToDoList View (todo_list_show.js).  That view uses the same pattern in order to create a subview for each To-Do Item.
 
+##Creating Projects
 
-[Details][phase-one]
+Projects are created from the ProjectIndex page.  Clicking on the Create Project square will take you to a form where the project title and details can be filled in.  Clicking on the "Create" button will create the project and return you to the index.  
+This process is handled by the ProjectsForm View (projects_form.js), and rendered by its template.
 
-###Phase 2: Viewing Projects, Discussions, and To-Do items (~2 days)
-I will add API routes to send Project, Discussion, and To-Do item information as JSON. The API routes will use CRUD functionality to create, render, and destroy items. Users will be able to create projects and view the discussions and To-Do items inside of them within the Backbone app.
+##Creating discussions
 
-[Details][phase-two]
+Discussions are created by clicking on the "Post a new message" button in the Project View page.  This will take you to the DiscussionForm view (discussion_form.js), which renders the template for creating the discussion.  Your user id will automatically be logged as the author of the discussion, but anyone with access to the project can comment on the discussion.
 
-###Phase 3: Inviting Collaborators to Projects (~1 day)
-I will add functionality for intrepid space explorers to be invited as collaborators on others' projects, so that they can view and comment on the project's discussions, as well as add To-Do items.
+##Commenting on discussions
 
-[Details][phase-three]
+Commenting on discussions is done through each discussion's DiscussionShow View (discussion_show.js).  The form to comment is embedded into the Show View's page as a subview, using the same technique as the other subviews on the site, and is controlled by the CommentForm View (comment_form.js).  Comments submitted using this form will appear on the DiscussionShow page, and display the name of the user that wrote them.
 
-###Phase 4: Commenting on Discussions and assigning To-Do items (~2 days)
-I will add the capability for fellow cosmonauts to comment on discussions to which they have access. I will also add the capability for the project owner to assign To-Do items to specific collaborators on the project.
+##Adding To-Do Lists
 
-[Details][phase-four]
+Clicking on the "Add a to-do list" button on the Project Show page will cause the ToDoList Form subview to appear (todo_list_form.js).  This will allow you to create a new list and give it a title.
+Each To-Do List is provided with the id of its parent Project by the "Submit" method inside the ToDoList View, so that it is only displayed in the correct place.
 
-###Phase 5: Drag-and-Drop rearranging of To-Do items (~2 days)
-I will implement the ability to drag-and-drop to rearrange items in the To-Do list and discussions list, with the 'jQuery UI' library.
+##Adding To-Do Items
 
-[Details][phase-five]
+Clicking on the "Add a to-do" link inside of any To-Do List triggers an event causing that link to disappear, and the form to create such an item to appear in its place.  The form is a subview implemented like all the other oneds.
+That form can be used to submit a new To-Do Item, and to assign it to anyone who currently is working on the project.  It know who is working on the project because the ProjectView passes down a list of collaborators that it received from its jbuilder (the project owner is also listed as a collaborator).
+Once a To-Do Item is saved, it will appear unchecked below the others.  If the To-Do Item is checked as complete, that status is saved in the database and it will remain marked as complete.
 
-###Phase 6: Users can upload documents to be viewed by collaborators (~2 days)
-I will add the capability for users to upload documents that can be shared with collaborators on the same project. This will be done using the "paperclip" library.
-
-### Bonus Features (TBD)
-- [ ] Users can upload documents
-- [ ] Users can share documents with other project members
-- [ ] Projects will have a central calendar for team members to coordinate
-- [ ] Track the history of project updates
-- [ ] Some kind of fancy authentication
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+##Features to implement
+- [ ] Better styling for completed To-Do Items
+- [ ] Share projects with other project members
+- [ ] View discussions
+- [ ] View To-Do Items
+- [ ] Rearrange To-Do items
+- [ ] Oauth integration with Google login
+- [ ] Uploading avatars
+- [ ] Uploading files
