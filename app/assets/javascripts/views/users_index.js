@@ -24,7 +24,8 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
 
     var content = this.template({
       users: this.users,
-      collaborators: this.collaborators
+      collaborators: this.collaborators,
+      project: this.project
     });
     this.$el.html(content);
 
