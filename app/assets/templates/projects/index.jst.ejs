@@ -7,6 +7,13 @@
      <p class="project-description">
        <%= project.escape("description") %>
      </p>
+     <span class="ownership-status">
+       <% if (project.id === project.get("current_user_id")) { %>
+         (owner)
+       <% } else { %>
+         (collaborator)
+       <% } %>
+     </span>
     </li>
  <% }) %>
 <li class="new-project-tile">
