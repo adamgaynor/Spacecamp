@@ -4,6 +4,6 @@ SpaceCamp.Models.Collaboration = Backbone.Model.extend({
   },
 
   url: function () {
-    return '/api/' + project.id + '/collaborations'
+    return '/api/projects/' + this.project.id + '/collaborations'
   }
 });

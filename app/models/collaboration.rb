@@ -13,6 +13,9 @@ class Collaboration < ActiveRecord::Base
 
   validates :user_id, :project_id, presence: true
 
+  validates :user_id, uniqueness: { scope: :project_id,
+    message: "can only have one collaboration per user/project pair" }
+
   belongs_to(
     :user,
     class_name: 'User',
