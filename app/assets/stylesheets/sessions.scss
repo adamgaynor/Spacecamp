@@ -7,6 +7,13 @@
   margin: auto;
   margin-top: 100px;
 
+  button {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+  }
+
   .site-name {
     color: white;
     margin: auto;
@@ -15,11 +22,8 @@
   }
   .guest-login-button {
     background-color: green;
-    display: block;
     padding: 10px 20px;
-    margin: auto;
     width: 13%;
-    border-radius: 5px;
   }
 
   .new-session-button {
@@ -27,8 +31,6 @@
     color: white;
     padding: 5px 10px;
     border: 1px solid green;
-    border-radius: 5px;
-    margin: auto;
     font-size: 20px;
     margin-top: 20px;
   }
