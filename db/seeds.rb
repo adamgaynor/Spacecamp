@@ -46,39 +46,54 @@ to_do_items = ToDoItem.create([{
     to_do_list_id: to_do_lists.first.id,
     description: 'To-Do Lists',
     completed: true,
-    order: 0
+    order: 0,
+    assigned_user_id: users.first.id
   }, {
     to_do_list_id: to_do_lists.first.id,
     description: 'Discussion Boards',
     completed: false,
-    order: 1
+    order: 1,
+    assigned_user_id: users.first.id
   }, {
     to_do_list_id: to_do_lists[1].id,
     description: 'To-Do Lists',
     completed: true,
-    order: 0
+    order: 0,
+    assigned_user_id: users.first.id
   }, {
     to_do_list_id: to_do_lists[1].id,
     description: 'Discussion Boards',
     completed: false,
-    order: 1
+    order: 1,
+    assigned_user_id: users.first.id
   }]
 )
 
-discussions = Discussion.create([{
+discussions = Discussion.create([
+  {
+    author_id: users.first.id,
+    project_id: projects.first.id,
+    title: 'Sample Discussion',
+    content: 'Here is my proposal',
+    summary: 'Here is what I propose we do about the thing.'
+    }, {
   author_id: users.first.id,
-  project_id: projects.first.id,
+  project_id: projects[1].id,
   title: 'Sample Discussion',
   content: 'Here is my proposal',
-  summary: 'Here is my'
+  summary: 'Here is what I propose we do about the thing.'
   }
 ])
 
 comments = Comment.create([{
-    author_id: users.first.id,
+    author_id: users[1].id,
     discussion_id: discussions.first.id,
-    content: 'Something to say.'
-  }
+    content: 'Yes we really should discuss this.'
+  }, {
+      author_id: users[1].id,
+      discussion_id: discussions[1].id,
+      content: 'Yes we really should discuss this.'
+    }
 ])
 
 collaborations = Collaboration.create([{
