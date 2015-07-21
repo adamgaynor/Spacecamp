@@ -32,8 +32,11 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
 
   addCollaborator: function (event) {
     event.preventDefault();
+    //model initialize(attributes, options)
+    //attributes are saved into the model's attributes
+    //options are just handled within the model
     var collaboration = new SpaceCamp.Models.Collaboration({
-      project: this.project
+      project_id: this.project.id
     });
     var $target = $(event.currentTarget);
     var formData = {
@@ -41,13 +44,9 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
         user_id: $target.data("user-id")
       }
     };
-    collaboration.set(formData);
-    collaboration.save({
+    collaboration.save(formData, {
       success: function () {
-        var url = '#projects/' + this.project.id + '/add';
         this.project.fetch();
-        //this.collaborators.add(this.users.get($target.data("user-id")));
-        //Backbone.history.navigate(url, { trigger: true });
       }.bind(this),
       error: function (model, jqxhr) {
         //debugger;
