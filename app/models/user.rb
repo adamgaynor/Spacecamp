@@ -100,13 +100,22 @@ class User < ActiveRecord::Base
             uid: auth_hash[:uid])
 
     unless user
-      user = User.create!(
-            provider: auth_hash[:provider],
-            uid: auth_hash[:uid],
-            fname: auth_hash[:info][:name].split.first,
-            lname: auth_hash[:info][:name].split.last,
-            email: auth_hash[:info][:email],
-            password: SecureRandom::urlsafe_base64)
+      user = User.find_by(email: auth_hash[:info][:email])
+      if user
+        user.update!(
+          provider: auth_hash[:provider],
+          uid: auth_hash[:uid]
+        )
+      else
+        user = User.create!(
+              provider: auth_hash[:provider],
+              uid: auth_hash[:uid],
+              fname: auth_hash[:info][:name].split.first,
+              lname: auth_hash[:info][:name].split.last,
+              email: auth_hash[:info][:email],
+              password: SecureRandom::urlsafe_base64
+        )
+      end
     end
 
     user

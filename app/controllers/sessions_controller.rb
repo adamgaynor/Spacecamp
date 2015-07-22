@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  skip_before_action :require_login!, only: [:new, :create]
+  skip_before_action :require_login!, only: [:new, :create, :omniauth]
 
   def new
   end
@@ -26,9 +26,12 @@ class SessionsController < ApplicationController
     if @user
       login!(@user)
       redirect_to root_url
+    else
+      flash.now[:errors] = "Invalid login details"
+      render :new
     end
   end
-  
+
   private
 
   def auth_hash
