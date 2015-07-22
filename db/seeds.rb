@@ -79,11 +79,11 @@ discussions = Discussion.create([
     content: 'Here is my proposal',
     summary: 'Here is what I propose we do about the thing.'
     }, {
-  author_id: users.first.id,
-  project_id: projects[1].id,
-  title: 'Sample Discussion',
-  content: 'Here is my proposal',
-  summary: 'Here is what I propose we do about the thing.'
+    author_id: users.first.id,
+    project_id: projects[1].id,
+    title: 'Sample Discussion',
+    content: 'Here is my proposal',
+    summary: 'Here is what I propose we do about the thing.'
   }
 ])
 
@@ -133,12 +133,56 @@ sansa = User.create({
   password: "loras"
 })
 
+# Arya
 arya = User.create({
   email: "arya_stark@winterfell.com",
   fname: "Arya",
   lname: "Stark",
   password: "pointyend"
 })
+
+my_list = Project.create({
+  owner_id: arya.id,
+  title: "My List",
+  description: "Gifts for the Many-Faced God"
+})
+
+collaboration = Collaboration.create(
+  user_id: arya.id,
+  project_id: my_list.id
+)
+
+the_list = ToDoList.create({
+  project_id: my_list.id,
+  title: 'Gifts for the Many-Faced God',
+  description: ''
+})
+alive = ["Cersei", "Ser Gregor", "The Hound"]
+dead = ["Joffrey", "Ser Meryn Trant", "Ser Amory Lorch",
+        "Raff the Sweetling", "The Tickler", "Chiswyck",
+        "Tywin Lannister"]
+targets = []
+alive.each_with_index do |name, index|
+  item = ToDoItem.create(
+    to_do_list_id: the_list.id,
+    description: name,
+    completed: false,
+    order: index,
+    assigned_user_id: arya.id
+  )
+  targets << item
+end
+dead.each_with_index do |name, index|
+  item = ToDoItem.create(
+    to_do_list_id: the_list.id,
+    description: name,
+    completed: true,
+    order: alive.length + index,
+    assigned_user_id: arya.id
+  )
+  targets << item
+end
+
 
 jon_snow = User.create({
   email: "jon_snow@winterfell.com",
