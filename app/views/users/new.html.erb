@@ -3,7 +3,7 @@
     <h1>Sign Up</h1>
   </div>
 
-  <form class="new-user" action="<%= users_url %>" method="POST">
+  <form enctype="multipart/form-data" class="new-user" action="<%= users_url %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input class="email"
            type="text"
@@ -24,6 +24,10 @@
            type="password"
            name="user[password]"
            placeholder="Password">
+    <input class="avatar"
+           type="file"
+           name="user[avatar]">
+    <img class="preview-avatar" src="" width="50">
     <button class="new-user-button">Submit</button>
   </form>
   <br>
