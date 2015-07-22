@@ -20,6 +20,8 @@ users = User.create([{
   }
 ])
 
+
+
 projects = Project.create([{
     owner_id: users.first.id,
     title: 'SpaceCamp',
@@ -107,3 +109,82 @@ collaborations = Collaboration.create([{
     project_id: projects[1].id
   }
 ])
+
+# Game of thrones seed data
+
+ned = User.create({
+  email: "eddard_stark@winterfell.com",
+  fname: "Eddard",
+  lname: "Stark",
+  password: "winteriscoming"
+})
+
+catelyn = User.create({
+  email: "catelyn_tully@winterfell.com",
+  fname: "Catelyn",
+  lname: "Tully",
+  password: "stoneheart"
+})
+
+sansa = User.create({
+  email: "sansa_stark@winterfell.com",
+  fname: "Sansa",
+  lname: "Stark",
+  password: "loras"
+})
+
+arya = User.create({
+  email: "arya_stark@winterfell.com",
+  fname: "Arya",
+  lname: "Stark",
+  password: "pointyend"
+})
+
+jon_snow = User.create({
+  email: "jon_snow@winterfell.com",
+  fname: "Jon",
+  lname: "Snow",
+  password: "youknownothing"
+})
+
+stannis = User.create({
+  email: "stannis_baratheon@dragonstone.com",
+  fname: "Stannis",
+  lname: "Baratheon",
+  password: "ironthrone"
+})
+
+tyrion = User.create({
+  email: "tyrion_lannister@casterly_rock.com",
+  fname: "Tyrion",
+  lname: "Lannister",
+  password: "valonqar"
+})
+
+jaime = User.create({
+  email: "jaime_lannister@casterly_rock.com",
+  fname: "Jaime",
+  lname: "Lannister",
+  password: "brienne"
+})
+
+cersei = User.create({
+  email: "cersei_lannister@casterly_rock.com",
+  fname: "Cersei",
+  lname: "Lannister",
+  password: "joffrey"
+})
+
+danaerys = User.create({
+  email: "danaerys_targaryen@dothraki.com",
+  fname: "Danaerys",
+  lname: "Targaryen",
+  password: "khaleesi"
+})
+
+littlefinger = User.create({
+  email: "littlefinger@kingslanding.com",
+  fname: "Petyr",
+  lname: "Baelish",
+  password: "catelyn"
+})
