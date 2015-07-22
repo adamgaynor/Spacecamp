@@ -34,7 +34,7 @@ module SpaceCamp
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
-    paperclip configuration
+    # paperclip configuration
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
