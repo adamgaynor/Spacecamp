@@ -20,6 +20,10 @@
 
   > li {
     float: left;
+
+    > img {
+      width: 60px;
+    }
   }
 
   > ul {
