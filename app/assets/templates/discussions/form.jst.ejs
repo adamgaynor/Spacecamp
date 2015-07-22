@@ -1,12 +1,14 @@
-<a href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a>
+<a class="project-link"
+   href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a>
 
 <h1>Post a new Message</h1>
 
-Title: <input type="text" name="title" value="">
+<input type="text" name="title" value=""
+       placeholder="Type the subject of the discussion...">
 <br>
-Description:
 <br>
-<textarea name="content" rows="8" cols="40"></textarea>
+<textarea name="content" rows="8" cols="40"
+          placeholder="Type your opening remarks here..."></textarea>
 <br>
 <button>Post this message</button>
 <br>

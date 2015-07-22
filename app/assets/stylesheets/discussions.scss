@@ -2,15 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.discussion-form {
+  margin-left: 20px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  input {
+    display: block;
+    width: 40%;
+    font-size: 16px;
+    color: black;
+    border-bottom: 1px dotted black;
+    padding-bottom: 3px;
+  }
+
+  textarea {
+    display: block;
+    width: 40%;
+    font-size: 16px;
+    color: black;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 3px;
+    resize: none;
+  }
+}
+
 .discussions {
   margin: 10px 0px 0px 20px;
   border-collapse: collapse;
   width: 90%;
 
-
   tr {
     border-bottom: 1px solid #aaa;
   }
+
   td {
     padding: 10px 10px 10px 0px;
     position: relative;
