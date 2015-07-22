@@ -18,6 +18,16 @@
   margin-top: 250px;
   min-width: 500px;
 
+  .errors {
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: darkred;
+    color: white;
+    width: 80%;
+    border-radius: 5px;
+  }
+
   button {
     cursor: pointer;
     display: block;
