@@ -80,4 +80,32 @@
     border-bottom: 1px solid #aaa;
     margin-bottom: 10px;
   }
+
+  .comments {
+    margin-top: 20px;
+  }
+
+  .comment-article {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 5px;
+  }
+
+  .name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .comment {
+    margin-left: 10px;
+  }
+
+  .time {
+    display: block;
+    font-size: 12px;
+    padding-top: 2px;
+    padding-bottom: 15px;
+    margin-left: 10px;
+    color: #aa9c84;
+  }
 }

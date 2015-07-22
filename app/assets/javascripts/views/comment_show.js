@@ -1,10 +1,10 @@
 SpaceCamp.Views.CommentShow = Backbone.View.extend({
 	template: JST['comments/show'],
 
-	tagName: 'section',
+	tagName: 'article',
 
 	initialize: function (options) {
-		this.$el.attr("class", "comment-form");
+		this.$el.attr("class", "comment-article");
 		this.listenTo(this.collection, "add", this.render);
 	},
 

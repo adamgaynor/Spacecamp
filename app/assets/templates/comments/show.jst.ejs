@@ -1,8 +1,4 @@
-<br>
-<article>
-	<strong><%= comment.escape("author_fname") %> <%= comment.escape("author_lname") %></strong>
-	<p>
-	<%= comment.escape("content") %>
-	</p>
-	Posted <%= time %>
-</article>
+
+<span class="name"><%= comment.escape("author_fname") %> <%= comment.escape("author_lname") %></span>
+<p class="comment"><%= comment.escape("content") %></p>
+<span class="time">Posted <%= time %></span>
