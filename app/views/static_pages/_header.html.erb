@@ -6,6 +6,7 @@
     </ul>
 
     <ul class="user-info">
+      <li><img src="<%= current_user.avatar %>"></li>
       <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
       <li><%= render "logout_button" if logged_in? %></li>
     </ul>
