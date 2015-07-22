@@ -42,4 +42,8 @@
   font-size: 100%;
   border: 1px solid white;
   color: white;
+
+  &:active {
+    background-color: #aaa;
+  }
 }
