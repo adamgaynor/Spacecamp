@@ -1,9 +1,9 @@
-<h1><a href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a></h1>
+<a class="project-link" href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a>
 <h1><%= discussion.escape("title") %></h1>
-<p>
+<p class="content">
 	<%= discussion.escape("content") %>
 </p>
-<p>
-	<em>Discuss this</em>
-</p>
+
+	<span class="discuss">Discuss this message</span>
+
 <section class="comments"></section>
