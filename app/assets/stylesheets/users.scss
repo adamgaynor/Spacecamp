@@ -3,7 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #content {
   .projects-list {
-    margin: 10px;
+    margin: 20px;
+    margin-top: 0px;
+
+    h1 {
+      padding: 20px 20px 10px 0px;
+      font-size: 24px;
+      font-weight: bold;
+    }
 
     .project-tile {
       float: left;
