@@ -4,11 +4,12 @@
     <ul class="main-header">
       <li><a href="#">SpaceCamp</a></li>
     </ul>
-
-    <ul class="user-info">
-      <li><img src="<%= current_user.avatar %>"></li>
-      <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
-      <li><%= render "logout_button" if logged_in? %></li>
-    </ul>
+    <section class="user-info">
+      <li><img src="<%= current_user.avatar.url(:thumb) %>"></li>
+      <ul>
+        <li class="header-name"><%= current_user.fname %> <%= current_user.lname %></li>
+        <li><%= render "logout_button" if logged_in? %></li>
+      </ul>
+    </section>
   </nav>
 </header>
