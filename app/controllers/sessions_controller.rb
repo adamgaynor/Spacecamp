@@ -20,4 +20,12 @@ class SessionsController < ApplicationController
     logout!
     redirect_to new_session_url
   end
+
+  def omniauth
+    @user = User.find_or_create_by_auth_hash(auth_hash)
+    if @user
+      login!(@user)
+      redirect_to root_url
+    end
+  end
 end
