@@ -16,6 +16,6 @@ SpaceCamp.Models.User = Backbone.Model.extend({
 });
 
 
-// SpaceCamp.Models.CurrentUser = Backbone.Models.User.extend({
-//   url: '/api/session'
-// });
+SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
+  url: '/api/session'
+});
