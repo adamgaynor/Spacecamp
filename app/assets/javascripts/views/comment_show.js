@@ -32,7 +32,7 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend({
     else if (delta < (60 * 60)) { return (parseInt(delta / 60)).toString() + ' minutes ago'; }
     else if (delta < (120 * 60)) { return 'an hour ago'; }
     else if (delta < (24 * 60 * 60)) { return '' + (parseInt(delta / 3600)).toString() + ' hours ago'; }
-    else if (delta < (48 * 60 * 60)) { return '1 day ago'; }
+    else if (delta < (2 * 24 * 60 * 60)) { return '1 day ago'; }
 		else if (delta < (365 * 24 * 60 * 60)) {
 			return this.getMonthAndDay(date);
 		} else {
