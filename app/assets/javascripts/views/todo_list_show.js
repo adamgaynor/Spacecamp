@@ -16,6 +16,7 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
 
     this.removeAllItems();
     this.model.toDoItems().each(this.addToDoItem.bind(this));
+    this.$(".todo-items").sortable();
     this.addCreateToDoItem();
     this.attachSubviews();
 
