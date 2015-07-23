@@ -33,6 +33,24 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend({
     else if (delta < (120 * 60)) { return 'an hour ago'; }
     else if (delta < (24 * 60 * 60)) { return '' + (parseInt(delta / 3600)).toString() + ' hours ago'; }
     else if (delta < (48 * 60 * 60)) { return '1 day ago'; }
-    else { return (parseInt(delta / 86400)).toString() + ' days ago'; }
-}
+		else if (delta < (365 * 24 * 60 * 60)) {
+			return this.getMonthAndDay(date);
+		} else {
+			return this.getMonthAndDay(date, true);
+		}
+    // else {
+		// 	return (parseInt(delta / 86400)).toString() + ' days ago';
+		// }
+	},
+
+	getMonthAndDay: function (date, includeYear) {
+		var dateString = date.toDateString();
+		dateString = dateString.split(" ");
+		if (includeYear) {
+			dateString = dateString.splice(1,3);
+		} else {
+			dateString = dateString.splice(1,2);
+		}
+		return dateString.join(" ");
+	}
 });

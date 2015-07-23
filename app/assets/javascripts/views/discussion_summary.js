@@ -9,6 +9,7 @@ SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
 	},
 
 	render: function () {
+		var updated = new Date(this.model.get("updated_at"));
 		var content = this.template({
 			discussion: this.model,
 			project: this.project
