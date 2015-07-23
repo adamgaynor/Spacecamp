@@ -1,17 +1,14 @@
 <form>
-
-  <!-- <label for="title">Title</label> -->
   <br>
   <input id="title" type="text"
          name="todo_list[title]"
          value="<%= list.escape("title") %>"
          placeholder="Give the list a title">
 
-  <!-- <label for="description">Description</label> -->
-
-  <input id="description" type="hidden"
+  <input id="description" type="text"
          name="todo_list[description]"
-         value="<%= list.escape("description") %>">
+         value="<%= list.escape("description") %>"
+         placeholder="Give the list a description">
   <br>
   <button class='submit'>Save and start adding to-dos</button>
   or
