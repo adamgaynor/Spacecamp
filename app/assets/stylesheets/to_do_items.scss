@@ -76,6 +76,13 @@
 
 .todo-item {
   margin: 5px 0px;
+  position: relative;
+
+  .show-item-edit-form {
+    position: absolute;
+    left: -20px;
+    top: 0;
+  }
 }
 
 .show {

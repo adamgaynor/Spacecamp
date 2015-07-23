@@ -19,9 +19,9 @@ Space pioneers will be able to:
  - [x] To-Do Items can be assigned to specific collaborators
  - [x] Share projects with other project members
  - [x] View discussions
- - [ ] View To-Do Items
+ - [x] View To-Do Items
  - [ ] Rearrange To-Do items
- - [ ] Oauth integration with Google login
+ - [x] Oauth integration with Google login
  - [x] Uploading avatars
  - [ ] Uploading files
 
@@ -67,7 +67,6 @@ I will add the capability for users to upload documents that can be shared with 
 - [ ] Users can share documents with other project members
 - [ ] Projects will have a central calendar for team members to coordinate
 - [ ] Track the history of project updates
-- [ ] Some kind of fancy authentication
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

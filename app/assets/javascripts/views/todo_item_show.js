@@ -2,7 +2,8 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
   template: JST['todo_items/show'],
 
   events: {
-    'click .completion-box': 'completeTask'
+    'click .completion-box': 'completeTask',
+    'mouseover': 'showEditButton'
   },
 
   tagName: 'li',
@@ -35,11 +36,14 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         this.render();
-        //this.model.fetch();
       }.bind(this),
       error: function (model, jqxhr) {
         //debugger;
       }
     });
+  },
+
+  showEditButton: function () {
+    var editButton = this.$el.find(".show-item-edit-form") 
   }
 });
