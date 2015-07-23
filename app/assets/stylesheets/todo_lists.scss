@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.todo-lists-index {
+  .todo-lists-head {
+    font-size: 20px;
+    color: #900;
+    padding: 0px 0px 10px 20px;
+  }
+}
 
 .todo-list-form-show {
   display: inline;
