@@ -23,10 +23,9 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     //remove all Discussions before we add them again
     this.removeAllDiscussions();
-    //add a form to create a new Discussion
-    //this.addCreateDiscussion();
     //add a Discussion subview for each Discussion
-    this.discussions.each(this.addDiscussion.bind(this));
+    var recentDiscussions = this.discussions.slice(0,4);
+    recentDiscussions.forEach(this.addDiscussion.bind(this));
     //remove all ToDOLists before we add them again
     this.removeAllLists();
     //add a form to create a new ToDoList
@@ -51,10 +50,6 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
       project: this.project
     });
     this.addSubview(".discussions", discussionView);
-  },
-
-  addCreateDiscussion: function () {
-
   },
 
   //functions dealing with ToDoList subviews
