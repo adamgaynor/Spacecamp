@@ -3,6 +3,11 @@ SpaceCamp.Collections.Discussions = Backbone.Collection.extend({
     return this.project.url() + "/discussions";
   },
 
+	comparator: function (discussion) {
+		var date = new Date(discussion.get("updated_at"));
+		return (-1) * date.getTime();
+	},
+
   model: SpaceCamp.Models.Discussion,
 
 	getOrFetch: function (id) {
