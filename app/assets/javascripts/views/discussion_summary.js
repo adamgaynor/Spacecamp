@@ -1,4 +1,5 @@
-SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
+SpaceCamp.Views.DiscussionSummary = Backbone.View.extend(
+	_.extend({}, SpaceCamp.Mixins.ElapsedTime, {
 	template: JST['discussions/summary'],
 
 	tagName: 'tr',
@@ -18,4 +19,5 @@ SpaceCamp.Views.DiscussionSummary = Backbone.View.extend({
 
 		return this;
 	}
-});
+})
+);
