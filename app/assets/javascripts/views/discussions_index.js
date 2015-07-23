@@ -1,16 +1,18 @@
 SpaceCamp.Views.DiscussionsIndex = Backbone.CompositeView.extend({
   template: JST['discussions/index'],
 
-  tagName: 'table',
+  tagName: 'section',
 
   initialize: function (options) {
     this.discussions = options.discussions;
     this.project = options.project;
-    this.$el.attr("class", "discussions");
+    this.project.fetch();
+    this.$el.attr("class", "discussions-index");
+    this.listenTo(this.project, "sync", this.render);
   },
 
   render: function () {
-    var content = template({
+    var content = this.template({
       project: this.project
     });
     this.$el.html(content);

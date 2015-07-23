@@ -9,8 +9,12 @@
 	</section>
 	<% } %>
 <section class="item-totals group">
-	<a href="#"><%= project.discussions().length %> Discussions</a>
-	<a href="#"><%= project.toDoLists().length %> To-Do Lists</a>
+	<a href="#projects/<%= project.id %>/discussions">
+		<%= project.discussions().length %> Discussions
+	</a>
+	<a href="#">
+		<%= project.toDoLists().length %> To-Do Lists
+	</a>
 </section>
 </header>
 

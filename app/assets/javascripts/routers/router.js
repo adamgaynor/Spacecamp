@@ -87,6 +87,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
       discussions: discussions,
       project: project
     });
+    this._swapView(discussionsIndexView);
   },
 
   _swapView: function (view) {
