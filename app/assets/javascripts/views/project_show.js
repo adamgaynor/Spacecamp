@@ -23,8 +23,9 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     //remove all Discussions before we add them again
     this.removeAllDiscussions();
-    //add a Discussion subview for each Discussion
-    var recentDiscussions = this.discussions.slice(0,4);
+    //take the most recent five discussions
+    var recentDiscussions = this.discussions.slice(0,5);
+    //add a Discussion summary subview for each of the five
     recentDiscussions.forEach(this.addDiscussion.bind(this));
     //remove all ToDOLists before we add them again
     this.removeAllLists();

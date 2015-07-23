@@ -7,6 +7,12 @@
 }
 
 .project-show {
+  .more-discussions {
+    display: block;
+    padding: 20px;
+    color: #1c5c76;
+    text-decoration: underline;
+  }
 
   .project-header {
     position: relative;
@@ -38,12 +44,13 @@
       padding: 10px 0px;
       border-top: 1px solid #aaa;
       border-bottom: 1px solid #aaa;
+
       a {
         float: left;
         position: static;
         padding: 0px 10px;
-
       }
+
     }
   }
 

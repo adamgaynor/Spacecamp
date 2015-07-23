@@ -23,7 +23,10 @@
 	Post a new message
 </a>
 <table class="discussions"></table>
-<br>
+<a class="more-discussions"
+	 href="#projects/<%= project.id %>/discussions">
+	<%= project.discussions().length - 5 %> More Discussions
+</a>
 <span>To-do lists</span>
 <button class="todo-list-form-show">Add a to-do list</button>
 <section class="todo-lists"></section>
