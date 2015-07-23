@@ -20,8 +20,8 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
   render: function () {
     var content = this.template({
       item: this.model,
-      toDoList: this.toDoList,
-      collaborators: this.collaborators
+      collaborators: this.collaborators,
+      currentCollaborator: -1
     });
     this.$el.html(content);
     return this;

@@ -24,6 +24,9 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
 
+    this.addEditToDoItem();
+    this.attachSubviews();
+
     return this;
   },
 
@@ -47,15 +50,18 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
 
   showEditForm: function (event) {
     var $target = $(event.delegateTarget);
+    var $form = $target.find(".todo-item-form");
+    $form.addClass("show");
   },
 
   addEditToDoItem: function () {
     var toDoItem = this.model;
     var createToDoItemEditForm = new SpaceCamp.Views.ToDoItemEditForm({
       model: toDoItem,
-      collaborators: this.collaborators
+      collaborators: this.collaborators,
+      collaborator: toDoItem.get("assigned_user_id")
     });
-    this.addSubview(".todo-items", createToDoItemForm);
+    this.addSubview(".todo-item-edit-form", createToDoItemEditForm);
   },
 
   showEditButton: function (event) {
