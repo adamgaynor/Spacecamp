@@ -9,8 +9,8 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend({
 	},
 
 	render: function () {
-		var updatedData = new Date(this.model.attributes.updated_at);
-		var timeSinceUpdate = this.getElapsedTime(updatedData);
+		var updated = new Date(this.model.get("updated_at"));
+		var timeSinceUpdate = this.getElapsedTime(updated);
 		var content = this.template({
 			comment: this.model,
 			time: timeSinceUpdate
