@@ -1,10 +1,11 @@
-SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
+SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   template: JST['todo_items/show'],
 
   events: {
     'click .completion-box': 'completeTask',
-    'mouseover': 'showEditButton'//,
-    //'mouseleave': 'hideEditButton'
+    'mouseover': 'showEditButton',
+    //'mouseleave': 'hideEditButton',
+    'click .show-item-edit-form': 'showEditForm'
   },
 
   tagName: 'li',
@@ -42,6 +43,19 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
         //debugger;
       }
     });
+  },
+
+  showEditForm: function (event) {
+    var $target = $(event.delegateTarget);
+  },
+
+  addEditToDoItem: function () {
+    var toDoItem = this.model;
+    var createToDoItemEditForm = new SpaceCamp.Views.ToDoItemEditForm({
+      model: toDoItem,
+      collaborators: this.collaborators
+    });
+    this.addSubview(".todo-items", createToDoItemForm);
   },
 
   showEditButton: function (event) {

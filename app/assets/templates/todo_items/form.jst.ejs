@@ -1,4 +1,8 @@
-<span class="todo-item-form-show">Add a to-do</span>
+<% if (item.isNew()) { %>
+  <span class="todo-item-form-show">Add a to-do</span>
+<% } else { %>
+  <span class="todo-item-form-show">Edit a to-do</span>
+<% } %>
 <form class="todo-item-form">
   <input type="checkbox" disabled>
   <input class="description" type="text"

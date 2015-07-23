@@ -11,7 +11,7 @@ SpaceCamp.Views.ToDoItemForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.toDoList = options.toDoList;
-    this.project = options.project;
+    //this.project = options.project;
     this.collaborators = options.collaborators;
     this.listenTo(this.collaborators, 'sync', this.render);
     //this.$el.attr("class", "todo-item-form")
