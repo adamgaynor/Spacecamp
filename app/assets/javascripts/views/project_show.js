@@ -14,7 +14,7 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.toDoLists = options.toDoLists;
     this.discussions = options.discussions;
     //invoking collaborators may be unecessary
-    this.collaborators = this.project.collaborators();
+    this.collaborators = options.collaborators;
     this.listenTo(this.toDoLists, "add", this.render);
   },
 

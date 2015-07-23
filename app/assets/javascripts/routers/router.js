@@ -96,7 +96,8 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     var toDoLists = project.toDoLists();
     var toDoListsIndexView = new SpaceCamp.Views.ToDoListsIndex({
       toDoLists: toDoLists,
-      project: project
+      project: project,
+      collaborators: project.collaborators()
     });
     this._swapView(toDoListsIndexView);
   },
