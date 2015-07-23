@@ -8,7 +8,12 @@
 		<a href="#projects/<%= project.id %>/add">Invite more people</a>
 	</section>
 	<% } %>
+<section class="item-totals group">
+	<a href="#"><%= project.discussions().length %> Discussions</a>
+	<a href="#"><%= project.toDoLists().length %> To-Do Lists</a>
+</section>
 </header>
+
 <span>Discussions</span>
 <a class="new-discussion" href="<%= "#projects/" + project.id + "/discussions/new" %>">
 	Post a new message
