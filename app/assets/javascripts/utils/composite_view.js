@@ -1,12 +1,15 @@
 Backbone.CompositeView = Backbone.View.extend({
   addSubview: function (selector, subview) {
     this.subviews(selector).push(subview);
-    // Try to attach the subview. Render it as a convenience.
-    this.attachSubview(selector, subview.render());
+    // Try to attach the subview.
+    // Render in attachSubview so that sortable works.
+    this.attachSubview(selector, subview);
   },
 
   attachSubview: function (selector, subview) {
     this.$(selector).append(subview.$el);
+    // render the subview here
+    subview.render();
     // Bind events in case `subview` has previously been removed from
     // DOM.
     subview.delegateEvents();

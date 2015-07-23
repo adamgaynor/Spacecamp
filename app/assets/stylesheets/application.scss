@@ -84,3 +84,12 @@ h1 {
 input[type="checkbox"] {
   font-size: larger;
 }
+
+.ui-sortable-helper {
+  -ms-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
+  z-index: 1000;
+  position: relative;
+}
