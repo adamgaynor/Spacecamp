@@ -19,7 +19,10 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ project: this.project });
+    var content = this.template({
+      project: this.project,
+      extraDiscussionCount: this.project.discussions().length - 5
+    });
     this.$el.html(content);
     //remove all Discussions before we add them again
     this.removeAllDiscussions();

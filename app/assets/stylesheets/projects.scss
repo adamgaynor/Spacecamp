@@ -10,6 +10,7 @@
   .more-discussions {
     display: block;
     padding: 20px;
+    padding-top: 0px;
     color: #1c5c76;
     text-decoration: underline;
   }
@@ -55,12 +56,15 @@
   }
 
 
-
   > span {
     font-weight: normal;
     font-size: 20px;
     padding: 0px 0px 10px 20px;
     color: #900;
+  }
+
+  .todo-lists-label {
+    padding-top: 20px;
   }
 
   .new-discussion {
