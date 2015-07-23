@@ -23,9 +23,18 @@
   <!-- <span class="form-text">Due Date: </span> -->
   <!-- <input type="date" name="date" value=""> -->
   <br>
-  <button>Add this to-do</button>
+  <% if (item.isNew()) { %>
+    <button>Add this to-do</button>
+  <% } else { %>
+    <button>Edit this to-do</button>
+  <% } %>
   or
-  <span class="cancel">I'm done adding new items</span>
+  <% if (item.isNew()) { %>
+    <span class="cancel">I'm done adding new items</span>
+  <% } else { %>
+    <span class="cancel">Cancel</span>
+  <% } %>
+
 
 
 </form>
