@@ -3,12 +3,18 @@ SpaceCamp.Views.ToDoListsIndex = Backbone.CompositeView.extend({
 
   tagName: 'section',
 
+  events: {
+    'click .todo-list-form-show': 'showTodoListForm'
+  },
+
   initialize: function (options) {
     this.toDoLists = options.toDoLists;
     this.project = options.project;
+    this.collaborators = options.collaborators;
     this.project.fetch();
     this.$el.attr("class", "todo-lists-index");
     this.listenTo(this.project, "sync", this.render);
+    this.listenTo(this.toDoLists, "sync", this.render);
   },
 
   render: function () {
