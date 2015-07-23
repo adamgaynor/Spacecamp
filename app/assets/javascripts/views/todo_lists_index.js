@@ -1,3 +1,5 @@
 SpaceCamp.Views.ToDoListsIndex = Backbone.CompositeView.extend({
-  template: JST['todo_lists/index']
+  template: JST['todo_lists/index'],
+
+  tagName: 'section'
 });

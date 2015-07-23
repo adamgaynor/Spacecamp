@@ -7,7 +7,8 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     'projects/:project_id/discussions/:discussion_id': 'showDiscussion',
     'discussions/:id/edit': 'editDiscussion',
     'projects/:project_id/add': 'addCollaborators',
-    'projects/:project_id/discussions': 'discussionsIndex'
+    'projects/:project_id/discussions': 'discussionsIndex',
+    'projects/:project_id/todoLists': 'todoListsIndex'
   },
 
   initialize: function (options) {
@@ -88,6 +89,16 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
       project: project
     });
     this._swapView(discussionsIndexView);
+  },
+
+  todoListsIndex: function(project_id) {
+    var project = this.projects.getOrFetch(project_id);
+    var toDoLists = project.toDoLists();
+    var toDoListsIndexView = new SpaceCamp.Views.ToDoListsIndex({
+      toDoLists: toDoLists,
+      project: project
+    });
+    this._swapView(toDoListsIndexView);
   },
 
   _swapView: function (view) {
