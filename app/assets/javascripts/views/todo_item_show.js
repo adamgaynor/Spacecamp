@@ -3,7 +3,8 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
 
   events: {
     'click .completion-box': 'completeTask',
-    'mouseover': 'showEditButton'
+    'mouseover': 'showEditButton'//,
+    //'mouseleave': 'hideEditButton'
   },
 
   tagName: 'li',
@@ -43,7 +44,28 @@ SpaceCamp.Views.ToDoItemShow = Backbone.View.extend({
     });
   },
 
-  showEditButton: function () {
-    var editButton = this.$el.find(".show-item-edit-form") 
+  showEditButton: function (event) {
+    var $target = $(event.currentTarget);
+    var $itemList = $target.parentsUntil(".todo-lists")
+      .parent()
+      .first()
+      .find(".show-item-edit-form");
+    this._hideAllEditButtons($itemList);
+    var editButton = this.$el.find(".show-item-edit-form");
+    editButton.addClass("show");
+  },
+
+  // hideEditButton: function (event) {
+  //   var $target = $(event.currentTarget);
+  //   var $itemList = $target.parentsUntil(".todo-lists")
+  //     .parent()
+  //     .first()
+  //     .find(".show-item-edit-form");    window.setTimeout(this._hideAllEditButtons.bind(this, $itemList), 1000);
+  // },
+
+  _hideAllEditButtons: function (itemList) {
+    itemList.each(function (index) {
+      $(itemList.get(index)).removeClass("show");
+    });
   }
 });
