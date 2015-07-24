@@ -15,8 +15,7 @@ SpaceCamp.Views.ToDoListForm = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      list: this.model,
-      project: this.project
+      list: this.model
     });
     this.$el.html(content);
 

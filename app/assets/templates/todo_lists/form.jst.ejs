@@ -10,7 +10,11 @@
          value="<%= list.escape("description") %>"
          placeholder="Give the list a description">
   <br>
-  <button class='submit'>Save and start adding to-dos</button>
+  <% if (list.isNew()) { %>
+    <button class='submit'>Save and start adding to-dos</button>
+  <% } else { %>
+    <button class='submit'>Edit this to-do list</button>
+  <% } %>
   or
   <span class='cancel'>Cancel</span>
 </form>

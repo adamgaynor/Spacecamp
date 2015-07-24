@@ -50,6 +50,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   },
 
   showEditForm: function (event) {
+    event.preventDefault();
     $(event.currentTarget).removeClass("show");
     var $target = $(event.delegateTarget);
     var $form = $target.find(".todo-item-form");
