@@ -26,8 +26,8 @@ SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
     var formData = this.$el.serializeJSON();
     this.project.save(formData, {
       success: function () {
-        this.projects.add(this.project, { merge:true });
-        Backbone.history.navigate('', { trigger: true });
+        this.projects.add(this.project, { merge: true });
+        Backbone.history.navigate('#projects/' + this.project.id, { trigger: true });
       }.bind(this)
     });
   }
