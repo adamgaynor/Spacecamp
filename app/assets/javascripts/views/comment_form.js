@@ -7,10 +7,10 @@ SpaceCamp.Views.CommentForm = Backbone.View.extend({
 		'click button': 'submit'
 	},
 
+	className: 'comment-form',
+
 	initialize: function (options) {
 		this.discussion = options.discussion;
-		this.$el.attr("class", "comment-form");
-		//this.listenTo(this.model, "sync", this.render);
 	},
 
 	render: function () {
