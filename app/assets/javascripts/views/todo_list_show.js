@@ -80,6 +80,7 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
   },
 
   showEditForm: function (event) {
+    event.preventDefault();
     var $target = $(event.delegateTarget);
     var $form = $target.find(".todo-list-edit-form");
     $form.addClass("show");

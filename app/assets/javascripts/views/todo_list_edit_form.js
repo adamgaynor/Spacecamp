@@ -23,7 +23,7 @@ SpaceCamp.Views.ToDoListEditForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    var formData = this.$el.find("form").serializeJSON();
+    var formData = this.$el.serializeJSON();
     this.model.set(formData);
     this.model.save(formData, {
       success: function () {
@@ -37,8 +37,8 @@ SpaceCamp.Views.ToDoListEditForm = Backbone.View.extend({
 
   hideForm: function (event) {
     event.preventDefault();
-    var $form = this.$el.find(".todo-list-edit-form");
-    $form.removeClass("show");
+    var $container = this.$el.parent();
+    $container.removeClass("show");
   }
 
 });
