@@ -1,8 +1,9 @@
 .root-header {
   background: black;
+  width: 1000px;
 
   nav {
-    width: 1000px;
+    width: 920px;
     margin: auto;
     background: black;
   }
@@ -16,7 +17,6 @@
 
 .user-info {
   float: right;
-  margin: 10px 10px 0px 0px;
 
   > li {
     float: left;
@@ -34,7 +34,7 @@
 
 .main-header {
   float: left;
-  margin: 30px 0px 0px 0px;
+  margin: 30px 0px 0px 20px;
   font-size: 24px;
 }
 
