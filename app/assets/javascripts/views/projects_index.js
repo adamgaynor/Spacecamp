@@ -7,7 +7,6 @@ SpaceCamp.Views.ProjectsIndex = Backbone.View.extend({
     this.projects = options.projects;
     this.listenTo(this.projects, "sync", this.render);
     this.$el.attr("class", "projects-list group");
-    //this.projects.fetch();
   },
 
   render: function () {

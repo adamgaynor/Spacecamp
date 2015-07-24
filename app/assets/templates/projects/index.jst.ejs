@@ -1,7 +1,8 @@
 <h1>Your Projects</h1>
  <% projects.forEach(function(project) { %>
    <li class="project-tile">
-     <h2 class="project-title"><a href="#projects/<%= project.id %>"><%= project.escape("title") %></a></h2>
+     <a href="#projects/<%= project.id %>"></a>
+     <h2 class="project-title"><%= project.escape("title") %></h2>
      <span class="ownership-status">
        <% if (project.get("owner_id") === project.get("current_user_id")) { %>
          Owner
@@ -15,7 +16,8 @@
     </li>
  <% }) %>
 <li class="new-project-tile">
-  <h2><a href="#projects/new">Create New Project</a></h2>
+  <a href="#projects/new"></a>
+  <h2>Create New Project</h2>
   <p>
     Your journey begins here.
   </p>
