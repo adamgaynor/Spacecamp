@@ -8,7 +8,6 @@
          name="todo_list[description]"
          value="<%= list.escape("description") %>"
          placeholder="Give the list a description">
-  <br>
   <% if (list.isNew()) { %>
     <button class='submit'>Save and start adding to-dos</button>
   <% } else { %>
