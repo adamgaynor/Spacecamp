@@ -31,7 +31,7 @@
 }
 
 .todo-list {
-  margin: 20px 0px 0px 20px;
+  padding: 20px 0px 0px 20px;
   position: relative;
 
   .todo-list-title {
@@ -50,8 +50,8 @@
 
   .show-list-edit-form {
     position: absolute;
-    left: -40px;
-    top: 8px;
+    left: -19px;
+    top: 25px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 12px;

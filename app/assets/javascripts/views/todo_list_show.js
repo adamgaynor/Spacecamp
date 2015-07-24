@@ -9,7 +9,8 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
 
   events: {
     'mouseover > p': 'showEditButton',
-    'click .show-list-edit-form': 'showEditForm'
+    'click .show-list-edit-form': 'showEditForm',
+    'mouseleave': 'hideButtons'
   },
 
 
@@ -98,6 +99,16 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
     this._hideAllEditButtons($listList);
     var editButton = $target.find(".show-list-edit-form");
     editButton.addClass("show");
+  },
+
+  hideButtons: function (event) {
+    var $target = $(event.currentTarget);
+    var $listList = $target.parent()
+      .find(".show-list-edit-form");
+    this._hideAllEditButtons($listList);
+    $listList = $target.parent()
+      .find(".show-item-edit-form");
+    this._hideAllEditButtons($listList);
   },
 
   _hideAllEditButtons: function (listList) {

@@ -94,7 +94,8 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   //   var $itemList = $target.parentsUntil(".todo-lists")
   //     .parent()
   //     .first()
-  //     .find(".show-item-edit-form");    window.setTimeout(this._hideAllEditButtons.bind(this, $itemList), 1000);
+  //     .find(".show-item-edit-form");
+  // window.setTimeout(this._hideAllEditButtons.bind(this, $itemList), 1000);
   // },
 
   _hideAllEditButtons: function (itemList) {
