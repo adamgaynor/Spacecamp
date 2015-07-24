@@ -1,7 +1,7 @@
 SpaceCamp.Views.ToDoListEditForm = Backbone.View.extend({
   template: JST["todo_lists/form"],
 
-  tagName: 'article',
+  tagName: 'form',
 
   events: {
     'click button': 'submit',
