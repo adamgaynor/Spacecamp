@@ -107,15 +107,15 @@ discussions = Discussion.create([
   {
     author_id: users.first.id,
     project_id: projects.first.id,
-    title: 'Sample Discussion',
-    content: 'Here is my proposal',
-    summary: 'Here is what I propose we do about the thing.'
+    title: 'Mission Parameters',
+    content: 'The mission parameters for our SpaceCamp.',
+    summary: 'The mission parameters for our SpaceCamp.'
     }, {
     author_id: users.first.id,
     project_id: projects[1].id,
-    title: 'Sample Discussion',
-    content: 'Here is my proposal',
-    summary: 'Here is what I propose we do about the thing.'
+    title: 'Mission Parameters',
+    content: 'The mission parameters for our SpaceCamp.',
+    summary: 'The mission parameters for our SpaceCamp.'
   }
 ])
 
