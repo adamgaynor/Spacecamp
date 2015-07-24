@@ -21,6 +21,9 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
     //var sortableId = "#sortable" + this.model.id
     this.$el.html(content);
 
+    this.removeAllForms();
+    this.addEditToDoList();
+
     this.removeAllItems();
     this.model.toDoItems().each(this.addToDoItem.bind(this));
     this.addCreateToDoItem();
@@ -28,6 +31,20 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
 
     //this.$(sortableId).sortable();
     return this;
+  },
+
+  removeAllForms: function () {
+    var subviews = this.subviews('.todo-list-edit-form');
+    var views = subviews.clone();
+    views.forEach(this.removeSubview.bind(this, '.todo-list-edit-form'));
+  },
+
+  addEditToDoList: function () {
+    var toDoList = this.model;
+    var createToDoListEditForm = new SpaceCamp.Views.ToDoListEditForm({
+      model: toDoItem
+    });
+    this.addSubview(".todo-list-edit-form", createToDoListEditForm);
   },
 
   removeAllItems: function () {
