@@ -2,7 +2,7 @@
        name="todo_item[completed]"
        class="completion-box"
        <% if (item.get("completed")) { %>checked<% } %>>
-<article>
+<article class="item-info">
   <%= item.escape("description") %>
   <% if (collaborator) { %>
     <span class="assigned-user">

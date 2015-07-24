@@ -3,7 +3,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
 
   events: {
     'click .completion-box': 'completeTask',
-    'mouseover': 'showEditButton',
+    'mouseover .item-info': 'showEditButton',
     //'mouseleave': 'hideEditButton',
     'click .show-item-edit-form': 'showEditForm'
   },
