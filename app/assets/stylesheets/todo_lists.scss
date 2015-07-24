@@ -47,6 +47,22 @@
   .todo-items {
     margin-left: 10px;
   }
+
+  .show-list-edit-form {
+    position: absolute;
+    left: -40px;
+    top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0px 1px 0px #ddd;
+    padding: 2px 6px;
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
 }
 
 .todo-list-form, .todo-list-edit-form {
