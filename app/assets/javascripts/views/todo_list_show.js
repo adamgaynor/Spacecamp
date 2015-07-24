@@ -9,6 +9,7 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
 
   events: {
     'mouseover': 'showEditButton',
+    'click .show-list-edit-form': 'showEditForm'
   },
 
 
@@ -76,6 +77,12 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
       project: this.project
     });
     this.addSubview(".todo-items", createToDoItemForm);
+  },
+
+  showEditForm: function () {
+    var $target = $(event.delegateTarget);
+    var $form = $target.find(".todo-list-edit-form");
+    $form.addClass("show");
   },
 
   showEditButton: function (event) {
