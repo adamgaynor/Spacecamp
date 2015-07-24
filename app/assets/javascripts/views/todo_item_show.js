@@ -14,7 +14,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
     this.collaborators = options.collaborators;
     this.collaborator = this.collaborators.get(this.model.get("assigned_user_id"));
     this.$el.attr("class", "todo-item");
-    this.listenTo(this.model, "change sync", this.render)
+    this.listenTo(this.model, "change sync", this.render);
   },
 
   render: function () {
@@ -50,6 +50,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   },
 
   showEditForm: function (event) {
+    $(event.currentTarget).removeClass("show");
     var $target = $(event.delegateTarget);
     var $form = $target.find(".todo-item-form");
     $form.addClass("show");

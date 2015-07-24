@@ -1,5 +1,5 @@
 class Api::TodoListsController < ApplicationController
-  def index # Not used for anything yet    
+  def index # Not used for anything yet
     @project = current_user.projects.find(params[:project_id])
     @lists = @project.to_do_lists
     render json: @lists
@@ -22,8 +22,7 @@ class Api::TodoListsController < ApplicationController
   end
 
   def update
-    current_project = current_user.projects.find(params[:project_id])
-    @list = current_project.to_do_lists.find(params[:id])
+    @list = current_user.to_do_lists.find(params[:id])
     if @list.update_attributes(list_params)
       render json: @list
     else

@@ -32,6 +32,8 @@
 
 .todo-list {
   margin: 20px 0px 0px 20px;
+  position: relative;
+
   .todo-list-title {
     font-weight: bold;
   }
@@ -45,10 +47,6 @@
   .todo-items {
     margin-left: 10px;
   }
-}
-
-.todo-lists .show {
-  display: block;
 }
 
 .todo-list-form, .todo-list-edit-form {
