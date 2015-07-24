@@ -7,6 +7,10 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
 
   className: 'todo-list group',
 
+  events: {
+    'mouseover': 'showEditButton',
+  },
+
 
 
   initialize: function (options) {
@@ -42,7 +46,7 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
   addEditToDoList: function () {
     var toDoList = this.model;
     var createToDoListEditForm = new SpaceCamp.Views.ToDoListEditForm({
-      model: toDoItem
+      model: toDoList
     });
     this.addSubview(".todo-list-edit-form", createToDoListEditForm);
   },
@@ -72,6 +76,23 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend(
       project: this.project
     });
     this.addSubview(".todo-items", createToDoItemForm);
+  },
+
+  showEditButton: function (event) {
+    var $target = $(event.currentTarget);
+    var $listList = $target.parentsUntil(".todo-lists")
+      .parent()
+      .first()
+      .find(".show-todo-edit-form");
+    this._hideAllEditButtons($listList);
+    var editButton = this.$el.find(".show-todo-edit-form");
+    editButton.addClass("show");
+  },
+
+  _hideAllEditButtons: function (listList) {
+    listList.each(function (index) {
+      $(listList.get(index)).removeClass("show");
+    });
   }
 
   // orderOptions: {
