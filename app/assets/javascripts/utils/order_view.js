@@ -8,7 +8,7 @@
  * }
  */
 
-TrelloClone.Mixins.Orderable = {
+SpaceCamp.Mixins.Orderable = {
   resortSubviews: function() {
     var subviews = this.subviews(this.orderOptions.subviewContainer);
     subviews.sort(function(subview1, subview2) {
