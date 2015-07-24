@@ -3,10 +3,32 @@ SpaceCamp.Views.ToDoListShow = Backbone.CompositeView.extend({
 
   tagName: 'article',
 
+  className: 'todo-list group',
+
+  events: {
+    'sortreceive': 'receiveCard',
+    'sortremove': 'removeCard',
+    'sortstop': 'saveCards'
+  },
+
+  receiveItem: function (event, ui) {
+    var $itemDisplay = ui.item;
+    var itemId = $itemDisplay.data('item-id');
+
+  },
+
+  removeItem: function (event, ui) {
+
+  },
+
+  saveItems: function (event, ui) {
+
+  },
+
   initialize: function (options) {
     this.project = options.project;
     this.collaborators = options.collaborators;
-    this.$el.attr("class", "todo-list group");
+    // this.$el.attr("class", "todo-list group");
     this.listenTo(this.model.toDoItems(), "update add", this.render);
   },
 
