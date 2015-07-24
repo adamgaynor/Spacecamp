@@ -13,9 +13,9 @@ users = User.create([{
     lname: 'Gaynor',
     password: 'aaaaaa'
   }, {
-    email: 'john_smith@example.com',
-    fname: 'John',
-    lname: 'Smith',
+    email: 'guest_user@example.com',
+    fname: 'Guest',
+    lname: 'User',
     password: 'qwerty'
   }
 ])
@@ -41,6 +41,14 @@ to_do_lists = ToDoList.create([{
     project_id: projects[1].id,
     title: 'Features',
     description: 'To be implemented.'
+  }, {
+    project_id: projects.first.id,
+    title: 'Stretch Goals',
+    description: 'To be not implemented.'
+  }, {
+    project_id: projects.first.id,
+    title: 'Foods',
+    description: 'To be eaten.'
   }
 ])
 
@@ -65,8 +73,32 @@ to_do_items = ToDoItem.create([{
   }, {
     to_do_list_id: to_do_lists[1].id,
     description: 'Discussion Boards',
-    completed: false,
+    completed: true,
     order: 1,
+    assigned_user_id: users.first.id
+  }, {
+    to_do_list_id: to_do_lists.first.id,
+    description: 'Collaborations on Projects',
+    completed: true,
+    order: 2,
+    assigned_user_id: users.first.id
+  }, {
+    to_do_list_id: to_do_lists.first.id,
+    description: 'Edit user profiles',
+    completed: false,
+    order: 3,
+    assigned_user_id: users.first.id
+  }, {
+    to_do_list_id: to_do_lists[2].id,
+    description: 'Draggable list items',
+    completed: false,
+    order: 0,
+    assigned_user_id: users.first.id
+  }, {
+    to_do_list_id: to_do_lists[3].id,
+    description: 'Pasta',
+    completed: true,
+    order: 0,
     assigned_user_id: users.first.id
   }]
 )
