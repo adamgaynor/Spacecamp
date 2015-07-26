@@ -34,10 +34,13 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   completeTask: function (event) {
     event.preventDefault();
     var isComplete = this.model.get("completed");
+    var currentOrder = this.model.get("order");
     if (isComplete) {
       this.model.set("completed", false);
+      this.model.set("order", currentOrder - 1000)
     } else {
       this.model.set("completed", true);
+      this.model.set("order", currentOrder + 1000)
     }
     this.model.save({}, {
       success: function () {
