@@ -11,6 +11,7 @@ SpaceCamp.Views.ToDoItemShow = Backbone.CompositeView.extend({
   tagName: 'li',
 
   initialize: function (options) {
+    this.toDoList = options.toDoList;
     this.collaborators = options.collaborators;
     this.collaborator = this.collaborators.get(this.model.get("assigned_user_id"));
     this.$el.attr("class", "todo-item");
