@@ -26,7 +26,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   editUser: function () {
-
+    var user = new SpaceCamp.Models.CurrentUser
   },
 
   newProject: function () {
