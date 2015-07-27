@@ -55,11 +55,13 @@ SpaceCamp.Views.CommentShow = Backbone.CompositeView.extend(
 
 		deleteComment: function (event) {
 			event.preventDefault();
-			this.model.destroy({
-				success: function () {
-					this.collection.remove(this.model);
-				}.bind(this)
-			});
+			if (confirm("Permanently delete this comment?")) {
+				this.model.destroy({
+					success: function () {
+						this.collection.remove(this.model);
+					}.bind(this)
+				});
+			}
 		}
 	})
 );
