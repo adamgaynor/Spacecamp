@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #content {
+
+  .edit-user {
+    margin-left: 20px;
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px 20px 10px 0px;
+    }
+
+    input {
+      display: block;
+      background-color: white;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      font-size: 16px;
+      padding: 5px;
+      margin: 5px 0px 20px 0px;
+    }
+  }
+
   .projects-list {
     margin: 20px;
     margin-top: 0px;
@@ -94,7 +115,6 @@
       p {
         margin: 10px;
       }
-
 
     }
   }

@@ -1,3 +1,10 @@
 <h1>Edit Your Profile</h1>
+<label for="fname">First Name</label>
+<input id="fname" type="text" name="fname" value="<%= user.escape("fname") %>">
 
-<input type="text" name="lname" value="<%= user.escape("lname") %>">
+<label for="lame">Last Name</label>
+<input id="lname" type="text" name="lname" value="<%= user.escape("lname") %>">
+
+<label for="avatar">Avatar Picture</label>
+<input type="file" name="avatar" value="user.avatar">
+<button>Submit</button>

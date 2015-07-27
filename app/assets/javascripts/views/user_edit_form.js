@@ -3,9 +3,11 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
 
   tagName: 'form',
 
-  // initialize: function (options) {
-  //
-  // },
+  className: 'edit-user group',
+
+  initialize: function (options) {
+    this.$el.attr("enctype", "multipart/form-data");
+  },
 
   render: function () {
     var content = this.template({ user: this.model });

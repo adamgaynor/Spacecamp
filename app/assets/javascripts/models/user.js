@@ -17,5 +17,25 @@ SpaceCamp.Models.User = Backbone.Model.extend({
 
 
 SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
-  url: '/api/users/1'
+  url: '/api/users/1',
+
+  saveFormData: function (formData, options) {
+    var method = "PUT";
+    var model = this;
+
+    $.ajax({
+      url: _.result(model, "url"),
+      type: method,
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        model.set(model.parse(response));
+        model.trigger('sync', model, response, options);
+      },
+      error: function (response) {
+        options.error && options.error(model, response, options);
+      }
+    });
+  }
 });
