@@ -1,4 +1,9 @@
 class Api::CommentsController < ApplicationController
+
+	def show
+
+	end
+	
 	def create
 		current_discussion =
 			current_user.discussions.find(params[:comment][:discussion_id])
@@ -10,6 +15,16 @@ class Api::CommentsController < ApplicationController
     else
       render json: @comment.errors.full_messages, status: :unprocessable_entity
     end
+	end
+
+	def update
+		@comment = current_user.authored_comments.find(params[:id])
+		if @comment.update_attributes(comment_params)
+			render json: @comment
+		else
+			render json: @comment.errors.full_messages, status: :unprocessable_entity
+		end
+
 	end
 
 

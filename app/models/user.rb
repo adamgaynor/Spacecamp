@@ -89,6 +89,12 @@ class User < ActiveRecord::Base
   )
 
   has_many(
+    :comments,
+    through: :discussions,
+    source: :comments
+  )
+
+  has_many(
     :assigned_to_do_items,
     class_name: 'ToDoItem',
     foreign_key: :assigned_user_id
