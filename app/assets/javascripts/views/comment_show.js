@@ -47,7 +47,6 @@ SpaceCamp.Views.CommentShow = Backbone.CompositeView.extend(
 
 	  showEditForm: function (event) {
 	    event.preventDefault();
-			debugger
 	    var $target = $(event.delegateTarget);
 	    var $form = $target.find(".comment-edit-form");
 	    $form.addClass("show");
