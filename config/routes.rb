@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#omniauth"
 
   namespace :api, defaults: { format: :json } do
+    resource :current_user, only: [:show]
     resource :session, only: [:show]
     resources :users, only: [:index, :show]
     resources :projects, except: [:new, :edit] do

@@ -10,7 +10,6 @@ SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
   initialize: function (options) {
     this.project = options.project;
     this.projects = options.projects;
-    //this.listenTo(this.project, "sync", this.render);
     this.$el.attr("class", "project-form");
   },
 
