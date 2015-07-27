@@ -5,7 +5,8 @@ SpaceCamp.Views.CommentShow = Backbone.CompositeView.extend(
 		tagName: 'article',
 
 		events: {
-			'click .edit-button': 'showEditForm'
+			'click .edit-button': 'showEditForm',
+			'click .delete-button': 'deleteComment'
 		},
 
 		initialize: function (options) {
@@ -50,6 +51,15 @@ SpaceCamp.Views.CommentShow = Backbone.CompositeView.extend(
 	    var $target = $(event.delegateTarget);
 	    var $form = $target.find(".comment-edit-form");
 	    $form.addClass("show");
-	  }
+	  },
+
+		deleteComment: function (event) {
+			event.preventDefault();
+			this.model.destroy({
+				success: function () {
+					//this.collection.fetch();
+				}.bind(this)
+			});
+		}
 	})
 );
