@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 	def show
 
 	end
-	
+
 	def create
 		current_discussion =
 			current_user.discussions.find(params[:comment][:discussion_id])
@@ -25,6 +25,15 @@ class Api::CommentsController < ApplicationController
 			render json: @comment.errors.full_messages, status: :unprocessable_entity
 		end
 
+	end
+
+	def destroy
+		@comment = current_user.authored_comments.find(params[:id])
+		if @comment.destroy
+			render json: @comment
+		else
+			render json: @comment.errors.full_messages, status: :unprocessable_entity
+		end
 	end
 
 
