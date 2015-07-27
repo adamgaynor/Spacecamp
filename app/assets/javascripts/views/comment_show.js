@@ -37,6 +37,7 @@ SpaceCamp.Views.CommentShow = Backbone.CompositeView.extend(
 
 	  addEditComment: function () {
 	    var comment = this.model;
+			//debugger
 	    var createCommentEditForm = new SpaceCamp.Views.CommentEditForm({
 	      model: comment,
 	      collection: this.collection

@@ -1,3 +1,5 @@
+<% if (comment.isNew()) { %>
+
 
 <form class="">
 	<textarea name="content"
@@ -6,3 +8,13 @@
 	<br>
 	<button>Add this comment</button>
 </form>
+<% } else { %>
+	<form class="">
+		<textarea name="content"
+							rows="8" cols="40"><%= comment.escape("content") %></textarea>
+		<br>
+		<button class="submit">Edit</button>
+		or
+		<button class="cancel">Cancel</button>
+	</form>
+<% } %>
