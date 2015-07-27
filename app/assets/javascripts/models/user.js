@@ -3,7 +3,7 @@ SpaceCamp.Models.User = Backbone.Model.extend({
   toJSON: function() {
     return { user: _.clone( this.attributes ) }
   }
-  urlRoot: '/api/current_user' //,
+
 
   // parse: function (response) {
   //   if (response.projects) {
@@ -17,5 +17,5 @@ SpaceCamp.Models.User = Backbone.Model.extend({
 
 
 SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
-  url: '/api/current_user'
+  url: '/api/users/1'
 });

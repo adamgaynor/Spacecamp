@@ -13,6 +13,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   initialize: function (options) {
+    this.user = new SpaceCamp.Models.CurrentUser();
     this.projects = options.projects;
     this.$rootEl = options.$rootEl;
     this.projects.fetch();
@@ -26,7 +27,14 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   editUser: function () {
-    var user = new SpaceCamp.Models.CurrentUser
+    this.user.fetch({
+      success: function () {
+        var userEditView = new SpaceCamp.Views.UserEditForm({
+          model: this.user
+        });
+        this._swapView(userEditView);
+      }.bind(this)
+    });
   },
 
   newProject: function () {
