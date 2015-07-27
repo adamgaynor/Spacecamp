@@ -4,7 +4,7 @@ SpaceCamp.Views.CommentEditForm = Backbone.View.extend({
   tagName: "form",
 
   events: {
-    'click button': 'submit'
+    'click .submit': 'submit'
   },
 
   className: 'comment-form',
@@ -25,5 +25,12 @@ SpaceCamp.Views.CommentEditForm = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
+    var formData = this.$el.serializeJSON();
+    this.model.save(formData, {
+			success: function () {
+				this.model.fetch();
+			}.bind(this)
+		});
+
   }
 });
