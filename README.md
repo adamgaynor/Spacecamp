@@ -20,7 +20,6 @@ Space pioneers will be able to:
  - [x] Share projects with other project members
  - [x] View discussions
  - [x] View To-Do Items
- - [ ] Rearrange To-Do items (jQuery Sortable)
  - [x] Oauth integration with Google login
  - [x] Uploading avatars
  - [ ] Uploading files
