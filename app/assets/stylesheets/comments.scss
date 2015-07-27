@@ -21,6 +21,15 @@
     border-radius: 3px;
   }
 
+  .cancel {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: #1c5c76;
+    }
+  }
+
   button {
     border: 1px solid #016c43;
     background-color: #00a264;
@@ -34,6 +43,11 @@
     &:active {
       background-color: #016c43;
     }
+  }
+
+  .submit {
+    padding: 2px 10px;
+    margin: 5px 0px;
   }
 }
 
