@@ -4,6 +4,10 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend(
 
 		tagName: 'article',
 
+		events: {
+			'click .edit-button': 'submit'
+		},
+
 		initialize: function (options) {
 			this.$el.attr("class", "comment-article");
 			this.listenTo(this.collection, "add", this.render);
@@ -19,6 +23,10 @@ SpaceCamp.Views.CommentShow = Backbone.View.extend(
 			this.$el.html(content);
 
 			return this;
+		},
+
+		submit: function (event) {
+			event.preventDefault();
 		}
 	})
 );
