@@ -34,7 +34,8 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
 
     this.model.saveFormData(formData, {
       success: function () {
-        Backbone.history.navigate("", { trigger: true });
+        debugger
+        Backbone.history.navigate("#", { trigger: true });
       }.bind(this)
     });
   },

@@ -27,7 +27,7 @@ SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
     var model = this;
 
     $.ajax({
-      url: _.result(model, "postUrl"),
+      url: _.result(model, "url"),
       type: method,
       data: formData,
       processData: false,
