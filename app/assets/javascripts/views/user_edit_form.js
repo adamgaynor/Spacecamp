@@ -5,6 +5,11 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
 
   className: 'edit-user group',
 
+  events: {
+    'click button': 'submit',
+    'change #avatar': 'fileInputChange'
+  },
+
   initialize: function (options) {
     this.$el.attr("enctype", "multipart/form-data");
   },
@@ -15,4 +20,23 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
     return this;
   },
 
+  fileInputChange: function (event) {
+    console.log(event.currentTarget.files[0]);
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      this._updatePreview(reader.result);
+    }.bind(this)
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this._updatePreview("");
+    }
+  },
+
+  _updatePreview: function (src) {
+    this.$el.find("#avatar-preview").attr("src", src);
+  }
 });
