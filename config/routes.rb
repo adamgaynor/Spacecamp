@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     #resource :current_user, only: [:show]
     resource :session, only: [:show]
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show, :update]
     resources :projects, except: [:new, :edit] do
       resources :users, only: [:index]
       resources :collaborations, only: [:create]

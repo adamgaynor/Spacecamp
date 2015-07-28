@@ -18,13 +18,16 @@ SpaceCamp.Models.User = Backbone.Model.extend({
 
 SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
   url: '/api/users/1',
+  postUrl: function (id) {
+    return '/api/users/' + this.id;
+  },
 
   saveFormData: function (formData, options) {
     var method = "PUT";
     var model = this;
 
     $.ajax({
-      url: _.result(model, "url"),
+      url: _.result(model, "postUrl"),
       type: method,
       data: formData,
       processData: false,
