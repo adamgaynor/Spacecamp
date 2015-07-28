@@ -4,7 +4,7 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 	tagName: 'section',
 
 	events: {
-		'click button': 'deleteDiscussion'
+		'click li button': 'deleteDiscussion'
 	},
 
 	initialize: function (options) {
