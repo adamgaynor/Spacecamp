@@ -1,5 +1,9 @@
 <a class="project-link" href="<%= "#projects/" + project.id %>"><%= project.escape("title") %></a>
 <h1><%= discussion.escape("title") %></h1>
+<ul>
+	<li>Edit...</li>
+	<li><button>Delete...</button></li>
+</ul>
 <p class="content">
 	<%= discussion.escape("content") %>
 </p>

@@ -3,6 +3,10 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 
 	tagName: 'section',
 
+	events: {
+		'click button': 'deleteDiscussion'
+	},
+
 	initialize: function (options) {
 		this.project = options.project;
 		this.comments = options.comments;
@@ -49,5 +53,9 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
       model: comment
     });
     this.addSubview('.comments', createCommentForm);
-  }
+  },
+
+	deleteDiscussion: function (event) {
+		event.preventDefault();
+	}
 });

@@ -153,11 +153,21 @@
     margin-bottom: 10px;
   }
 
+  ul {
+    float: right;
+    margin-right: 6.5%;
+  }
+
+  li {
+    padding-bottom: 5px;
+  }
+
   .comments {
     margin-top: 20px;
   }
 
   .comment-article {
+    width: 94.5%;
     border-bottom: 1px solid #aaa;
     margin-bottom: 5px;
   }
