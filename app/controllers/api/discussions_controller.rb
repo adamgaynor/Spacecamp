@@ -24,6 +24,15 @@ class Api::DiscussionsController < ApplicationController
 		render :show
 	end
 
+	def destroy
+		@discussion = current_user.discussions.find(params[:id])
+		if @discussion.destroy
+			render json: @discussion
+		else
+			render json: @discussion.errors.full_messages, status: :unprocessable_entity
+		end
+	end
+
 	private
 
 	def discussion_params

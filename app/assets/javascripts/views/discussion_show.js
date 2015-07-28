@@ -57,5 +57,12 @@ SpaceCamp.Views.DiscussionShow = Backbone.CompositeView.extend({
 
 	deleteDiscussion: function (event) {
 		event.preventDefault();
+		if (confirm("Permanently delete this discussion?")) {
+			this.model.destroy({
+				success: function () {
+					Backbone.history.navigate("#projects/" + this.project.id, { trigger: true });
+				}.bind(this)
+			});
+		}
 	}
 });
