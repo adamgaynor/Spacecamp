@@ -20,6 +20,25 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
     return this;
   },
 
+  submit: function (event) {
+    event.preventDefault();
+
+    var fname = this.$("#fname").val();
+    var lname = this.$("#lname").val();
+    var avatar = this.$("#avatar")[0].files[0];
+
+    var formData = new FormData();
+    formData.append("user[fname]", fname);
+    formData.append("user[lname]", lname);
+    formData.append("user[avatar]", avatar);
+
+    this.model.saveFormData(formData, {
+      success: function () {
+        Backbone.history.navigate("", { trigger: true });
+      }.bind(this)
+    });
+  },
+
   fileInputChange: function (event) {
     console.log(event.currentTarget.files[0]);
     var file = event.currentTarget.files[0];
