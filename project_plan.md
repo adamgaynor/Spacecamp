@@ -5,7 +5,7 @@
 [heroku]: http://www.spacecamp.xyz/
 
 ##Minimum Viable Project
-SpaceCamp is a clone of Basecamp for use in space built on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
+SpaceCamp is a project management site built on Ruby on Rails and Backbone.  It is designed for use by astronauts, to keep track of ongoing projects...in space!
 Space pioneers will be able to:
 
  - [x] Create accounts
