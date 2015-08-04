@@ -22,6 +22,43 @@
   margin: auto;
   margin-top: 250px;
   min-width: 500px;
+  position: relative;
+
+  .feature {
+    position: absolute;
+    background-color: lightblue;
+    opacity: 0.9;
+    padding: 50px 30px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: default;
+  }
+
+  .one {
+    left: 0;
+    top: 0;
+  }
+
+  .two {
+    left: -75px;;
+    top: 200px;
+  }
+
+  .three {
+    right: 0;
+    top: 0;
+  }
+
+  .four {
+    right: -20px;
+    top: 200px;
+  }
+
+  .five {
+    left: 350px;
+    top: -200px;
+  }
 
   .errors {
     text-align: center;
@@ -88,6 +125,7 @@
   .sign-up-link {
     width: 9%;
     background-color: white;
+    border: 1px solid black;
     display: block;
     margin: auto;
     text-align: center;
