@@ -1,4 +1,4 @@
-# [SpaceCamp][heroku]
+# SpaceCamp - [Live Link][heroku]
 [heroku]: http://www.spacecamp.xyz/
 
 ##Features
