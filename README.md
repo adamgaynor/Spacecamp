@@ -23,7 +23,7 @@ Each project can have multiple To-Do Lists, which appear below the discussions s
 Each To-Do List can be assigned To-Do Items.  These items are displayed below the list's title, and contain a checkbox to show if they have been completed.  Each item has a title, and can optionally be assigned to a specific person who is collaborating on the site.  Each item can also be edited by clicking the link that appears to its left when hovering over the item.
 
 ##Technology
-SpaceCamp is built using Ruby on Rails for the backend, and Backbone.js to implement an AJAX (Asynchronous JavaScript and XML) frontend.
+SpaceCamp is built using Ruby on Rails for the backend, and Backbone.js to implement an AJAX (Asynchronous JavaScript and XML) frontend.  Oauth allows users to log in using their Google login information, instead of having to create completely new accounts.
 
 ###Backbone
 Backbone is a JavaScript library designed to facilitate the creation of single page webapps by incorporating the use of AJAX requests into its framework.
@@ -45,3 +45,6 @@ The advantages of using subviews are that they allow each data structure within 
 Ruby on Rails uses a Model-View-Controller (MVC) architecture, allowing users on the outside to interact with Views to receive information from Models in the database.  The Controller regulates the flow of information between these two places.  
 
 In a classic Rails environment, each View would be a web page that the site's users would see on their browser.  Because SpaceCamp is primarily a single page webapp that uses AJAX, it displays its views as JSON information which the Backbone frontend uses to display the website's content to users.
+
+###Oauth
+Oauth allows users to log into a website using credentials from a different company, in this case Google.  The user's login information is sent to Google, which confirms the name and password through its own servers.  Google then sends back a user identification code that is used to identify the user.  The result is that the user is not required to take the time to create their own account, and can log in with one click.
