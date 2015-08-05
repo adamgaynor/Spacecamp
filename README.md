@@ -27,15 +27,21 @@ SpaceCamp is built using Ruby on Rails for the backend, and Backbone.js to imple
 
 ###Backbone
 Backbone is a JavaScript library designed to facilitate the creation of single page webapps by incorporating the use of AJAX requests into its framework.
+
 All views in a Backbone site is displayed on a single root page, without any browser redirection.  This allows content to load in the background with AJAX, without the need to wait for a web browser to reload an entire page every time information is changed.  This lack of downtime enhances the user experience and makes the website feel significantly more responsive to input.
 
 ###Backbone Subviews
 Ordinarily, Backbone views are rendered to the page one at a time, and take up the entire page.  SpaceCamp extends certain basic Backbone views with CompositeView features, which allows each vie to be divided into multiple parent and child views, each with its own content and JavaScript listeners.
-An example of this functionality is seen on each Project main page, where Discussions and To-Do Lists are shown:  
+
+**An example of this functionality is seen on each Project main page, where Discussions and To-Do Lists are shown:**
+
 Each Discussion summary is actually a subview containing the information of only that Discussion.
+
 Likewise, each To-Do List has its own subview, and each To-Do Item within that list is an individual subview containing the information about that particular item.
+
 The advantages of using subviews are that they allow each data structure within a view to be compartmentalized and displayed individually, rather than lumped together with everything else on display.  It also makes assigning listeners to objects much easier, because they remain scoped to the subview in which they are created.
 
 ###Ruby on Rails
 Ruby on Rails uses a Model-View-Controller (MVC) architecture, allowing users on the outside to interact with Views to receive information from Models in the database.  The Controller regulates the flow of information between these two places.  
+
 In a classic Rails environment, each View would be a web page that the site's users would see on their browser.  Because SpaceCamp is primarily a single page webapp that uses AJAX, it displays its views as JSON information which the Backbone frontend uses to display the website's content to users.
