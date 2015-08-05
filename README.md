@@ -48,3 +48,9 @@ In a classic Rails environment, each View would be a web page that the site's us
 
 ###Oauth
 Oauth allows users to log into a website using credentials from a different company, in this case Google.  The user's login information is sent to Google, which confirms the name and password through its own servers.  Google then sends back a user identification code that is used to identify the user.  The result is that the user is not required to take the time to create their own account, and can log in with one click.
+
+##Upcoming Features
+
+- [ ] Allow Users to upload documents, and share them with others
+- [ ] Create a central calendar for team members to coordinate
+- [ ] Display a project's recent updates on its main page
