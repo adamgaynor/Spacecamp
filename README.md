@@ -20,7 +20,7 @@ Each project can have multiple To-Do Lists, which appear below the discussions s
 Each To-Do List can be assigned To-Do Items.  These items are displayed below the list's title, and contain a checkbox to show if they have been completed.  Each item has a title, and can optionally be assigned to a specific person who is collaborating on the site.  Each item can also be edited by clicking the link that appears to its left when hovering over the item.
 
 ##Technology
-SpaceCamp is built using Ruby on Rails for the backend, and Backbone.js to implement an AJAX (Asynchronous JavaScript and XML) frontend.  Oauth allows users to log in using their Google login information, instead of having to create completely new accounts.
+SpaceCamp is built using Ruby on Rails for the backend, and Backbone.js to implement an AJAX (Asynchronous JavaScript and XML) frontend.  Oauth allows users to log in using their Google login information, instead of having to create completely new accounts.  Amazon Web Services (AWS) S3 storage allows users to upload profile pictures.
 
 ###Backbone
 Backbone is a JavaScript library designed to facilitate the creation of single page webapps by incorporating the use of AJAX requests into its framework.
@@ -46,8 +46,12 @@ In a classic Rails environment, each View would be a web page that the site's us
 ###Oauth
 Oauth allows users to log into a website using credentials from a different company, in this case Google.  The user's login information is sent to Google, which confirms the name and password through its own servers.  Google then sends back a user identification code that is used to identify the user.  The result is that the user is not required to take the time to create their own account, and can log in with one click.
 
+###Amazon Web Services S3 Storage
+AWS stores the profile pictures uploaded by users, allowing them to be displayed on the website.  When a user creates a new account, their chosen profile picture is automatically uploaded to AWS using Ruby's Paperclip gem.
+
 ##Upcoming Features
 
 - [ ] Allow Users to upload documents, and share them with others
 - [ ] Create a central calendar for team members to coordinate
 - [ ] Display a project's recent updates on its main page
+- [ ] Display users' profile pictures alongside their discussion comments
