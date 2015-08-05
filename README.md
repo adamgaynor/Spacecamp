@@ -1,6 +1,6 @@
 # SpaceCamp
 
-[Heroku link][heroku]
+[Live][heroku]
 
 [heroku]: http://www.spacecamp.xyz/
 
