@@ -19,6 +19,15 @@ class Api::ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = current_user.projects.find(params[:id])
+    if @project.destroy
+      render json: @project
+    else
+      render json: @project.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+    
   private
 
   def project_params
