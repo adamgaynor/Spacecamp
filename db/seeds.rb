@@ -7,20 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-users = User.create([{
+adam = User.create({
     email: 'adamgaynor71017@gmail.com',
     fname: 'Adam',
     lname: 'Gaynor',
     password: 'aaaaaa'
-  }, {
+})
+guest = User.create({
     email: 'guest_user@example.com',
     fname: 'Guest',
     lname: 'User',
     password: 'qwerty'
-  }
-])
-
-
+})
 
 projects = Project.create([{
     owner_id: users.first.id,
