@@ -12,10 +12,8 @@ class Api::UsersController < ApplicationController
   def update
     @user = current_user
     user_params2 = user_params
+    # If no new picture is given, remove that key from parameters
     user_params2.delete("avatar") if user_params2["avatar"] == "undefined"
-    
-
-    # user_params
     if @user.update(user_params2)
       render json: @user
     else
