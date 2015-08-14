@@ -11,7 +11,12 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(user_params)
+    user_params2 = user_params
+    user_params2.delete("avatar") if user_params2["avatar"] == "undefined"
+    
+
+    # user_params
+    if @user.update(user_params2)
       render json: @user
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
