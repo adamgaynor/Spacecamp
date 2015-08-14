@@ -98,6 +98,12 @@
 
   tr {
     border-bottom: 1px solid #aaa;
+
+    &:hover {
+      transition-property: background-color;
+      transition-duration: 0.25s;
+      background-color: #ddd;
+    }
   }
 
   td {
