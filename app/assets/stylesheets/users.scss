@@ -1,6 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.edit-user-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #aa9c84;
+}
+
 #content {
 
   .edit-user {
