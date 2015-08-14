@@ -32,12 +32,7 @@ SpaceCamp.Views.UserEditForm = Backbone.View.extend({
     formData.append("user[lname]", lname);
     formData.append("user[avatar]", avatar);
 
-    this.model.saveFormData(formData, {
-      success: function () {
-        debugger
-        Backbone.history.navigate("#", { trigger: true });
-      }.bind(this)
-    });
+    this.model.saveFormData(formData, {});
   },
 
   fileInputChange: function (event) {

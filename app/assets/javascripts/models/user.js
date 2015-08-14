@@ -35,6 +35,10 @@ SpaceCamp.Models.CurrentUser = SpaceCamp.Models.User.extend({
       success: function (response) {
         model.set(model.parse(response));
         model.trigger('sync', model, response, options);
+
+        // refresh the root page
+        window.location.reload();
+        Backbone.history.navigate('', true);
       },
       error: function (response) {
         options.error && options.error(model, response, options);
