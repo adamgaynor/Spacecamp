@@ -5,6 +5,7 @@
 	</section>
 	<% if (project.get("owner_id") === project.get("current_user_id")) { %>
 	<section class="invite-link">
+		<span class="delete-project">Delete this project</span>
 		<a href="#projects/<%= project.id %>/add">Invite more people</a>
 	</section>
 	<% } %>
