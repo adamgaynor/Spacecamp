@@ -116,6 +116,12 @@
       right: 25px;
       color: #1c5c76;
       text-decoration: underline;
+      cursor: pointer;
+      display: none;
+    }
+
+    .show {
+      display: block;
     }
 
     .item-totals {
