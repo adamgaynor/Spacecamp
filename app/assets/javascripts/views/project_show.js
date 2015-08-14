@@ -4,7 +4,8 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
   tagName: 'section',
 
   events: {
-    'click .todo-list-form-show': 'showTodoListForm'
+    'click .todo-list-form-show': 'showTodoListForm',
+    'click .delete-project': 'deleteProject'
   },
 
   initialize: function (options) {
@@ -87,5 +88,16 @@ SpaceCamp.Views.ProjectShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var todoList = this.$el.find('.todo-list-form');
     todoList.attr("class", "todo-list-form show");
+  },
+
+  deleteProject: function (event) {
+    event.preventDefault();
+    if (confirm("Permanently delete this project?")) {
+      this.project.destroy({
+        success: function () {
+          Backbone.history.navigate('', { trigger: true });
+        }.bind(this)
+      });
+    }
   }
 });
