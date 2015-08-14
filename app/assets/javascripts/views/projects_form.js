@@ -8,6 +8,7 @@ SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
   },
 
   initialize: function (options) {
+    this.router = options.router;
     this.project = options.project;
     this.projects = options.projects;
     this.$el.attr("class", "project-form");
@@ -26,7 +27,9 @@ SpaceCamp.Views.ProjectsForm = Backbone.View.extend({
     this.project.save(formData, {
       success: function () {
         this.projects.add(this.project, { merge: true });
-        Backbone.history.navigate('#projects/' + this.project.id, { trigger: true });
+
+        this.router.navigate('#projects/' + this.project.id, { trigger:true });
+        //Backbone.history.navigate('#projects/' + this.project.id, { trigger: true });
       }.bind(this)
     });
   }
