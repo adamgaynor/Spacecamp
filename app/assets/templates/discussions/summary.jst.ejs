@@ -1,11 +1,19 @@
-<td class="name group">
+<td class="avatar group">
   <a href="<%= "#projects/" +
               project.id +
               "/discussions/" +
               discussion.id %>">
   </a>
   <img height="30px" src="<%= discussion.escape("author_avatar") %>">
-  <%= discussion.escape("author_name") %></td>
+</td>
+<td class="name group">
+  <a href="<%= "#projects/" +
+              project.id +
+              "/discussions/" +
+              discussion.id %>">
+  </a>
+  <%= discussion.escape("author_name") %>
+</td>
 
 <td class="content group">
 <a href="<%= "#projects/" +
@@ -21,5 +29,10 @@
 </span>
 </td>
 <td class="content-date">
+  <a href="<%= "#projects/" +
+              project.id +
+              "/discussions/" +
+              discussion.id %>">
+  </a>
   <span><%= time %></span>
 </td>
