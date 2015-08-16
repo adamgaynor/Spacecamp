@@ -5,6 +5,10 @@
 
 <% users.forEach(function (user) { %>
   <li class="show-user">
+    <img src="<%= user.escape("avatar") %>"
+         height="30px"
+         class="avatar-thumbnail"
+         alt="<%= user.escape("fname") %> <%= user.escape("lname") %>'s Avatar">
     <span class="user-name"><%= user.escape("fname") %> <%= user.escape("lname") %></span>
     <% if (collaborators.get(user.id)) { %>
       <button class="remove-collaborator"
