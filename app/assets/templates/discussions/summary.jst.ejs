@@ -3,7 +3,9 @@
               project.id +
               "/discussions/" +
               discussion.id %>">
-  </a><%= discussion.escape("author_name") %></td>
+  </a>
+  <img height="30px" src="<%= discussion.escape("author_avatar") %>">
+  <%= discussion.escape("author_name") %></td>
 
 <td class="content group">
 <a href="<%= "#projects/" +
