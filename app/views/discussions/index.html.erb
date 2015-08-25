@@ -22,7 +22,7 @@
     },
     componentDidMount: function () {
       this.loadDiscussionsFromServer();
-      setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+      setInterval(this.loadDiscussionsFromServer, this.props.pollInterval);
     },
     render: function() {
       return (
@@ -44,7 +44,8 @@
         return (
           <Discussion author_name={discussion.author_name}
                       title={discussion.title}
-                      summary={discussion.summary} />
+                      summary={discussion.summary}
+                      id={discussion.id} />
         );
       });
       return (
@@ -57,14 +58,16 @@
 
   var Discussion = React.createClass({
     render: function () {
-      //var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+      var url = "http://localhost:3000/discussions/" + this.props.id;
       return (
         <div className="discussion">
+          <a href={url}>
           <p className="discussionTitle">Title: {this.props.title}</p>
           <p className="discussionAuthor">
             Author: {this.props.author_name}
           </p>
           <p className="discussionSummary">Summary: {this.props.summary}</p>
+          </a>
           <br />
         </div>
       );

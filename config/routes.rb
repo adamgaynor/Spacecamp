@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :projects, only: [] do
     resources :discussions, only: :index
   end
+  resources :discussions, only: :show
 
   get "/auth/:provider/callback", to: "sessions#omniauth"
 
