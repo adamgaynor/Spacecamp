@@ -10,7 +10,8 @@ class Api::DiscussionsController < ApplicationController
 			current_user.projects.find(params[:discussion][:project_id])
 		@discussion = current_project.discussions.new(discussion_params)
 		@discussion.author_id = current_user.id
-		@discussion.summary = generate_summary(@discussion.content)
+		@discussion.summary = ''
+		@discussion.summary = generate_summary(@discussion.content) unless @discussion.content.nil?
 
 		if @discussion.save
 			render json: @discussion

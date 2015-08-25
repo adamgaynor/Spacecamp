@@ -19,10 +19,6 @@
       });
     },
     handleCommentSubmit: function (comment) {
-      //var comments = this.state.data.comments;
-      //var newComments = comments.concat([comment]);
-      //this.setState({data: newComments});
-
       var commentObject = { "comment": comment };
       $.ajax({
         url: "http://localhost:3000/api/comments",

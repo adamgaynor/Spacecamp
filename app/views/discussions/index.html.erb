@@ -17,6 +17,23 @@
         }.bind(this)
       });
     },
+    handleDiscussionSubmit: function (discussion) {
+      $.ajax({
+        url: "http://localhost:3000/api/discussions",
+        dataType: 'json',
+        type: 'POST',
+        data: discussion,
+        success: function (data) {
+          //this.setState({data: data});
+          this.loadDiscussionsFromServer();
+        }.bind(this),
+        error: function (xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+      this.loadDiscussionsFromServer();
+    },
+
     getInitialState: function () {
       return {data: []};
     },
@@ -30,7 +47,7 @@
           <h1>Discussions</h1>
           <br />
           <DiscussionList data={this.state.data} />
-          <DiscussionForm />
+          <DiscussionForm submitDiscussion = {this.handleDiscussionSubmit} />
         </div>
       );
     }
@@ -84,7 +101,7 @@
         return;
       }
       // send information to server in function callback
-      this.props.submitComment({discussion: {title: text, description: description, project_id: <%= @project.id %>}});
+      this.props.submitDiscussion({discussion: {title: title, content: description, project_id: <%= @project.id %>}});
       // reset form
       React.findDOMNode(this.refs.title).value="";
       React.findDOMNode(this.refs.description).value="";
