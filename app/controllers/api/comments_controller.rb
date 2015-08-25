@@ -5,8 +5,8 @@ class Api::CommentsController < ApplicationController
 	end
 
 	def create
-		current_discussion =
-			current_user.discussions.find(params[:comment][:discussion_id])
+		#current_discussion =
+			#current_user.discussions.find(params[:comment][:discussion_id])
 		@comment = current_user.authored_comments.new(comment_params)
 		if @comment.save
 			summary = generate_summary(@comment.content)

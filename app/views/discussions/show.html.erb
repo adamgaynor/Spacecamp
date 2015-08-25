@@ -19,21 +19,25 @@
       });
     },
     handleCommentSubmit: function (comment) {
-      var comments = this.state.data.comments;
-      var newComments = comments.concat([comment]);
-      this.setState({data: newComments});
+      //var comments = this.state.data.comments;
+      //var newComments = comments.concat([comment]);
+      //this.setState({data: newComments});
+
+      var commentObject = { "comment": comment };
       $.ajax({
         url: "http://localhost:3000/api/comments",
         dataType: 'json',
         type: 'POST',
-        data: comment,
+        data: commentObject,
         success: function (data) {
           this.setState({data: data});
+          this.loadCommentsFromServer();
         }.bind(this),
         error: function (xhr, status, err) {
           console.error(this.props.url, status, err.toString());
         }.bind(this)
       });
+      this.loadCommentsFromServer();
     },
     getInitialState: function () {
       return {data: []};
@@ -99,7 +103,7 @@
         return;
       }
       // send information to server in function callback
-      this.props.submitComment({text: text});
+      this.props.submitComment({content: text, discussion_id: <%= @discussion.id %>});
       // reset form
       React.findDOMNode(this.refs.text).value="";
       return;
@@ -107,15 +111,16 @@
     render: function () {
       return (
         <form className="commentForm" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Your comment..." ref="text" />
-          <input type="submit" value="Post" />
+          <textarea className="commentContent" name="name" rows="8" cols="40" ref="text" placeholder="Your comment..."></textarea>
+          <br />
+          <input className="edit-button" type="submit" value="Post" />
         </form>
       );
     }
   });
 
   React.render(
-    <DiscussionShow pollInterval={2000} url="http://localhost:3000/api/discussions/<%= @discussion.id %>"/>,
+    <DiscussionShow pollInterval={5000} url="http://localhost:3000/api/discussions/<%= @discussion.id %>"/>,
     document.getElementById('content')
   );
 </script>
