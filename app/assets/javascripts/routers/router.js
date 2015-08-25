@@ -39,14 +39,9 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
   },
 
   react_DiscussionsIndex: function (project_id) {
-    var url = 1;
-
-
-    var project = this.projects.getOrFetch(project_id);
-    var discussions = project.discussions();
-    var discussionsIndexView = new SpaceCamp.Views.DiscussionsIndex({
-      discussions: discussions,
-      project: project
+    var url = "/api/projects/" + project_id + "/discussions"
+    var discussionsIndexView = new SpaceCamp.Views.React_DiscussionsIndex({
+      url: url
     });
     this._swapView(discussionsIndexView);
   },

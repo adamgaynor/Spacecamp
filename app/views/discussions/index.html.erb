@@ -1,0 +1,78 @@
+<section id="content"></section>
+
+
+<script type="text/jsx">
+
+  var DiscussionIndex = React.createClass({
+    loadDiscussionsFromServer: function () {
+      $.ajax({
+        url: this.props.url,
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+          this.setState({data: data});
+        }.bind(this),
+        error: function (xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+    },
+    getInitialState: function () {
+      return {data: []};
+    },
+    componentDidMount: function () {
+      this.loadDiscussionsFromServer();
+      setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+    },
+    render: function() {
+      return (
+        <div className="discussion-index">
+          <h1>Discussions</h1>
+          <br />
+          <DiscussionList data={this.state.data} />
+        </div>
+      );
+    }
+  });
+
+  var DiscussionList = React.createClass({
+    render: function () {
+      var discussionNodes = [];
+      var discussions = this.props.data.discussions;
+      console.log(discussions);
+      discussionNodes = discussions && discussions.map(function (discussion) {
+        return (
+          <Discussion author_name={discussion.author_name}
+                      title={discussion.title}
+                      summary={discussion.summary} />
+        );
+      });
+      return (
+        <div className="commentList">
+          {discussionNodes}
+        </div>
+      );
+    }
+  });
+
+  var Discussion = React.createClass({
+    render: function () {
+      //var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+      return (
+        <div className="discussion">
+          <p className="discussionTitle">Title: {this.props.title}</p>
+          <p className="discussionAuthor">
+            Author: {this.props.author_name}
+          </p>
+          <p className="discussionSummary">Summary: {this.props.summary}</p>
+          <br />
+        </div>
+      );
+    }
+  });
+
+  React.render(
+    <DiscussionIndex pollInterval={2000} url="http://localhost:3000/api/projects/<%= @project_id %>/discussions"/>,
+    document.getElementById('content')
+  );
+</script>
