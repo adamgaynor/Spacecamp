@@ -146,7 +146,7 @@
   });
 
   React.render(
-    <DiscussionShow pollInterval={5000} url="http://localhost:3000/api/discussions/<%= @discussion.id %>"/>,
+    <DiscussionShow pollInterval={1000} url="http://localhost:3000/api/discussions/<%= @discussion.id %>"/>,
     document.getElementById('content')
   );
 </script>
