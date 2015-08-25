@@ -1,4 +1,4 @@
-json.extract! @discussion, :id, :title, :content, :author_id
+json.extract! @discussion, :id, :title, :content, :author_id, :project_id
 json.author_name @discussion.author.fname + " " + @discussion.author.lname
 json.author_avatar @discussion.author.avatar
 json.comments do

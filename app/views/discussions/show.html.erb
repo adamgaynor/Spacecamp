@@ -30,7 +30,7 @@
         type: 'POST',
         data: commentObject,
         success: function (data) {
-          this.setState({data: data});
+          //this.setState({data: data});
           this.loadCommentsFromServer();
         }.bind(this),
         error: function (xhr, status, err) {
@@ -48,10 +48,13 @@
     },
     render: function () {
       var url = "http://localhost:3000/discussions/" + this.state.data.id;
-      console.log(this.state.data.comments);
+      console.log(this.state.data);
+      var indexUrl = "http://localhost:3000/projects/" + this.state.data.project_id + "/discussions";
       return (
         <div className="discussion">
           <h1 className="discussionTitle">{this.state.data.title}</h1>
+          <a className="linkBack" href={indexUrl}>Back to all discussions</a>
+          <br />
           <p className="discussionAuthor">
             Author: {this.state.data.author_name}
           </p>
@@ -88,8 +91,6 @@
             {this.props.author}
           </h2>
           <span>{this.props.content}</span>
-          <br />
-          <br />
         </div>
       );
     }

@@ -1,19 +1,40 @@
 .discussion {
   .comment {
+    border-bottom: 1px solid black;
+    margin: 10px;
+  }
 
+  .linkBack {
+    color: blue;
   }
 
   .commentForm {
+    margin: 10px;
     .commentContent {
       background-color: white;
       border: 1px solid #aaa;
       resize: none;
       padding: 10px;
+
     }
 
     .submitButton {
 
     }
 
+  }
+}
+.discussionForm {
+  .discussionTitle {
+    background-color: white;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #aaa;
+  }
+  .discussionContent {
+    background-color: white;
+    border: 1px solid #aaa;
+    resize: none;
+    padding: 10px;
   }
 }

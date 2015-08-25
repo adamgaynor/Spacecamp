@@ -30,6 +30,7 @@
           <h1>Discussions</h1>
           <br />
           <DiscussionList data={this.state.data} />
+          <DiscussionForm />
         </div>
       );
     }
@@ -70,6 +71,33 @@
           </a>
           <br />
         </div>
+      );
+    }
+  });
+
+  var DiscussionForm = React.createClass({
+    handleSubmit: function (event) {
+      event.preventDefault();
+      var title = React.findDOMNode(this.refs.title).value.trim();
+      var description = React.findDOMNode(this.refs.description).value.trim();
+      if (!title) {
+        return;
+      }
+      // send information to server in function callback
+      this.props.submitComment({discussion: {title: text, description: description, project_id: <%= @project.id %>}});
+      // reset form
+      React.findDOMNode(this.refs.title).value="";
+      React.findDOMNode(this.refs.description).value="";
+      return;
+    },
+    render: function () {
+      return (
+        <form className="discussionForm" onSubmit={this.handleSubmit}>
+          <input className="discussionTitle" type="text" placeholder="Project Title" ref="title" />
+          <textarea className="discussionContent" name="name" rows="8" cols="40" ref="description" placeholder="Project description"></textarea>
+          <br />
+          <input className="edit-button" type="submit" value="Post" />
+        </form>
       );
     }
   });
