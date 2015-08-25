@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :projects, except: [:new, :edit] do
       resources :users, only: [:index]
       resources :collaborations, only: [:create]
+      resources :discussions, only: :index
     end
     resources :todo_lists, only: [:show, :create, :update, :destroy] do
       resources :todo_items, only: [:index]

@@ -9,6 +9,7 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
     'discussions/:id/edit': 'editDiscussion',
     'projects/:project_id/add': 'addCollaborators',
     'projects/:project_id/discussions': 'discussionsIndex',
+    'projects/:project_id/react_discussions': 'react_DiscussionsIndex',
     'projects/:project_id/todoLists': 'todoListsIndex'
   },
 
@@ -35,6 +36,19 @@ SpaceCamp.Routers.Router = Backbone.Router.extend({
         this._swapView(userEditView);
       }.bind(this)
     });
+  },
+
+  react_DiscussionsIndex: function (project_id) {
+    var url = 1;
+
+
+    var project = this.projects.getOrFetch(project_id);
+    var discussions = project.discussions();
+    var discussionsIndexView = new SpaceCamp.Views.DiscussionsIndex({
+      discussions: discussions,
+      project: project
+    });
+    this._swapView(discussionsIndexView);
   },
 
   newProject: function () {
