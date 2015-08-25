@@ -2,6 +2,11 @@
   .comment {
     border-bottom: 1px solid black;
     margin: 10px;
+
+    .delete-button {
+      display: block;
+      margin-bottom: 10px;
+    }
   }
 
   .linkBack {

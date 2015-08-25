@@ -26,7 +26,6 @@
         type: 'POST',
         data: commentObject,
         success: function (data) {
-          //this.setState({data: data});
           this.loadCommentsFromServer();
         }.bind(this),
         error: function (xhr, status, err) {
@@ -44,7 +43,6 @@
     },
     render: function () {
       var url = "http://localhost:3000/discussions/" + this.state.data.id;
-      console.log(this.state.data);
       var indexUrl = "http://localhost:3000/projects/" + this.state.data.project_id + "/discussions";
       return (
         <div className="discussion">
@@ -67,7 +65,8 @@
       var commentNodes = [];
       commentNodes = this.props.data && this.props.data.map(function (comment) {
         return (
-          <Comment author={comment.author_fname + " " + comment.author_lname}
+          <Comment id={comment.id}
+                   author={comment.author_fname + " " + comment.author_lname}
                    content={comment.content} />
         );
       });
@@ -80,6 +79,22 @@
   });
 
   var Comment = React.createClass({
+    deleteComment: function (comment_id) {
+      var url = "http://localhost:3000/api/comments/" + comment_id;
+      $.ajax({
+        url: url,
+        dataType: 'json',
+        type: 'DELETE',
+        success: function (data) {
+          return;
+          //this.loadCommentsFromServer();
+        }.bind(this),
+        error: function (xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+      //this.loadCommentsFromServer();
+    },
     render: function () {
       return (
         <div className="comment">
@@ -87,6 +102,7 @@
             {this.props.author}
           </h2>
           <span>{this.props.content}</span>
+          <DeleteButton deleteComment={this.deleteComment} id={this.props.id}/>
         </div>
       );
     }
@@ -112,6 +128,19 @@
           <br />
           <input className="edit-button" type="submit" value="Post" />
         </form>
+      );
+    }
+  });
+
+  var DeleteButton = React.createClass({
+    handleSubmit: function (event) {
+      event.preventDefault();
+      this.props.deleteComment(this.props.id);
+      return;
+    },
+    render: function () {
+      return (
+        <button className="delete-button" onClick={this.handleSubmit}>Delete</button>
       );
     }
   });
