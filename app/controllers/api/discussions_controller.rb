@@ -21,11 +21,13 @@ class Api::DiscussionsController < ApplicationController
 
 	def show
 		@discussion = current_user.discussions.find(params[:id])
+		@current_user = current_user
 		render :show
 	end
 
 	def destroy
 		@discussion = current_user.discussions.find(params[:id])
+		return unless current_user.id == @discussion.author_id
 		if @discussion.destroy
 			render json: @discussion
 		else

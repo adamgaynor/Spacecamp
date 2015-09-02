@@ -4,7 +4,9 @@
 	<%= discussion.escape("title") %></h1>
 <ul>
 	<!-- <li>Edit...</li> -->
-	<li><button>Delete...</button></li>
+	<% if (discussion.get("current_user_id") === discussion.get("author_id")) { %>
+		<li><button>Delete...</button></li>
+	<% } %>
 </ul>
 
 <p class="content">
