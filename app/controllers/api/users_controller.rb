@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   wrap_parameters false
 
   def index
-    @users = User.all
+    @users = User.all.includes(:projects)
   end
 
   def show

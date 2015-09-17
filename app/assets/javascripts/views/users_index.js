@@ -22,6 +22,7 @@ SpaceCamp.Views.UsersIndex = Backbone.View.extend({
     //the owner of the project should not be on its own list
     this.users.remove(this.project.get("owner_id"));
 
+
     var content = this.template({
       users: this.users,
       collaborators: this.collaborators,
