@@ -103,6 +103,9 @@ GEM
     figaro (1.1.1)
       thor (~> 0.14)
     formatador (0.2.5)
+    fullcalendar-rails (2.3.1.0)
+      jquery-rails (>= 3.1.1, < 5.0.0)
+      momentjs-rails (~> 2.8, >= 2.8.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     guard (2.12.8)
@@ -147,6 +150,8 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -304,11 +309,13 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  fullcalendar-rails
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
   launchy
+  momentjs-rails
   newrelic_rpm
   omniauth
   omniauth-google-oauth2
@@ -328,3 +335,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.5

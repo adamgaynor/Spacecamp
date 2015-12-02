@@ -17,6 +17,8 @@
 //= require underscore
 //= require backbone
 //= require space_camp
+//= require moment
+//= require fullcalendar
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

@@ -154,6 +154,7 @@
   .discussion-author-thumb {
     display: inline-block;
     float: left;
+    max-width: 40px;
   }
 
   > .content {
@@ -185,6 +186,7 @@
   .comment-author-thumb {
     height: 60px;
     float: left;
+    max-width: 40px;
   }
 
   .name {
