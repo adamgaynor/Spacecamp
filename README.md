@@ -55,3 +55,6 @@ AWS stores the profile pictures uploaded by users, allowing them to be displayed
 - [ ] Create a central calendar for team members to coordinate
 - [ ] Display a project's recent updates on its main page
 - [ ] Display users' profile pictures alongside their discussion comments
+- [ ] To-Do Items have deadlines
+- [ ] To-Do Items can only be marked complete by the assigned person
+- [ ] Events calendar
