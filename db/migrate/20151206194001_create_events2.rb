@@ -1,6 +1,7 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEvents2 < ActiveRecord::Migration
   def change
-    create_table :calendar_events do |t|
+    drop_table :calendar_events
+    create_table :events do |t|
       t.string :title, null: false
       t.datetime :start, null: false
       t.datetime :end, null: false

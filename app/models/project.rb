@@ -26,6 +26,8 @@ class Project < ActiveRecord::Base
 
   has_many :discussions
 
+  has_many :events
+
   has_many(
     :to_do_items,
     through: :to_do_lists,
