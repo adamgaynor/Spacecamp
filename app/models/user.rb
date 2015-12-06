@@ -100,6 +100,12 @@ class User < ActiveRecord::Base
     foreign_key: :assigned_user_id
   )
 
+  has_many(
+    :events,
+    through: :projects,
+    source: :events
+  )
+
   def self.find_or_create_by_auth_hash(auth_hash)
     user = User.find_by(
             provider: auth_hash[:provider],
