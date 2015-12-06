@@ -10,7 +10,7 @@ SpaceCamp.Models.Project = Backbone.Model.extend({
   discussions: function () {
     if (this._discussions) return this._discussions;
     this._discussions = new SpaceCamp.Collections.Discussions([], { project: this });
-    return this._discussions
+    return this._discussions;
   },
 
   collaborations: function () {
