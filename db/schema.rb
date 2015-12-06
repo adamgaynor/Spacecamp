@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722190441) do
+ActiveRecord::Schema.define(version: 20151206182055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendar_events", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "start",      null: false
+    t.datetime "end",        null: false
+    t.string   "color",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "collaborations", force: :cascade do |t|
     t.integer  "project_id", null: false
@@ -49,6 +58,18 @@ ActiveRecord::Schema.define(version: 20150722190441) do
 
   add_index "discussions", ["author_id"], name: "index_discussions_on_author_id", using: :btree
   add_index "discussions", ["project_id"], name: "index_discussions_on_project_id", using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "project_id",  null: false
+    t.string   "title",       null: false
+    t.text     "description"
+    t.datetime "start_time",  null: false
+    t.datetime "end_time",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["project_id"], name: "index_events_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "owner_id",    null: false
